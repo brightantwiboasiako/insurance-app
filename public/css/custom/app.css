@@ -1,0 +1,138 @@
+
+@media (min-width: 780px) {
+    .search-box #search-query{
+        min-width: 300px;
+    }
+}
+
+
+.modal-body{
+    overflow: hidden;
+}
+
+
+[v-cloak] .v-cloak--block {
+    display: block;
+}
+[v-cloak] .v-cloak--inline {
+    display: inline;
+}
+[v-cloak] .v-cloak--inlineBlock {
+    display: inline-block;
+}
+[v-cloak] .v-cloak--hidden {
+    display: none;
+}
+[v-cloak] .v-cloak--invisible {
+    visibility: hidden;
+}
+.v-cloak--block,
+.v-cloak--inline,
+.v-cloak--inlineBlock {
+    display: none;
+}
+
+
+.search-box{
+    padding:15px 15px 25px 15px;
+    text-align: center;
+    max-width:680px;
+    margin:10px auto;
+    box-shadow: 0 0 4px rgba(0,0,0,.4);
+}
+
+.modal-body .search-box{
+    box-shadow: none;
+    padding: 5px 10px;
+}
+
+.search-box .title{
+    margin-bottom: 25px;
+    padding-bottom:8px;
+    text-align: left;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+    overflow: hidden;
+}
+
+
+.search-box p.alt-search{
+    margin-top:10px;
+    font-size:13px;
+}
+
+
+.search-results{
+    border-top:1px solid rgba(0,0,0,.2);
+    margin-top:35px;
+    padding-top:15px;
+}
+
+.search-results table td{
+    padding: 5px !important;
+    font-size:13px !important;
+    color: #000 !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+}
+
+.finder-empty-results{
+    display: none;
+}
+
+.edit-form{
+    position: fixed;
+    bottom:0;
+    right:0;
+    left:230px;
+    padding:10px 10px;
+    z-index: 999;
+    background: white;
+}
+
+.w-50{
+    width:50px !important;
+}
+
+.w-80{
+    width:80px !important;
+}
+
+.w-80{
+    width:100px !important;
+}
+
+/* Alertify extension */
+
+.ajs-header{
+    color: #fff !important;
+    padding: 12px 24px !important;
+}
+
+.ajs-footer{
+    padding: 0 !important;
+}
+
+.ajs-button{
+    outline: none !important;
+}
+
+.ajs-success{
+    background: #689f38 !important;
+}
+
+.ajs-danger{
+    background: #dd191d !important;
+}
+
+.ajs-warning{
+    background: #ffa000 !important;
+}
+
+.ajs-info{
+    background: #2980b9 !important;
+}
+
+.ajs-content{
+    color: rgba(0,0,0,.7);
+    font-size: 13px;
+}
