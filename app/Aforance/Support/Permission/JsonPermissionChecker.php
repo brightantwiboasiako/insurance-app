@@ -6,7 +6,7 @@ use Aforance\Aforance\Support\Contracts\Parser;
 use Aforance\Aforance\Support\Contracts\Checker;
 use Aforance\Aforance\Support\DataParser\JsonDataParser;
 use Aforance\Aforance\Support\DataParser\ParserException;
-use Aforance\Aforance\Support\Permission\UnauthorizedActivityException;
+use Aforance\Aforance\Support\Permission\InvalidPermissionException;
 
 class JsonPermissionChecker implements Checker{
 
@@ -58,8 +58,13 @@ class JsonPermissionChecker implements Checker{
 
 			$servicePermission = $this->parser->read($this->service);
 
-			if(!isset($servicePermission[$this->fullActionName()]) || 
-				array_search($this->role, $servicePermission[$this->fullActionName()]) === false){
+			if(!isset($servicePermission[$this->fullPermissionName()])){
+				// sought permission is not available
+				throw new InvalidPermissionException('Permission: ' + $this->fullPermissionName() + ' does not exist!');
+			}
+
+
+			if(array_search($this->role, $servicePermission[$this->fullPermissionName()]) === false){
 				// role cannot perform operation
 				return false;
 			}else{
@@ -80,7 +85,7 @@ class JsonPermissionChecker implements Checker{
 	}
 
 
-	private function fullActionName(){
+	private function fullPermissionName(){
 		return $this->action.'_'.$this->service;
 	}
 
