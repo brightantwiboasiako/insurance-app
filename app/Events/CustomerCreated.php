@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Events;
+namespace Aforance\Events;
 
-use App\Events\Event;
+use Aforance\Events\Event;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 

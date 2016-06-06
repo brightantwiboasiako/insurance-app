@@ -6,13 +6,13 @@
  * Time: 3:14 PM
  */
 
-namespace App\Http\Controllers\Policy;
+namespace Aforance\Http\Controllers\Policy;
 
 
-use App\Http\Controllers\Controller;
-use App\PaymentFrequency;
-use App\PaymentMethod;
-use App\PolicyType;
+use Aforance\Http\Controllers\Controller;
+use Aforance\PaymentFrequency;
+use Aforance\PaymentMethod;
+use Aforance\PolicyType;
 use Illuminate\Http\Request;
 
 class PolicyController extends Controller

@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Aforance\Http\Controllers;
 
-use App\Customer;
-use App\Events\CustomerCreated;
+use Aforance\Customer;
+use Aforance\Events\CustomerCreated;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
+use Aforance\Http\Requests;
 use Illuminate\Support\Facades\Validator;
 
 class CustomerController extends Controller{

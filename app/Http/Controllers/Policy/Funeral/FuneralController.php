@@ -6,10 +6,10 @@
  * Time: 12:26 PM
  */
 
-namespace App\Http\Controllers\Policy\Funeral;
+namespace Aforance\Http\Controllers\Policy\Funeral;
 
 
-use App\Http\Controllers\Controller;
+use Aforance\Http\Controllers\Controller;
 
 class FuneralController extends Controller
 {

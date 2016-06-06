@@ -6,7 +6,7 @@
  * Time: 4:58 PM
  */
 
-namespace App\Insurance\Finder;
+namespace Aforance\Insurance\Finder;
 
 
 class Engine{
@@ -30,7 +30,7 @@ class Engine{
     private function setModel($model){
         switch($model){
             case 'customer':
-                $this->model = \App\Customer::class;
+                $this->model = \Aforance\Customer::class;
                 break;
         }
     }

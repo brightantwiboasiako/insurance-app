@@ -1,0 +1,11 @@
+{
+	"customer": {
+		"create_customer": [
+			"company manager", "payment authorizer", "staff"
+		],
+		
+		"find_customer": [
+			"company manager", "payment authorizer", "staff"
+		]
+	}
+}

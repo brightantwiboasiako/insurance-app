@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace Aforance\Events;
 
 abstract class Event
 {

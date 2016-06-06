@@ -6,11 +6,11 @@
  * Time: 5:18 PM
  */
 
-namespace App\Http\Controllers\Finder;
+namespace Aforance\Http\Controllers\Finder;
 
 
-use App\Http\Controllers\Controller;
-use App\Insurance\Finder\Engine;
+use Aforance\Http\Controllers\Controller;
+use Aforance\Insurance\Finder\Engine;
 use Illuminate\Http\Request;
 
 class FinderController extends Controller{
@@ -28,7 +28,6 @@ class FinderController extends Controller{
         $engine = new Engine($params);
 
         return $engine->run();
-
     }
 
 }

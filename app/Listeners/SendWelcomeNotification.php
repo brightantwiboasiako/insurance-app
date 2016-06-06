@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Listeners;
+namespace Aforance\Listeners;
 
-use App\Events\CustomerCreated;
+use Aforance\Events\CustomerCreated;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
