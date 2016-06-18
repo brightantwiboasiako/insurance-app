@@ -3,11 +3,14 @@
 namespace Aforance\Aforance\Business;
 
 use Aforance\Aforance\Service\PremiumService;
+use Aforance\Aforance\Validation\DispatchesErrors;
 use Aforance\Aforance\Validation\ValidationException;
 use Aforance\Aforance\Validation\PolicyValidatorInterface;
 use Aforance\Aforance\Repository\Contracts\PolicyRepositoryInterface;
 
 abstract class Business{
+
+	use DispatchesErrors;
 
 	/**
 	*
@@ -85,6 +88,7 @@ abstract class Business{
 		try{
 			$this->validator->checkPolicyData($data);
 		}catch(ValidationException $e){
+			$this->addAllToBag($this->validator->getErrors());
 			throw $e;
 		}
 	}

@@ -44,9 +44,4 @@ class CustomerService implements ServiceInterface{
 	}
 
 
-	public function errors(){
-		return $this->errors;
-	}
-
-
 }

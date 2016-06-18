@@ -17,7 +17,7 @@ trait DispatchesErrors{
 	}
 
 
-	public function dispatch(){
+	public function errors(){
 		return $this->errors;
 	}
 
