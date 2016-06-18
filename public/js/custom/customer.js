@@ -112,8 +112,9 @@ $(document).ready(function(){
             ajax(options, function(response){
 
                 if(!response.OK){
+                    console.log(response);
                     bindErrors(response.errors, createCustomerForm);
-                    alert('Could not create customer. Please try again!', 'danger');
+                    alert('Could not create customer. Please check the inputs and try again!', 'danger');
                 }else{
                     // successfully created customer
 
@@ -125,6 +126,9 @@ $(document).ready(function(){
                 }
 
             }, function(response){
+
+                // alert(response.responseText, 'danger');
+
                 alert('Something went wrong. Please try again!', 'danger', function(){
                     return window.location.reload();
                 });

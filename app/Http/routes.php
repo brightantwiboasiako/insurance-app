@@ -78,7 +78,7 @@ Route::group(['middleware' => 'auth'], function(){
         ]);
 
         Route::post('/create', [
-            'uses' => 'CustomerController@create'
+            'uses' => 'CustomerController@createCustomer'
         ]);
 
     });

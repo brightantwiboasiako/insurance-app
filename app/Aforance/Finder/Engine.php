@@ -6,7 +6,7 @@
  * Time: 4:58 PM
  */
 
-namespace Aforance\Insurance\Finder;
+namespace Aforance\Aforance\Finder;
 
 
 class Engine{

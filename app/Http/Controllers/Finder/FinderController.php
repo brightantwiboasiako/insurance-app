@@ -10,7 +10,7 @@ namespace Aforance\Http\Controllers\Finder;
 
 
 use Aforance\Http\Controllers\Controller;
-use Aforance\Insurance\Finder\Engine;
+use Aforance\Aforance\Finder\Engine;
 use Illuminate\Http\Request;
 
 class FinderController extends Controller{

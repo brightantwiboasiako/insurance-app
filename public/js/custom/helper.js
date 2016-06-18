@@ -134,6 +134,17 @@ function alert(message, type, onOk){
             'transition':'zoom'
         }).show();
 
+    var types = ["danger", "warning", "info", "success"];
+    var index = types.indexOf(type);
+
+    if(index > -1){
+        types.slice(index, 1);
+    }
+
+    types.forEach(function(t){
+        $('.ajs-header').removeClass('ajs-'+t);
+    });
+
     $('.ajs-header').addClass('ajs-'+type);
 
 }

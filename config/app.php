@@ -136,6 +136,13 @@ return [
     'providers' => [
 
         /*
+         * Aforance Service Providers...
+         */
+        Aforance\Providers\CustomerServiceProvider::class,
+        Aforance\Providers\PremiumServiceProvider::class,
+
+
+        /*
          * Laravel Framework Service Providers...
          */
         Illuminate\Auth\AuthServiceProvider::class,
