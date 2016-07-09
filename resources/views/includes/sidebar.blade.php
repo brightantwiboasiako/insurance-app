@@ -93,17 +93,17 @@
                         </a>
                         <ul class="submenu">
                             <li>
-                                <a href="calendar.html">
+                                <a href="{{ url('/claim/register') }}">
                                     Register
                                 </a>
                             </li>
                             <li>
-                                <a href="calendar.html">
+                                <a href="{{ url('/claim/payment') }}">
                                     Pay Claim
                                 </a>
                             </li>
                             <li>
-                                <a href="gallery.html">
+                                <a href="{{ url('/claim/view') }}">
                                     View Claim
                                 </a>
                             </li>

@@ -20,6 +20,12 @@ class CustomerNotification implements CustomerNotificationInterface, SmsNotifier
 			case 'policy creation':
 				$this->tellCustomerAboutNewPolicy($data);
 				break;
+			case 'registered claim':
+				$this->notifyRegisteredClaim($data);
+				break;
+			case 'paid claim':
+				$this->notifyPaidClaim($data);
+				break;
 		}
 
 	}
@@ -44,6 +50,16 @@ class CustomerNotification implements CustomerNotificationInterface, SmsNotifier
 
 	private function tellCustomerAboutNewPolicy(array $data){
 		// notify customer about new policy
+	}
+
+
+	private function notifyRegisteredClaim(array $data){
+		// notify customer about registered claim
+	}
+
+
+	private function notifyPaidClaim(array $data){
+		// notify customer about paid claim
 	}
 
 

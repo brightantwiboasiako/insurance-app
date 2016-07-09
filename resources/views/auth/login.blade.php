@@ -18,11 +18,11 @@
 @section('content')
     <form role="form" action="#" name="login-form">
         <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+            <span class="input-group-addon"><i class="fa fa-user" style="color:grey; font-size:22px"></i></span>
             <input class="form-control validate[required,minSize[5]]" name="username" type="text" placeholder="Username">
         </div>
         <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-key"></i></span>
+            <span class="input-group-addon"><i class="fa fa-key" style="color:grey; font-size:22px"></i></span>
             <input type="password" class="form-control validate[required,minSize[5]]" name="password"
                    placeholder="Password">
         </div>
