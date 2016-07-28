@@ -2,12 +2,19 @@
 
 namespace Aforance\Aforance\Repository;
 
-use Contracts\PolicyRepositoryInterface;
+use Aforance\Aforance\Contracts\Repository\FuneralPolicyRepositoryInterface;
+use Aforance\FuneralPolicy;
 
-class FuneralPolicyRepository implements PolicyRepositoryInterface{
+class FuneralPolicyRepository implements FuneralPolicyRepositoryInterface{
 
+	/**
+	 * Stores funeral policy data to persistence
+	 * data source
+	 *
+	 * @param array $data
+	 */
 	public function create(array $data){
-		// create a funeral policy
+		FuneralPolicy::issue($data);
 	}
 
 }

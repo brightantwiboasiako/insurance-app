@@ -2,6 +2,7 @@
 
 namespace Aforance\Aforance\Customer;
 
+use Aforance\Aforance\Customer\Contracts\CustomerRegistrationListenerInterface;
 use Aforance\Aforance\Validation\CustomerValidator;
 use Aforance\Aforance\Validation\ValidationException;
 use Aforance\Aforance\Notification\Contracts\CustomerNotificationInterface;
@@ -19,14 +20,14 @@ class Registration{
 
 
 	/**
-	*
-	* @var CustomerRepository
+	* The repository of customers
+	* @var Repository
 	*/
 	private $customers;
 
 
 	/**
-	*
+	* Notifier for customer notifications
 	* @var CustomerNotificationInterface 
 	*/
 	private $notifier;
@@ -39,29 +40,24 @@ class Registration{
 	}
 
 
-	public function handle($data){
+	public function handle($data, CustomerRegistrationListenerInterface $listener){
 
 		try{
 			$this->validator->registrationValidation($data);
 		}catch(ValidationException $e){
-			throw $e;
+			return $listener->onFailedRegistration([
+				'reason' => 'validation',
+				'errors' => $this->validator->getErrors()
+			]);
 		}
 
-		// Customer data validated!
+		$customer = $this->customers->register($data);
 
-		$customer = $this->registerCustomer($data);
+		$this->notifier->notify([
+			'customer' => $customer
+		], 'registration');
 
-		$this->notifier->notify($customer, 'registration');
-	}
-
-
-	private function registerCustomer(array $data){
-		return $this->customers->register($data);
-	}
-
-
-	public function errors(){
-		return $this->validator->getErrors();
+		return $listener->onSuccessfulRegistration();
 	}
 
 }

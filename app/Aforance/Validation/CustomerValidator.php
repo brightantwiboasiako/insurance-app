@@ -2,9 +2,6 @@
 
 namespace Aforance\Aforance\Validation;
 
-
-use Aforance\Aforance\Validation\ValidationException;
-
 class CustomerValidator extends Validator{
 
 
@@ -23,7 +20,7 @@ class CustomerValidator extends Validator{
             'first_name' => 'required|max:32',
             'other_name' => 'max:32',
             'email' => 'required|email|unique:customers,email,'.$id,
-            'primary_phone_number' => 'required|max:15',
+            'primary_phone_number' => 'required|max:15|unique:customers,primary_phone_number,'.$id,
             'personal_address' => 'required|max:1024',
             'gender' => 'required',
             'birth_day' => 'required',

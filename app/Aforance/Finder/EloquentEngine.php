@@ -9,28 +9,47 @@
 namespace Aforance\Aforance\Finder;
 
 
-class Engine{
+use Aforance\Aforance\Contracts\Finder\FinderEngineInterface;
+use Aforance\Customer;
+
+class EloquentEngine implements FinderEngineInterface{
 
     private $query;
     private $model;
     private $by;
 
-    public function __construct($params){
-        $this->setModel($params['model']);
-        $this->by = $params['by'];
-        $this->query = $this->withLike($params);
+    public function __construct($params = null){
+        if(is_array($params) && count($params) > 0){
+            $this->params($params);
+        }
     }
 
+    /**
+     * Runs the finder engine
+     *
+     * @return mixed
+     */
     public function run(){
         return (new $this->model)->where($this->by, 'like', $this->query)
             ->take(5)->get()->toJson();
     }
 
+    /**
+     * @param array $params
+     * @return $this
+     */
+    public function params(array $params)
+    {
+        $this->setModel($params['model']);
+        $this->by = $params['by'];
+        $this->query = $this->withLike($params);
+        return $this;
+    }
 
     private function setModel($model){
         switch($model){
             case 'customer':
-                $this->model = \Aforance\Customer::class;
+                $this->model = Customer::class;
                 break;
         }
     }
@@ -38,7 +57,6 @@ class Engine{
 
     private function withLike($params){
         $query = $params['query'];
-
         if(!isset($params['like'])){
             return '%'.$query.'%';
         }else if($params['like'] < 0){

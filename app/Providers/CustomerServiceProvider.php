@@ -2,6 +2,9 @@
 
 namespace Aforance\Providers;
 
+use Aforance\Aforance\Customer\Registration;
+use Aforance\Aforance\Repository\CustomerRepository;
+use Aforance\Aforance\Validation\CustomerValidator;
 use Illuminate\Support\ServiceProvider;
 
 class CustomerServiceProvider extends ServiceProvider
@@ -24,29 +27,40 @@ class CustomerServiceProvider extends ServiceProvider
     public function register()
     {
         
-        $this->app->bind('\Aforance\Aforance\Validation\CustomerValidator', function(){
-            return new \Aforance\Aforance\Validation\CustomerValidator();
+        $this->app->bind('customer.validator', function(){
+            return new CustomerValidator();
         });
 
 
         $this->app->bind(
-            '\Aforance\Aforance\Notification\Contracts\CustomerNotificationInterface',
+            'customer.notifier',
             '\Aforance\Aforance\Notification\CustomerNotification'
         );
 
 
-        $this->app->bind('\Aforance\Aforance\Repository\CustomerRepository', function(){
-            return new \Aforance\Aforance\Repository\CustomerRepository;
+        $this->app->bind('customer.repository', function(){
+            return new CustomerRepository();
         });
 
 
-        $this->app->bind('\Aforance\Aforance\Customer\Registration', function($app){
-            return new \Aforance\Aforance\Customer\Registration(
-                $app->make('\Aforance\Aforance\Validation\CustomerValidator'),
-                $app->make('\Aforance\Aforance\Notification\Contracts\CustomerNotificationInterface'),
-                $app->make('\Aforance\Aforance\Repository\CustomerRepository')
+        $this->app->bind('customer.registration', function(){
+            return new Registration(
+                app('customer.validator'),
+                app('customer.notifier'),
+                app('customer.repository')
             );
         });
 
     }
+
+    public function provides()
+    {
+        return [
+            'customer.notifier',
+            'customer.validator',
+            'customer.repository',
+            'customer.registration'
+        ];
+    }
+
 }

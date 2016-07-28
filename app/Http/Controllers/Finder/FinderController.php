@@ -9,25 +9,29 @@
 namespace Aforance\Http\Controllers\Finder;
 
 
+use Aforance\Aforance\Contracts\Finder\FinderEngineInterface;
 use Aforance\Http\Controllers\Controller;
 use Aforance\Aforance\Finder\Engine;
 use Illuminate\Http\Request;
 
 class FinderController extends Controller{
 
+    /**
+     * @var FinderEngineInterface
+     */
+    private $engine;
+    
+    public function __construct(FinderEngineInterface $engine){
+        $this->engine = $engine;
+    }
 
     public function execute(Request $request){
-
-        $params = [
+        return $this->engine->params([
             'model' => e($request->input('model')),
             'by' => e($request->input('by')),
             'query' => e($request->input('query')),
             'like' => $request->has('like') ? e($request->input('like')) : null
-        ];
-
-        $engine = new Engine($params);
-
-        return $engine->run();
+        ])->run();
     }
 
 }

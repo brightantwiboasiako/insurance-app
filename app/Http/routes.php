@@ -12,7 +12,6 @@
 */
 
 Route::get('/', function () {
-
     if(Auth::check()){
         return view('dashboard');
     }else{
@@ -89,17 +88,38 @@ Route::group(['middleware' => 'auth'], function(){
            'uses' => 'Policy\PolicyController@getMetadata'
         ]);
 
+        Route::post('create', [
+            'uses' => 'Policy\PolicyController@issue'
+        ]);
 
+        // Funeral Policies
         Route::group(['prefix' => 'funeral'], function(){
 
             Route::get('/', [
                 'uses' => 'Policy\Funeral\FuneralController@index'
             ]);
 
+            Route::get('/create/{customerId}', [
+               'uses' => 'Policy\Funeral\FuneralController@getCreationScreen'
+            ]);
+
         });
 
     });
 
+
+    // Application level data routes
+    Route::group(['prefix' => 'app'], function(){
+
+        Route::get('agents', [
+            'uses' => 'Agency\AgentController@all'
+        ]);
+
+        Route::get('branches', [
+            'uses' => 'Branch\BranchController@all'
+        ]);
+
+    });
 
 
     // Customers Route
@@ -110,11 +130,11 @@ Route::group(['middleware' => 'auth'], function(){
         });
 
         Route::post('/edit', [
-           'uses' => 'CustomerController@edit'
+           'uses' => 'Customer\RegistrationController@editCustomer'
         ]);
 
         Route::post('/create', [
-            'uses' => 'CustomerController@createCustomer'
+            'uses' => 'Customer\RegistrationController@createCustomer'
         ]);
 
     });

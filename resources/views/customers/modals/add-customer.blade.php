@@ -49,7 +49,7 @@
                         <div class="form-group col-md-6">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                                <input type="text" class="form-control validate[required,custom[phone]]" name="phone"
+                                <input type="text" class="form-control validate[required,custom[phone]]" name="primary_phone_number"
                                        id="phone" placeholder="Phone Number" v-model="newCustomer.primary_phone_number">
                             </div>
                         </div>
@@ -98,7 +98,10 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary btn-sm btn-submit">Create</button>
+                    <button type="submit" class="btn btn-primary btn-sm btn-submit">
+                        <span v-show="processing"><i class="fa fa-spinner fa-spin"></i></span>
+                        <span v-show="!processing">Create</span>
+                    </button>
                 </div>
             </form>
         </div><!-- /.modal-content -->

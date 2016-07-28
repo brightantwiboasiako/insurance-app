@@ -8,31 +8,16 @@ function findCustomer(query, searchBy, callback, form){
         form = $('.finder-form');
     }
 
-    if(query.length > 0){
+    if(query.length > 0) {
         var processElement = form.find('.btn-submit');
         setProcess(processElement, '<i class="fa fa-spin fa-spinner"></i>');
 
-        ajax({
-            type: 'get',
-            url: baseUrl() + '/finder',
-            data: {
-                model: 'customer',
-                query: query,
-                by: searchBy,
-                like: 1
-            },
-            dataType: 'json',
-            encode: true
-        }, function(data){
+        Vue.http.get(baseUrl() + '/finder?model=customer&query=' + query + '&by=' + searchBy + '&like=1')
+            .then(function (response) {
+                callback(response.data);
+                cancelProcess(processElement, 'Search');
+            }, function (response) {
 
-            $('.search-results').removeClass('v-cloak--hidden');
-
-            callback(data);
-
-            cancelProcess(processElement, 'Search');
-        }, function(response){
-            //alert(response.responseText, 'danger');
-        });
+            });
     }
-
 }

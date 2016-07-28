@@ -64,7 +64,7 @@
                                         <td class="table-text"><div>{{ $customer->primary_phone_number }}</div></td>
 
                                         <td>
-                                            <form action="/claim/{{ $customer->id }}" method="POST">
+                                            <form action="{{ url('/claim/'.e($customer->id)) }}" method="POST">
                                                 {{ csrf_field() }}
 
                                                 <button type="submit" class="btn btn-primary">

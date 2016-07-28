@@ -1,9 +1,8 @@
 <?php 
 
-namespace Aforance\Aforance\Service;
+namespace Aforance\Aforance\Service\Contracts;
 
 interface ServiceInterface{
 
-	public function errors();
-	
+
 }

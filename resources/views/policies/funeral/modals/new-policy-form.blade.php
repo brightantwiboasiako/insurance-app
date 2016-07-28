@@ -1,7 +1,7 @@
 <div class="modal fade new-policy-form" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <form role="form" name="add-customer-form" v-on:submit.prevent="create">
+            <form role="form" name="add-customer-form" @submit.prevent="createPolicy">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h4 class="modal-title" v-if="selectedCustomer">
@@ -37,7 +37,7 @@
                                               v-model="newPolicy.policyDetails.sum_assured"  placeholder="Sum Assured">
                                     </div>
                                     <div class="form-group col-md-3">
-                                        <input type="text" class="form-control validate[required]"
+                                        <input type="text" class="form-control date validate[required]"
                                                v-model="newPolicy.policyDetails.issue_date" placeholder="Issue Date">
                                     </div>
                                     <div class="form-group col-md-4">
@@ -54,11 +54,11 @@
                                     </div>
                                     <div class="form-group col-md-3">
                                         <input type="text" class="form-control validate[required]"
-                                               v-model="newPolicy.policyDetails.bank_name" placeholder="Bank Name">
+                                               v-model="newPolicy.policyDetails.bank.name" placeholder="Bank Name">
                                     </div>
                                     <div class="form-group col-md-3">
                                         <input type="text" class="form-control validate[required]"
-                                               v-model="newPolicy.policyDetails.account_number" placeholder="Account Number">
+                                               v-model="newPolicy.policyDetails.bank.account_number" placeholder="Account Number">
                                     </div>
                                     <div class="form-group col-md-3">
                                         <select class="form-control" name="payment_mode"
@@ -109,26 +109,68 @@
                                             <label>Add Family Member</label>
                                         </div>
                                         <div class="form-group col-md-3">
-                                            <input class="form-control" name="family_name" placeholder="Name"/>
+                                            <input class="form-control" v-model="family.name"
+                                                   name="family_name" placeholder="Name"/>
                                         </div>
                                         <div class="form-group col-md-3">
-                                            <input class="form-control" name="family-birth_day" placeholder="Date of Birth"/>
+                                            <input class="form-control date" v-model="family.birthday"
+                                                   name="family-birth_day" placeholder="Date of Birth"/>
                                         </div>
                                         <div class="form-group col-md-2">
-                                            <select class="form-control" name="family-gender">
+                                            <select class="form-control" name="family-gender" v-model="family.gender">
                                                 <option value="male">Male</option>
                                                 <option value="female">Female</option>
                                             </select>
                                         </div>
                                         <div class="form-group col-md-3">
-                                            <select class="form-control" name="family-relationship">
+                                            <select class="form-control" name="family-relationship"
+                                                    v-model="family.relationship">
                                                 <option value="">Relationship</option>
                                                 <option v-for="(key,family) in options.supported_family"
-                                                        value="key">@{{ family }}</option>
+                                                        v-bind:value="key">@{{ family }}</option>
                                             </select>
                                         </div>
                                         <div class="form-group col-md-1">
-                                            <button type="button" class="btn btn-sm btn-primary">Add Member</button>
+                                            <button type="button" @click="addMember" class="btn btn-sm btn-primary">Add Member</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12" v-if="newPolicy.policyDetails.family_members.length > 0">
+                                        <div class="col-md-12">
+                                            <label>Added Family Members</label>
+                                        </div>
+                                        <div class="col-md-12 table-responsive">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Name</th>
+                                                    <th>Birth Day</th>
+                                                    <th>Gender</th>
+                                                    <th>Relationship</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr v-for="(key, family) in newPolicy.policyDetails.family_members">
+                                                    <td>@{{ (key + 1) }}</td>
+                                                    <td>@{{ family.name }}</td>
+                                                    <td>@{{ family.birthday }}</td>
+                                                    <td>@{{ family.gender }}</td>
+                                                    <td>@{{ family.relationship }}</td>
+                                                    <td>
+                                                        <button class="btn btn-default btn-xs" title="Edit"
+                                                        @click="editFamilyMember(key)">
+                                                            <i class="fa fa-edit"></i>
+                                                        </button>
+                                                        <button class="btn btn-danger btn-xs" title="Remove"
+                                                        @click="removeFamilyMember(key)">
+                                                        <i class="fa fa-trash"></i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
 
@@ -138,22 +180,22 @@
                                     <br/>
                                     <h4>This is step 2</h4>
                                     <div class="alert alert-success fade in">
-                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">ï¿½</button>
                                         <i class="fa fa-check-circle fa-fw fa-lg"></i>
                                         <strong>Well done!</strong> You successfully read this important alert message.
                                     </div>
                                     <div class="alert alert-info fade in">
-                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">ï¿½</button>
                                         <i class="fa fa-info-circle fa-fw fa-lg"></i>
                                         <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
                                     </div>
                                     <div class="alert alert-warning fade in">
-                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">ï¿½</button>
                                         <i class="fa fa-warning fa-fw fa-lg"></i>
                                         <strong>Warning!</strong> Best check yo self, you're not looking too good.
                                     </div>
                                     <div class="alert alert-danger fade in">
-                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">ï¿½</button>
                                         <i class="fa fa-times-circle fa-fw fa-lg"></i>
                                         <strong>Oh snap!</strong> Change a few things up and <a href="#" class="alert-link">try submitting again</a>.
                                     </div>

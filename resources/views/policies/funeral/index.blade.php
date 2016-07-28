@@ -28,8 +28,8 @@
 
             setActiveLink('policy');
 
-            $('#birth-day').datepicker({
-                format: 'dd-mm-yyyy',
+            $('.date').datepicker({
+                format: 'yyyy-mm-dd',
                 endDate: new Date()
             });
 
@@ -70,7 +70,6 @@
                                 <h2 class="pull-left"><i class="fa fa-umbrella" aria-hidden="true"></i> Funeral Policy</h2>
 
                                 @include('customers.modals.find-customer-form')
-
                                 @include('policies.funeral.modals.new-policy-form')
 
                                 <div class="filter-block pull-right">

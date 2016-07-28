@@ -1,44 +1,56 @@
 <?php 
 
-namespace Aforance\Aforance\Business\Funeral;
+namespace Aforance\Aforance\Validation;
 
+use Aforance\Aforance\Contracts\Validation\FuneralValidatorInterface;
+use Aforance\Aforance\Validation\ValidationException;
 use Aforance\Aforance\Validation\Validator;
-use Aforance\Aforance\Validation\PolicyValidatorInterface;
+use Illuminate\Support\Collection;
 
-class FuneralPolicyValidator extends Validator implements PolicyValidatorInterface{
+class FuneralPolicyValidator extends Validator implements FuneralValidatorInterface{
+
+	/**
+	 * @var Collection
+	 */
+	private $errors;
+
+	/**
+	 * @var array
+	 */
+	private $handlers;
+
+	/**
+	 * FuneralPolicyValidator constructor.
+	 */
+	public function __construct()
+	{
+		$this->errors = new Collection();
+		$this->handlers = app('funeral.validators');
+	}
 
 
 	/**
+	 *
+	 * @param array $data
+	 *
 	* @throws ValidationException
 	*/
 	public function checkPolicyData(array $data){
-
-		$this->validate($data, $this->getPolicyRules());
-
-		foreach($data['family'] as $family){
-			$this->validate($family, $this->getFamilyMemberRules());
+		foreach($this->handlers as $handler){
+			$handler->handle($data, $this, $this->errors);
 		}
+		if(!$this->errors->isEmpty()) throw new ValidationException;
 	}
 
 
-	private function getFamilyMemberRules(){
-		return [
-
-		];
-	}
-
-
-	private function getPolicyRules(){
-		return [
-			'sum_assured' => 'required|numeric|min:0',
-			'issue_date' => 'required|date|max:today',
-			'automatic_update' => 'required|numeric|min:0',
-			'bank_name' => 'max:64',
-			'account_number' => 'max:32',
-			'mode_of_payment' => 'required',
-			'payment_frequency' => 'required',
-			'accident_rider' => 'required'
-		];
+	/**
+	 * Get possible validation errors
+	 *
+	 * @return array
+	 */
+	public function errors()
+	{
+		return $this->errors->toArray();
 	}
 
 

@@ -10,16 +10,13 @@
 (function(){
 
     $('form[name=login-form]').validationEngine('attach', {
-
         onValidationComplete: function(form, status){
-
             if(status){
                 // validation passed
                 var loginData = {
                     username: form.find('[name=username]').val().trim(),
                     password: form.find('[name=password]').val()
                 };
-
                 var processElement = $('form[name=login-form]').find('.btn-submit');
                 setProcess(processElement, '<i class="fa fa-spin fa-spinner"></i>');
                 sendLoginRequest(loginData, processElement);

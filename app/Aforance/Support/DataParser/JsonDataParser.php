@@ -7,7 +7,7 @@ use Aforance\Aforance\Support\Contracts\Parser;
 class JsonDataParser implements Parser{
 
 
-	private $fileContent;
+	private $fileContent = [];
 
 
 	public function __construct($filePath){
@@ -31,6 +31,13 @@ class JsonDataParser implements Parser{
 
 	public function raw(){
 		return json_encode($this->fileContent, true);
+	}
+
+	/**
+	 * @return array
+	 */
+	public function readAll(){
+		return $this->fileContent;
 	}
 
 }

@@ -98,7 +98,7 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr v-for="customer in found" v-on:click="showEditForm(customer)">
+                                            <tr v-for="customer in found" @click="showEditForm(customer)">
                                                 <td><i class="fa fa-caret-right" aria-hidden="true"></i>
                                                     @{{{ getCustomerName(customer) }}}</td>
                                                 <td>@{{ customer.email }}</td>
@@ -116,10 +116,10 @@
                 </div>
             </div>
 
-            <div class="row edit-form" style="display: none;">
+            <div class="row edit-form" v-show="editing">
                 <div class="col-md-12">
                     <div class="main-box-body clearfix">
-                        <form class="form-inline" name="edit-form" role="form" v-on:submit.prevent="modify">
+                        <form class="form-inline" name="edit-form" role="form" @submit.prevent="modify">
                             <div class="input-group">
                                 <select class="form-control w-80" v-model="selectedCustomer.title">
                                     <option value="Mr.">Mr.</option>

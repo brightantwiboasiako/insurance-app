@@ -7,5 +7,10 @@
 		"find_customer": [
 			"company manager", "payment authorizer", "staff"
 		]
+	},
+	"policy": {
+		"create_policy": [
+			"manager", "staff"
+		]
 	}
 }

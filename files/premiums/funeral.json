@@ -1,0 +1,137 @@
+[
+  {
+    "age_limit": 10,
+    "primary": 0,
+    "spouse": 0,
+    "child": 0.7622,
+    "parent": 0,
+    "in_law": 0,
+    "business_partner": 0
+  },
+  {
+    "age_limit": 15,
+    "primary": 0,
+    "spouse": 0,
+    "child": 0.7627,
+    "parent": 0,
+    "in_law": 0,
+    "business_partner": 0
+  },
+  {
+    "age_limit": 20,
+    "primary": 1.2420,
+    "spouse": 1.2139,
+    "child": 0.7641,
+    "parent": 0,
+    "in_law": 0,
+    "business_partner": 1.2139
+  },
+  {
+    "age_limit": 25,
+    "primary": 1.4153,
+    "spouse": 1.3719,
+    "child": 0,
+    "parent": 0,
+    "in_law": 0,
+    "business_partner": 1.3719
+  },
+  {
+    "age_limit": 30,
+    "primary": 1.6596,
+    "spouse": 1.5903,
+    "child": 0,
+    "parent": 0,
+    "in_law": 0,
+    "business_partner": 1.5903
+  },
+  {
+    "age_limit": 35,
+    "primary": 2.0091,
+    "spouse": 1.8932,
+    "child": 0,
+    "parent": 0,
+    "in_law": 0,
+    "business_partner": 1.8932
+  },
+  {
+    "age_limit": 40,
+    "primary": 2.5148,
+    "spouse": 2.311,
+    "child": 0,
+    "parent": 0,
+    "in_law": 0,
+    "business_partner": 2.311
+  },
+  {
+    "age_limit": 45,
+    "primary": 3.2559,
+    "spouse": 2.8763,
+    "child": 0,
+    "parent": 3.0404,
+    "in_law": 3.0404,
+    "business_partner": 2.8763
+  },
+  {
+    "age_limit": 50,
+    "primary": 4.3844,
+    "spouse": 3.6246,
+    "child": 0,
+    "parent": 3.8578,
+    "in_law": 3.8578,
+    "business_partner": 3.6246
+  },
+  {
+    "age_limit": 55,
+    "primary": 6.3046,
+    "spouse": 4.6044,
+    "child": 0,
+    "parent": 4.9446,
+    "in_law": 4.9446,
+    "business_partner": 4.6044
+  },
+  {
+    "age_limit": 60,
+    "primary": 10.7015,
+    "spouse": 5.8902,
+    "child": 0,
+    "parent": 6.4033,
+    "in_law": 6.4033,
+    "business_partner": 5.8902
+  },
+  {
+    "age_limit": 65,
+    "primary": 0,
+    "spouse": 0,
+    "child": 0,
+    "parent": 8.3896,
+    "in_law": 8.3896,
+    "business_partner": 0
+  },
+  {
+    "age_limit": 70,
+    "primary": 0,
+    "spouse": 0,
+    "child": 0,
+    "parent": 11.1326,
+    "in_law": 11.1326,
+    "business_partner": 0
+  },
+  {
+    "age_limit": 75,
+    "primary": 0,
+    "spouse": 0,
+    "child": 0,
+    "parent": 14.9548,
+    "in_law": 14.9548,
+    "business_partner": 0
+  },
+  {
+    "age_limit": 80,
+    "primary": 0,
+    "spouse": 0,
+    "child": 0,
+    "parent": 20.2689,
+    "in_law": 20.2689,
+    "business_partner": 0
+  }
+]

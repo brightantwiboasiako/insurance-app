@@ -14,7 +14,7 @@ class PolicyType extends Model
 
 
     public static function getByIdentifier($identifier){
-        return self::where('id', $identifier)->first();
+        return self::where('identifier', $identifier)->first();
     }
 
 }

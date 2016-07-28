@@ -23,8 +23,6 @@ class PolicyServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        
-        
-        
+
     }
 }

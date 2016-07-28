@@ -2,22 +2,22 @@
 
 namespace Aforance\Aforance\Validation;
 
-use ValidationException;
-use Aforance\Aforance\Validation\ValidationInterface;
-
 abstract class Validator implements ValidationInterface{
 
+	/**
+	 * @var \Illuminate\Validation\Validator
+	 */
 	protected $validator;
 
 
 	/**
-	*
-	* @throws ValidationException
-	*/
-	protected function validate($data, $rules){
+	 * @param $data
+	 * @param $rules
+	 * @throws ValidationException
+	 */
+	public function validate($data, $rules){
 		$this->validator = \Validator::make($data, $rules);
-
-		if(!$this->validator->passes()){
+		if(!$this->passes()){
 			throw new ValidationException;
 		}
 	}
@@ -34,8 +34,7 @@ abstract class Validator implements ValidationInterface{
 
 
 	public function getErrors(){
-		return $this->validator->getMessageBag()->toArray();
+		return $this->validator->errors()->toArray();
 	}
-
 
 }

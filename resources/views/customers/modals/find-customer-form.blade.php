@@ -10,14 +10,15 @@
             <div class="modal-body">
 
                 <div class="search-box">
-                    <form class="form-inline finder-form" role="form">
+                    <form class="form-inline finder-form" role="form" @submit.prevent="findCustomer">
                         <div class="form-group">
                             <label class="sr-only" for="search-query">Search Query</label>
                             <input autofocus type="text" class="form-control search-query" id="search-query"
-                                   placeholder="Search for" autocomplete="off">
+                                   v-model="customerSearch.query"
+                                   placeholder="Search for" autocomplete="off" @keyup="findCustomer">
                         </div>
                         <div class="form-group">
-                            <select name="search_by" class="form-control search-by">
+                            <select name="search_by" v-model="customerSearch.by" class="form-control search-by">
                                 <option value="surname">Surname</option>
                                 <option value="first_name">Firstname</option>
                                 <option value="email">Email</option>
@@ -29,7 +30,7 @@
                 </div>
 
                 <div class="main-box-body clearfix">
-                    <div class="search-results v-cloak--hidden" v-if="foundCustomers.length > 0">
+                    <div class="search-results" v-if="foundCustomers.length > 0">
                         <div class="title clearfix">
                             <h2 class="pull-left">Search Results:</h2>
                             <h2 class="pull-right"><span class="badge">@{{ foundCustomers.length }}</span> total</h2>
@@ -44,7 +45,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr v-for="customer in foundCustomers" v-on:click="selectCustomer(customer)">
+                                <tr v-for="customer in foundCustomers" @click="selectCustomer(customer)">
                                     <td><i class="fa fa-caret-right" aria-hidden="true"></i>
                                         @{{{ getCustomerName(customer) }}}</td>
                                     <td>@{{ customer.email }}</td>

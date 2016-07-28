@@ -17,7 +17,25 @@ class CustomerRepository{
         $data['created_by'] = \Auth::id();
 
         return Customer::create($data);
-
 	}
+
+
+    /**
+     * @param $id
+     * @return Customer|null
+     */
+    public function find($id){
+        return Customer::find($id);
+    }
+
+
+    /**
+     * @param $id
+     * @return Customer|null
+     */
+    public function findOrFail($id){
+        return Customer::findOrFail($id);
+    }
+
 }
 

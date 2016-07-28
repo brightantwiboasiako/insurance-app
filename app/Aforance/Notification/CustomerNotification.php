@@ -2,10 +2,9 @@
 
 namespace Aforance\Aforance\Notification;
 
-use Aforance\Customer;
-use Aforance\Aforance\Notification\Contracts\SmsNotifier;
-use Aforance\Aforance\Notification\Contracts\EmailNotifier;
 use Aforance\Aforance\Notification\Contracts\CustomerNotificationInterface;
+use Aforance\Aforance\Notification\Contracts\EmailNotifier;
+use Aforance\Aforance\Notification\Contracts\SmsNotifier;
 
 class CustomerNotification implements CustomerNotificationInterface, SmsNotifier, EmailNotifier{
 
@@ -37,13 +36,21 @@ class CustomerNotification implements CustomerNotificationInterface, SmsNotifier
 
 
 	public function email(){
-
+		
 	}
 
 
-	private function notifyAboutRegistration($customer){
+	private function notifyAboutRegistration(array $data){
 
-		// send sms and email to customer
+		if(isset($data['customer'])){
+			$customer = $data['customer'];
+
+			// send sms
+			$smsMessage = 'Dear '. $customer->firstName(). ', An insurance account has been created for you at '.
+			config('company.name').'. Thank you for your trust in us.';
+			$this->sms($customer->primaryPhone(), $smsMessage);
+		}
+
 
 	}
 

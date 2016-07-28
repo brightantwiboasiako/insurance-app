@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
     <meta name="app-root" content="{{ asset('') }}"/>
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf-token" id="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title')</title>
 
@@ -74,6 +74,7 @@
 <script src="{{ asset('js/pace.min.js') }}"></script>
 
 <script src="{{ asset('js/vue.js') }}"></script>
+<script src="{{ asset('js/vue-resource.js') }}"></script>
 <script src="{{ asset('js/alertify.min.js') }}"></script>
 
 <script src="{{ asset('js/custom/helper.js') }}"></script>
@@ -88,6 +89,10 @@
         }
     });
 
+</script>
+
+<script>
+    Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#csrf-token').getAttribute('content');
 </script>
 
 

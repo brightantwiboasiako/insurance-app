@@ -43,7 +43,7 @@ class JsonPermissionChecker implements Checker{
 	private $parser;
 
 
-	public function __construct($service, $action, $role){
+	public function __construct($service = null, $action = null, $role = null){
 		$this->service = $service;
 		$this->role = $role;
 		$this->action = $action;
@@ -52,6 +52,13 @@ class JsonPermissionChecker implements Checker{
 	}
 
 
+	/**
+	 * Checks if role is allowed to perform
+	 * the given action
+	 *
+	 * @return bool
+	 * @throws UnauthorizedActivityException
+	 */
 	public function allowed(){
 
 		try{
@@ -60,9 +67,8 @@ class JsonPermissionChecker implements Checker{
 
 			if(!isset($servicePermission[$this->fullPermissionName()])){
 				// sought permission is not available
-				throw new InvalidPermissionException('Permission: ' + $this->fullPermissionName() + ' does not exist!');
+				throw new UnauthorizedActivityException('Permission: ' . $this->fullPermissionName() . ' does not exist!');
 			}
-
 
 			if(array_search($this->role, $servicePermission[$this->fullPermissionName()]) === false){
 				// role cannot perform operation
@@ -80,13 +86,60 @@ class JsonPermissionChecker implements Checker{
 	}
 
 
+	/**
+	 * Checks if role is denied from performing
+	 * the given action
+	 *
+	 * @return bool
+	 * @throws UnauthorizedActivityException
+	 */
 	public function denied(){
 		return !$this->allowed();
 	}
 
 
+	/**
+	 * Gets the full permission name
+	 *
+	 * @return string
+	 */
 	private function fullPermissionName(){
 		return $this->action.'_'.$this->service;
+	}
+
+
+	/**
+	 * Sets the sought service
+	 *
+	 * @param $service
+	 * @return $this
+	 */
+	public function service($service){
+		$this->service = $service;
+		return $this;
+	}
+
+
+	/**
+	 * Sets the sought action
+	 *
+	 * @param $action
+	 * @return $this
+	 */
+	public function action($action){
+		$this->action = $action;
+		return $this;
+	}
+
+	/**
+	 * Sets the role for the checker
+	 *
+	 * @param $role
+	 * @return $this
+	 */
+	public function role($role){
+		$this->role = $role;
+		return $this;
 	}
 
 

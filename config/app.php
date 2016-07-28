@@ -12,7 +12,7 @@ return [
     |
     */
 
-    'name' => 'Insurance',
+    'name' => 'Aforance',
 
     /*
     |--------------------------------------------------------------------------
@@ -103,7 +103,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY'),
+    'key' => env('APP_KEY', 'base64:uxEqQsbgtvfiTwh7QwOHyO3/resyvXbN9JmwZeiea1Q='),
 
     'cipher' => 'AES-256-CBC',
 
@@ -140,7 +140,10 @@ return [
          */
         Aforance\Providers\CustomerServiceProvider::class,
         Aforance\Providers\PremiumServiceProvider::class,
-
+        Aforance\Providers\PermissionServiceProvider::class,
+        Aforance\Providers\FuneralBusinessServiceProvider::class,
+        Aforance\Providers\FinderServiceProvider::class,
+        Aforance\Providers\AgencyServiceProvider::class,
 
         /*
          * Laravel Framework Service Providers...

@@ -2,6 +2,8 @@
 
 namespace Aforance\Aforance\Business;
 
+use Aforance\Aforance\Notification\Contracts\CustomerNotificationInterface;
+use Aforance\Aforance\Policy\PolicyCreationListenerInterface;
 use Aforance\Aforance\Service\PremiumService;
 use Aforance\Aforance\Validation\DispatchesErrors;
 use Aforance\Aforance\Validation\ValidationException;
@@ -47,13 +49,11 @@ abstract class Business{
 	private $notifier;
 
 
-	public function __construct(PolicyValidatorInterface $validator, 
-		PolicyRepositoryInterface $policyRepository){
-
+	public function __construct(PolicyValidatorInterface $validator, PolicyRepositoryInterface $policyRepository){
 		$this->validator = $validator;
 		$this->policies = $policyRepository;
-		$this->premiumService = app('Aforance\Aforance\Service\PremiumService');
-		$this->notifier = app('Aforance\Aforance\Notification\CustomerNotificationInterface');
+		$this->premiumService = app('premium');
+		$this->notifier = app('customer.notifier');
 	}
 
 
@@ -61,17 +61,15 @@ abstract class Business{
 	* Issues a new policy
 	*
 	* @param array $data
-	*
 	* @return null
 	*
 	*/
-	public function issue(array $data){
+	public function createPolicy(array $data){
 		// create policy
 		$this->policies->create($data);
 
 		// notify customer of policy creation
 		$this->notifier->notify($data, 'policy creation');
-
 	}
 
 
@@ -88,7 +86,6 @@ abstract class Business{
 		try{
 			$this->validator->checkPolicyData($data);
 		}catch(ValidationException $e){
-			$this->addAllToBag($this->validator->getErrors());
 			throw $e;
 		}
 	}

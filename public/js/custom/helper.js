@@ -8,7 +8,38 @@
  * @returns {string}
  */
 function baseUrl() {
-    return $('meta[name=app-root]').attr('content').replace(/\/$/, "");
+    return cleanUrl($('meta[name=app-root]').attr('content'));
+}
+
+function cleanUrl(url){
+    return url.replace(/\/$/, "");
+}
+
+function combineToUrl(){
+
+    if(arguments.length == 1) return arguments[0];
+
+    var combined = arguments[0];
+
+    for(var i = 1, length = arguments.length; i < length; i++){
+        combined += '/' + arguments[i];
+    }
+
+    return cleanUrl(combined);
+
+}
+
+function buildUrlFromBase(){
+
+    if(arguments.length == 0) return baseUrl();
+
+    var combined = arguments[0];
+
+    for(var i = 1, length = arguments.length; i < length; i++){
+        combined += '/' + arguments[i];
+    }
+
+    return cleanUrl(baseUrl() + '/' + combined);
 }
 
 function spinner(size){
@@ -23,6 +54,7 @@ function spinner(size){
 
 
 function setProcess(element, html){
+    if(html === undefined) html = '<i class="fa fa-spinner fa-spin"></i>';
     $(element).attr('disabled', true);
     handleProcess(element, html);
 }
@@ -43,17 +75,25 @@ function handleProcess(element, html){
     $(element).outerHeight(dimens.height);
 }
 
-
 function bindErrors(errors, parentElement){
-    errors = prepareErrors(errors);
+    if(errors !== undefined){
+        errors = prepareErrors(errors);
+        showPrompt(errors, parentElement);
+    }
 
+}
+
+function showPrompt(errors, parentElement){
     errors.forEach(function(errorSet){
-       $(parentElement).find('[name='+ errorSet.key +']').validationEngine('showPrompt', errorSet.value[0], 'error');
+        var target = $(parentElement).find('[name='+ errorSet.key +']');
+        target.validationEngine('showPrompt', errorSet.value[0], 'error');
+        target.on('focusout', function(){ // @TODO properly hide prompt on focus out!
+             //target.validationEngine('hidePrompt');
+        });
     });
 }
 
 function prepareErrors(errors){
-
     return  $.map(errors, function(value, index){
         return [{
             'key': index,
@@ -79,20 +119,32 @@ function finderNoResult(empty){
 
 
 function bindValidator(formContainer, submitBtnText, callback){
+    if(submitBtnText === null){
+        submitBtnText = 'Submit';
+    }
     formContainer.validationEngine('attach', {
-
         onValidationComplete: function(form, status){
-
-            if(status){
+            if(status === true){
                 // validation passed
-                callback(form);
-
+                return callback(form, status);
             }else{
                 cancelProcess(formContainer.find('.btn-submit'), submitBtnText);
             }
         }
-
     });
+}
+
+
+function post(url, data, onSuccess, onFailure){
+    var options = {
+        type: 'post',
+        url: url,
+        data: data,
+        dataType: 'json',
+        encode: true
+    };
+
+    ajax(options, onSuccess, onFailure);
 }
 
 
