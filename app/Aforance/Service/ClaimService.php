@@ -3,6 +3,7 @@
 namespace Aforance\Aforance\Service;
 
 use Aforance\Aforance\Notification\Contracts\CustomerNotificationInterface;
+use Aforance\Aforance\Notification\CustomerNotification;
 use Aforance\Aforance\Repository\ClaimRepository;
 
 /**
@@ -13,7 +14,7 @@ class ClaimService
 	private $claim;
 	private $notifier;
 
-	public function __construct( ClaimRepository $claim, CustomerNotificationInterface $notifier)
+	public function __construct( ClaimRepository $claim, CustomerNotification $notifier)
 	{
 		$this->claim = $claim;
 		$this->notifier = $notifier;

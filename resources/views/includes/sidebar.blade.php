@@ -20,19 +20,24 @@
                             <i class="fa fa-angle-right drop-icon"></i>
                         </a>
                         <ul class="submenu">
-                            <li>
+                           <!-- <li>
                                 <a href="tables-advanced.html">
                                     <i class="fa fa-bus" aria-hidden="true"></i> Motor Insurance
                                 </a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a href="{{ url('/policy/funeral') }}">
                                     <i class="fa fa-umbrella" aria-hidden="true"></i> Funeral Insurance
                                 </a>
                             </li>
-                            <li>
+                            <!--<li>
                                 <a href="users.html">
                                     <i class="fa fa-male" aria-hidden="true"></i> Life Assurance
+                                </a>
+                            </li>-->
+                            <li>
+                                <a href="{{ url('/policy/loan') }}">
+                                    <i class="fa fa-institution" aria-hidden="true"></i> Loan Proctection Plan
                                 </a>
                             </li>
                         </ul>
