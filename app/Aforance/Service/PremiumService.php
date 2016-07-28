@@ -2,6 +2,7 @@
 
 namespace Aforance\Aforance\Service;
 
+use Aforance\Aforance\Contracts\Business\Policy;
 use Aforance\Aforance\Premium\Calculators\PremiumCalculatorInterface;
 use Aforance\Aforance\Service\Contracts\ServiceInterface;
 
@@ -15,7 +16,7 @@ class PremiumService implements ServiceInterface{
 	* @param string $businessType
 	* @param array $data
 	*
-	* @return Money
+	* @return mixed
 	*/
 	public function getFirstPremium($businessType, array $data){
 		$calculator = $this->makeCalculator($businessType);
@@ -27,13 +28,12 @@ class PremiumService implements ServiceInterface{
 	* Gets the premium for an existing premium
 	*
 	* @param string $businessType
-	* @param int $policyId
+	* @param Policy $policy
 	*
-	* @return Money
+	* @return mixed
 	*/
-	public function getPremiumAmount($businessType, $policyId){
-
-
+	public function getPremiumAmount($businessType, Policy $policy){
+		return $this->makeCalculator($businessType)->getPremium($policy);
 	}
 
 
@@ -48,7 +48,7 @@ class PremiumService implements ServiceInterface{
 		$calculator = null;
 		switch($businessType){
 			default: 
-				$calculator = app('funeral.calculator');
+				$calculator = app("funeral.calculator");
 		}
 		return $calculator;
 	}

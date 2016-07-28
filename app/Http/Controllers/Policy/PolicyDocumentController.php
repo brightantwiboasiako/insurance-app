@@ -23,7 +23,11 @@ class PolicyDocumentController extends Controller
     }
 
     public function showDocument($business, $policyNumber){
-        return $this->service->policyDocument($business, $policyNumber);
+        return $this->service->policyDocument($business, $policyNumber, 'view');
+    }
+
+    public function downloadDocument($business, $policyNumber){
+        return $this->service->policyDocument($business, $policyNumber, 'download');
     }
 
 }

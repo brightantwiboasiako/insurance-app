@@ -2,7 +2,9 @@
 
 namespace Aforance;
 
+use Aforance\Aforance\Business\Funeral\PolicyStructure;
 use Aforance\Aforance\Contracts\Business\Policy;
+use Aforance\Aforance\Service\PremiumService;
 use Aforance\Aforance\Support\DateHelper;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
@@ -10,6 +12,8 @@ use Money\Money;
 
 class FuneralPolicy extends Model implements Policy
 {
+
+
     protected $table = 'funeral_policies';
     protected $guarded = ['id'];
 
@@ -41,17 +45,142 @@ class FuneralPolicy extends Model implements Policy
         return (DateHelper::ageNextBirthday($this->customer->birthday()));
     }
 
-    public function periodicPremium(){
-        return Money::withRaw(10);
-    }
 
     public function periodicPremiumString(){
-        return $this->payment_frequency;
+        return 'PREMIUM ('.$this->payment_frequency.')';
     }
 
+    public function policyHolderName(){
+        return $this->customer->name();
+    }
+
+    /**
+     * @return Customer|null
+     */
+    public function policyHolder(){
+        return $this->customer;
+    }
 
     public function issueDate(){
         return new Carbon($this->issue_date);
+    }
+
+
+    public function structure(){
+        return new PolicyStructure($this);
+    }
+
+
+    /**
+     * @param $live
+     * @return Money
+     */
+    public function benefit($live){
+        if($live === 'primary'){
+            return $this->sumAssured();
+        }else{
+            $amount = $this->sumAssured();
+            $amount->times($this->familyBenefitFactor($live));
+            return $amount;
+        }
+    }
+
+
+    /**
+     * Gets the benefit amount of a family member using
+     * the member's position
+     *
+     * @param int $key The position of the family member
+     * @return Money
+     */
+    public function familyBenefit($key){
+        $member = $this->familyMembers()[$key];
+        return $this->benefit($member['relationship']);
+    }
+
+
+    public function familyBenefitFactor($live){
+        // @TODO: Calculate this based on given percentages
+        return 0.6;
+    }
+
+
+    public function premiumStructure(){
+        return [
+            'basic' => json_decode($this->periodic_premium, true),
+            'underwriting' => $this->underwritingPremium()
+        ];
+    }
+
+    public function underwritingPremium(){
+        return Money::withSecure($this->underwriting_premium);
+    }
+
+    public function underwritingPremiumComponent(){
+        return $this->premiumComponents()['underwriting'];
+    }
+
+    public function premium()
+    {
+        $premiums = $this->premiumComponents();
+        $premium = $premiums['primary'];
+        $premium->add($premiums['underwriting']);
+        $premium->add($premiums['accidental_rider']);
+
+        foreach($premiums['family'] as $amount){
+            $premium->add($amount);
+        }
+
+        return $premium;
+    }
+
+
+    /**
+     * Returns an array of all premium components
+     *
+     * @return array
+     */
+    protected function premiumComponents(){
+        $premiumService = app('premium');
+        return $premiumService->getPremiumAmount('funeral', $this);
+    }
+
+
+    public function accidentalPremiumComponent(){
+        return $this->premiumComponents()['accidental_rider'];
+    }
+
+    public function premiumFrequency()
+    {
+        return $this->paymentFrequency();
+    }
+
+
+    /**
+     * @param $live
+     * @param null $familyKey
+     * @return mixed
+     */
+    public function premiumFor($live, $familyKey = null){
+        if($live === 'primary'){
+            return $this->premiumComponents()['primary'];
+        }else{ // family premiums
+             if($familyKey === null){
+                 return $this->premiumComponents()['family'];
+             }else{
+                 return $this->premiumComponents()['family'][$familyKey];
+             }
+        }
+    }
+
+    /**
+     * @param $age
+     * @param $live
+     * @return Carbon
+     */
+    public function expiry($age, $live){
+        // @TODO Change this algorithm to use real calculation
+        return Carbon::now()->addYear();
     }
 
     public function bank(){
@@ -77,6 +206,13 @@ class FuneralPolicy extends Model implements Policy
 
     public function familyRider(){
         return $this->family_rider;
+    }
+
+    public function familyMembers(){
+        if($this->family_members == null)
+            return [];
+        else
+            return json_decode($this->family_members, true);
     }
 
     public function paymentMode(){
@@ -107,7 +243,8 @@ class FuneralPolicy extends Model implements Policy
         $policy->setIssueDate($data['policy_details']['issue_date']);
         $policy->setTrustee($data['trustee']);
         $policy->setUnderwriting($data['underwriting']);
-
+        $policy->setPeriodicPremium($data['premium']);
+        $policy->setFamilyMembers($data['policy_details']['family']);
         return $policy->save();
     }
 
@@ -140,7 +277,6 @@ class FuneralPolicy extends Model implements Policy
         $this->accidental_rider = $rider;
     }
 
-
     public function setAccidentalRiderPremium($premium){
         $this->accidental_rider_premium = Money::withRaw($premium)->getSecure();
     }
@@ -152,7 +288,6 @@ class FuneralPolicy extends Model implements Policy
     public function setBeneficiaries($beneficiaries){
         $this->beneficiaries = json_encode($beneficiaries, true);
     }
-
 
     public function setBank($bank){
         $this->bank = json_encode($bank, true);
@@ -197,6 +332,5 @@ class FuneralPolicy extends Model implements Policy
     private function setCapturedBy($id){
         $this->captured_by = $id;
     }
-
 
 }

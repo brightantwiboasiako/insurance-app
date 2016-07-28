@@ -47,10 +47,11 @@ class PolicyService implements ServiceInterface{
 	 * 
 	 * @param $business
 	 * @param $policyNumber
+	 * @param string $action
 	 * @return mixed
 	 */
-	public function policyDocument($business, $policyNumber){
-		return $this->makeBusiness($business)->renderDocument($policyNumber);
+	public function policyDocument($business, $policyNumber, $action){
+		return $this->makeBusiness($business)->renderDocument($policyNumber, $action);
 	}
 	
 

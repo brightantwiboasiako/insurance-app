@@ -35,10 +35,10 @@
 
     <div class="premium clearfix page-info dashed-bottom-1 mrg-b-md">
         <h4 class="pull-left">
-            {{ e($policy->periodicPremiumString()) }} PREMIUM:
+            <strong>{{ e($policy->periodicPremiumString()) }}</strong>
         </h4>
         <h4 class="pull-right">
-            {{ e($policy->periodicPremium()) }}
+            <strong>{{ e($policy->premium()) }}</strong>
         </h4>
     </div>
 

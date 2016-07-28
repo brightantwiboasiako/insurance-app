@@ -42,7 +42,7 @@ class FamilyHandler implements FuneralValidationHandler
     {
         return [
             'age' => 'family_age:'.$family['relationship'],
-            'relationship' => 'in:child,spouse,business_partner,parent,in_law'
+            'relationship' => 'in:child,spouse,business partner,parent,in law'
         ];
     }
 

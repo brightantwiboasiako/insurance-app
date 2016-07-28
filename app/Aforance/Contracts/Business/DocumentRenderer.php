@@ -15,8 +15,9 @@ interface DocumentRenderer
      * Renders a document
      * 
      * @param $policyNumber
+     * @param $action
      * @return mixed
      */
-    public function renderDocument($policyNumber);
+    public function renderDocument($policyNumber, $action);
 
 }

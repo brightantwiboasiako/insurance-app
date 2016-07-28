@@ -98,6 +98,11 @@ Route::group(['middleware' => 'auth'], function(){
         ]);
 
 
+        Route::get('/document/{business}/{policyNumber}/download', [
+            'uses' => 'Policy\PolicyDocumentController@downloadDocument'
+        ]);
+
+
         // Funeral Policies
         Route::group(['prefix' => 'funeral'], function(){
 

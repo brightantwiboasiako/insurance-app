@@ -7,7 +7,6 @@ var formElement = $('.creation-policy');
 var funeralPolicy = new Vue({
 
     el: '#vue-funeral',
-
     data: {
         editing: false,
         options: {
@@ -79,22 +78,35 @@ var funeralPolicy = new Vue({
         },
 
         processCreation: function(){
-            this.$http.post(baseUrl() + '/policy/create', this.newPolicy)
-                .then(function(response){
-                    if(response.data.OK){
-                        alert('Policy has been created successfully.', 'success');
-                    }else{
-                        console.log(response.data.errors);
-                        alert('There were some errors that must be checked.', 'danger', function(){
-                            bindErrors(response.data.errors.policy, formElement);
-                            bindErrors(response.data.errors.family, formElement);
-                            bindErrors(response.data.errors.underwriting, formElement);
-                        });
-                    }
-                }, function(response){
-                    alert(response.body);
-                    //alert('There was an error while processing. Please try again!', 'danger');
-                });
+            ajax({
+                type: 'post',
+                url: baseUrl() + '/policy/create',
+                data: this.newPolicy,
+                dataType: 'json',
+                encode: true
+            }, function(data){
+                if(data.OK){
+                    alert('Policy has been created successfully.', 'success');
+                }else{
+                    console.log(data.errors);
+                    alert('There were some errors that must be checked.', 'danger', function(){
+                        bindErrors(data.errors.policy, formElement);
+                        bindErrors(data.errors.family, formElement);
+                        bindErrors(data.errors.underwriting, formElement);
+                    });
+                }
+            }, function(response){
+                alert(response);
+                //alert('There was an error while processing. Please try again!', 'danger');
+            });
+
+            //
+            // this.$http.post(baseUrl() + '/policy/create', this.newPolicy)
+            //     .then(function(response){
+            //
+            //     }, function(response){
+            //
+            //     });
         },
 
         addMember: function(){

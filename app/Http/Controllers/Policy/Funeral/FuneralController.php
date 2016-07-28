@@ -52,7 +52,7 @@ class FuneralController extends Controller
 
 
     public function getViewScreen($policyNumber){
-        $policy = $this->policies->getByPolicyNumber(e($policyNumber));
+        $policy = $this->policies->getPolicyByNumber(e($policyNumber));
         if($policy)
             return view('policies.funeral.view', ['policy' => $policy]);
         else

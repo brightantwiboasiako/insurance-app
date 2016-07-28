@@ -50,7 +50,7 @@
         </div>
         <div class="form-group col-md-2">
             <select class="form-control" name="trustee_gender" v-model="newPolicy.trustee.gender">
-                <option value="Male">Male</option>
+                <option selected value="Male">Male</option>
                 <option value="Female">Female</option>
             </select>
         </div>

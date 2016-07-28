@@ -8,7 +8,7 @@
 
 namespace Aforance\Aforance\Business\Funeral;
 
-
+use Barryvdh\Snappy\Facades\SnappyPdf as PDF;
 use Aforance\Aforance\Contracts\Business\Policy;
 use Aforance\Aforance\Contracts\Repository\FuneralPolicyRepositoryInterface;
 
@@ -16,6 +16,7 @@ class Document
 {
 
     const VIEW_FILE = 'policies.funeral.document';
+    const DOWNLOAD_FILE = 'policies.funeral.document.download';
 
     /**
      * @var FuneralPolicyRepositoryInterface
@@ -27,8 +28,25 @@ class Document
         $this->repository = app('funeral.repository_contract');
     }
 
-    public function display($policyNumber){
-        $policy = $this->repository->getByPolicyNumber($policyNumber);
+    public function handle($policyNumber, $action){
+        if($action === 'view') return $this->display($policyNumber);
+        return $this->download($policyNumber);
+    }
+
+
+    private function download($policyNumber){
+        $policy = $this->repository->getPolicyByNumber($policyNumber);
+
+        $pdf = app('dompdf.wrapper');
+
+        return $pdf->loadView(static::DOWNLOAD_FILE, compact('policy'))->stream($policyNumber.'.pdf');
+
+        //return PDF::loadHTML(static::DOWNLOAD_FILE, compact('policy'))->inline($policyNumber.'.pdf');
+    }
+
+
+    private function display($policyNumber){
+        $policy = $this->repository->getPolicyByNumber($policyNumber);
         return $this->loadView($policy);
     }
 

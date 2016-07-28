@@ -3,10 +3,18 @@
 namespace Aforance\Aforance\Premium\Calculators;
 
 use Aforance\Aforance\Contracts\Business\FuneralPremiumLoader;
+use Aforance\Aforance\Contracts\Business\Policy;
 use Aforance\Aforance\Support\DateHelper;
+use Aforance\FuneralPolicy;
+use Money\Money;
 
 class FuneralPremiumCalculator implements PremiumCalculatorInterface{
 
+	const PREMIUM_FREQUENCY_MONTHLY = 'MONTHLY';
+	const PREMIUM_FREQUENCY_QUARTERLY = 'QUARTERLY';
+	const PREMIUM_FREQUENCY_SEMI_ANNUALLY = 'SEMI ANNUALLY';
+	const PREMIUM_FREQUENCY_ANNUALLY = 'ANNUALLY';
+	const BASE_SUM_ASSURED = 1000.00;
 
 	/**
 	 * The funeral premium rates
@@ -16,8 +24,60 @@ class FuneralPremiumCalculator implements PremiumCalculatorInterface{
 	private $rates = [];
 
 
+	private $factor;
+
+
 	public function __construct(FuneralPremiumLoader $loader){
 		$this->rates = $loader->loadRates();
+	}
+
+
+	public function getPremium(Policy $policy){
+		$premiumStructure = $policy->premiumStructure();
+		$this->setFactor($policy->premiumFrequency());
+
+		return [
+			'primary' => $this->convertCoverPremium($premiumStructure['basic']['primary'], $policy->sumAssured()),
+			'family' => $this->buildFamilyPremium($premiumStructure['basic']['family'], $policy),
+			'underwriting' => $this->convert($premiumStructure['underwriting']->getAmount()),
+			'accidental_rider' => $this->convert($policy->accidentalRiderPremium()->getAmount())
+		];
+
+	}
+
+
+	private function buildFamilyPremium(array $family, $policy){
+		$premiums = [];
+		foreach($family as $key => $amount){
+			$premiums[$key] = $this->convertCoverPremium((float)$amount, $policy->familyBenefit($key));
+		}
+
+		return $premiums;
+	}
+
+
+	private function convertCoverPremium($amount, Money $sumAssured){
+		return $this->convert(((float)$amount) * $this->factor * ($sumAssured->getAmount()/static::BASE_SUM_ASSURED));
+	}
+
+	private function convert($amount){
+		return Money::withRaw(((float)$amount) * $this->factor);
+	}
+
+	private function setFactor($frequency){
+		switch ($frequency){
+			case static::PREMIUM_FREQUENCY_ANNUALLY:
+				$this->factor = 12;
+				break;
+			case static::PREMIUM_FREQUENCY_QUARTERLY:
+				$this->factor = 3;
+				break;
+			case static::PREMIUM_FREQUENCY_SEMI_ANNUALLY:
+				$this->factor = 6;
+				break;
+			default: // monthly
+				$this->factor = 1;
+		}
 	}
 
 	public function firstPremium($data){

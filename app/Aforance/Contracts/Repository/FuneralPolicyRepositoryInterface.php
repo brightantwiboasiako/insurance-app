@@ -19,6 +19,6 @@ interface FuneralPolicyRepositoryInterface extends PolicyRepositoryInterface
      * @param $policyNumber
      * @return FuneralPolicy|null
      */
-    public function getByPolicyNumber($policyNumber);
+    public function getPolicyByNumber($policyNumber);
 
 }

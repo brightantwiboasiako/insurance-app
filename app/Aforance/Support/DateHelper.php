@@ -21,13 +21,27 @@ class DateHelper
      * @return int
      */
     public static function ageNextBirthday($birthday){
-        $date = new Carbon($birthday);
-        $now = Carbon::now();
-        $years = $now->diffInYears($date);
-
-        if($date->month <= $now->month) $years += 1;
-
+        $years = static::yearsFrom($birthday);
+        if(static::dayAndMonthPassed($birthday)) $years += 1;
         return $years;
+    }
+
+    public static function age($birthday){
+        $years = static::yearsFrom($birthday);
+        if(static::dayAndMonthPassed($birthday)) $years -= 1;
+        return $years;
+    }
+
+    private static function dayAndMonthPassed($date){
+        $date = new Carbon($date);
+        $now = Carbon::now();
+        return $date->month <= $now->month && $date->day <= $now->day;
+    }
+    
+    public static function yearsFrom($date){
+        $date = new Carbon($date);
+        $now = Carbon::now();
+        return $now->diffInYears($date);
     }
 
 }

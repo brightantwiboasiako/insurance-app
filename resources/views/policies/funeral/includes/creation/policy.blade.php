@@ -98,8 +98,11 @@
                     <select class="form-control validate[]" name="family-relationship"
                             v-model="family.relationship">
                         <option value="">Relationship</option>
-                        <option v-for="(key,family) in options.supported_family"
-                                v-bind:value="family">@{{ family }}</option>
+                        <option value="child">Child</option>
+                        <option value="spouse">Spouse</option>
+                        <option value="parent">Parent</option>
+                        <option value="in law">Parent In Law</option>
+                        <option value="business partner">Business Partner</option>
                     </select>
                 </div>
                 <div class="form-group col-md-1">

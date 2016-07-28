@@ -1,7 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f3f44a77-29af-4112-a953-5cca73142adc" name="Default" comment="" />
+    <list default="true" id="f3f44a77-29af-4112-a953-5cca73142adc" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/custom/funeral.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/layouts/print.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/policies/funeral/document/download.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Aforance/Business/Funeral/Document.php" afterPath="$PROJECT_DIR$/app/Aforance/Business/Funeral/Document.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Aforance/Business/Funeral/FuneralBusiness.php" afterPath="$PROJECT_DIR$/app/Aforance/Business/Funeral/FuneralBusiness.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Aforance/Business/Funeral/ValidationHandler/FamilyHandler.php" afterPath="$PROJECT_DIR$/app/Aforance/Business/Funeral/ValidationHandler/FamilyHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Aforance/Contracts/Business/DocumentRenderer.php" afterPath="$PROJECT_DIR$/app/Aforance/Contracts/Business/DocumentRenderer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Aforance/Contracts/Business/Policy.php" afterPath="$PROJECT_DIR$/app/Aforance/Contracts/Business/Policy.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Aforance/Contracts/Repository/FuneralPolicyRepositoryInterface.php" afterPath="$PROJECT_DIR$/app/Aforance/Contracts/Repository/FuneralPolicyRepositoryInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Aforance/Premium/Calculators/FuneralPremiumCalculator.php" afterPath="$PROJECT_DIR$/app/Aforance/Premium/Calculators/FuneralPremiumCalculator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Aforance/Premium/Calculators/PremiumCalculatorInterface.php" afterPath="$PROJECT_DIR$/app/Aforance/Premium/Calculators/PremiumCalculatorInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Aforance/Repository/FuneralPolicyRepository.php" afterPath="$PROJECT_DIR$/app/Aforance/Repository/FuneralPolicyRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Aforance/Service/PolicyService.php" afterPath="$PROJECT_DIR$/app/Aforance/Service/PolicyService.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Aforance/Service/PremiumService.php" afterPath="$PROJECT_DIR$/app/Aforance/Service/PremiumService.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Aforance/Support/DateHelper.php" afterPath="$PROJECT_DIR$/app/Aforance/Support/DateHelper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/FuneralPolicy.php" afterPath="$PROJECT_DIR$/app/FuneralPolicy.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Policy/Funeral/FuneralController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Policy/Funeral/FuneralController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Policy/PolicyDocumentController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Policy/PolicyDocumentController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/company.php" afterPath="$PROJECT_DIR$/config/company.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/custom/policies/funeral/policy-creator.js" afterPath="$PROJECT_DIR$/public/js/custom/policies/funeral/policy-creator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/customers/modals/add-customer.blade.php" afterPath="$PROJECT_DIR$/resources/views/customers/modals/add-customer.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/policies/funeral/document.blade.php" afterPath="$PROJECT_DIR$/resources/views/policies/funeral/document.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/policies/funeral/document/coverage.blade.php" afterPath="$PROJECT_DIR$/resources/views/policies/funeral/document/coverage.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/policies/funeral/includes/creation/beneficiaries.blade.php" afterPath="$PROJECT_DIR$/resources/views/policies/funeral/includes/creation/beneficiaries.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/policies/funeral/includes/creation/policy.blade.php" afterPath="$PROJECT_DIR$/resources/views/policies/funeral/includes/creation/policy.blade.php" />
+    </list>
     <ignored path="insurance-app-master.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -22,11 +54,86 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="FuneralBusiness.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Aforance/Business/Funeral/FuneralBusiness.php">
+      <file leaf-file-name="FuneralPolicy.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/FuneralPolicy.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="61" column="47" selection-start-line="61" selection-start-column="47" selection-end-line="61" selection-end-column="47" />
+            <state relative-caret-position="272">
+              <caret line="114" column="10" selection-start-line="114" selection-start-column="4" selection-end-line="114" selection-end-column="10" />
+              <folding>
+                <element signature="e#28#83#0#PHP" expanded="true" />
+                <element signature="e#6850#6962#0#PHP" expanded="false" />
+                <element signature="e#6968#7098#0#PHP" expanded="false" />
+                <element signature="e#7104#7192#0#PHP" expanded="false" />
+                <element signature="e#7198#7299#0#PHP" expanded="false" />
+                <element signature="e#7305#7413#0#PHP" expanded="false" />
+                <element signature="e#7419#7503#0#PHP" expanded="false" />
+                <element signature="e#7509#7600#0#PHP" expanded="false" />
+                <element signature="e#7606#7745#0#PHP" expanded="false" />
+                <element signature="e#7751#7907#0#PHP" expanded="false" />
+                <element signature="e#7913#8034#0#PHP" expanded="false" />
+                <element signature="e#8040#8125#0#PHP" expanded="false" />
+                <element signature="e#8131#8241#0#PHP" expanded="false" />
+                <element signature="e#8247#8330#0#PHP" expanded="false" />
+                <element signature="e#8336#8412#0#PHP" expanded="false" />
+                <element signature="e#8418#8540#0#PHP" expanded="false" />
+                <element signature="e#8546#8663#0#PHP" expanded="false" />
+                <element signature="e#8669#8784#0#PHP" expanded="false" />
+                <element signature="e#8790#8861#0#PHP" expanded="false" />
+                <element signature="e#8867#8936#0#PHP" expanded="false" />
+                <element signature="e#8942#9039#0#PHP" expanded="false" />
+                <element signature="e#9045#9121#0#PHP" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PolicyStructure.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Aforance/Business/Funeral/PolicyStructure.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="48">
+              <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+              <folding>
+                <element signature="e#139#180#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="document.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/policies/funeral/document.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="100" column="64" selection-start-line="100" selection-start-column="56" selection-end-line="100" selection-end-column="64" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PolicyDocumentController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Policy/PolicyDocumentController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="25" column="78" selection-start-line="25" selection-start-column="78" selection-end-line="25" selection-end-column="78" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="download.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/policies/funeral/document/download.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -35,20 +142,30 @@
       <file leaf-file-name="Document.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Aforance/Business/Funeral/Document.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+            <state relative-caret-position="270">
+              <caret line="41" column="81" selection-start-line="41" selection-start-column="81" selection-end-line="41" selection-end-column="81" />
               <folding>
-                <element signature="e#140#188#0#PHP" expanded="true" />
+                <element signature="e#139#184#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="document.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/policies/funeral/document.blade.php">
+      <file leaf-file-name="print.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/print.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="120" column="15" selection-start-line="120" selection-start-column="15" selection-end-line="120" selection-end-column="15" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="funeral.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/css/custom/funeral.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="80" column="1" selection-start-line="0" selection-start-column="0" selection-end-line="80" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -57,48 +174,8 @@
       <file leaf-file-name="front.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/policies/funeral/document/front.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="company.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/company.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="coverage.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/policies/funeral/document/coverage.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="44" column="51" selection-start-line="44" selection-start-column="51" selection-end-line="44" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FuneralPolicy.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/FuneralPolicy.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="48" column="40" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Customer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Customer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="66" column="29" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="56" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -111,37 +188,19 @@
       <list>
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Aforance/Business/Funeral/ValidationHandler/UnderwritingHandler.php" />
-        <option value="$PROJECT_DIR$/app/Aforance/Business/Funeral/ValidationHandler/PolicyHandler.php" />
-        <option value="$PROJECT_DIR$/app/Aforance/Support/Helper.php" />
-        <option value="$PROJECT_DIR$/app/Aforance/Support/H.php" />
-        <option value="$PROJECT_DIR$/app/Aforance/Support/DateHelper.php" />
-        <option value="$PROJECT_DIR$/app/Aforance/Repository/CustomerRepository.php" />
-        <option value="$PROJECT_DIR$/app/Aforance/Premium/Calculators/FuneralPremiumCalculator.php" />
-        <option value="$PROJECT_DIR$/resources/views/policies/funeral/includes/creation/beneficiaries.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/policies/funeral/includes/creation/policy.blade.php" />
-        <option value="$PROJECT_DIR$/app/Aforance/Validation/FuneralPolicyValidator.php" />
-        <option value="$PROJECT_DIR$/config/app.php" />
-        <option value="$PROJECT_DIR$/public/js/custom/helper.js" />
-        <option value="$PROJECT_DIR$/tests/PolicyNumberGenerationTest.php" />
-        <option value="$PROJECT_DIR$/app/Aforance/Business/Funeral/FuneralNumberGenerator.php" />
-        <option value="$PROJECT_DIR$/resources/views/policies/funeral/create.blade.php" />
-        <option value="$PROJECT_DIR$/public/js/custom/policies/funeral/policy-creator.js" />
-        <option value="$PROJECT_DIR$/app/Aforance/Finder/EloquentEngine.php" />
-        <option value="$PROJECT_DIR$/resources/views/customers/modals/find-customer-form.blade.php" />
-        <option value="$PROJECT_DIR$/public/js/custom/policies/funeral.js" />
-        <option value="$PROJECT_DIR$/resources/views/policies/funeral/index.blade.php" />
         <option value="$PROJECT_DIR$/public/js/custom/vue-mixins.js" />
         <option value="$PROJECT_DIR$/resources/views/policies/funeral/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Aforance/Repository/Contracts/PolicyRepositoryInterface.php" />
-        <option value="$PROJECT_DIR$/app/Aforance/Contracts/Repository/FuneralPolicyRepositoryInterface.php" />
-        <option value="$PROJECT_DIR$/app/Aforance/Repository/FuneralPolicyRepository.php" />
         <option value="$PROJECT_DIR$/resources/views/policies/funeral/includes/editing/beneficiaries.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/policies/funeral/includes/editing/underwriting.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/policies/funeral/includes/editing/agency.blade.php" />
@@ -150,24 +209,46 @@
         <option value="$PROJECT_DIR$/app/Aforance/Support/FormHelper.php" />
         <option value="$PROJECT_DIR$/resources/views/policies/funeral/includes/editing/policy.blade.php" />
         <option value="$PROJECT_DIR$/public/js/custom/policies/funeral/policy-editor.js" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Policy/Funeral/FuneralController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Policy/PolicyCreationController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Policy/PolicyController.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/policies/funeral/view.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Policy/PolicyDocumentController.php" />
-        <option value="$PROJECT_DIR$/app/Aforance/Contracts/Business/DocumentRenderer.php" />
         <option value="$PROJECT_DIR$/app/Aforance/Business/Business.php" />
-        <option value="$PROJECT_DIR$/app/Aforance/Service/PolicyService.php" />
-        <option value="$PROJECT_DIR$/app/Aforance/Business/Funeral/FuneralBusiness.php" />
-        <option value="$PROJECT_DIR$/app/Aforance/Business/Funeral/Document.php" />
-        <option value="$PROJECT_DIR$/app/Providers/FuneralBusinessServiceProvider.php" />
-        <option value="$PROJECT_DIR$/config/company.php" />
         <option value="$PROJECT_DIR$/app/Customer.php" />
         <option value="$PROJECT_DIR$/resources/views/policies/funeral/document/front.blade.php" />
-        <option value="$PROJECT_DIR$/app/FuneralPolicy.php" />
+        <option value="$PROJECT_DIR$/app/Aforance/Support/DateHelper.php" />
+        <option value="$PROJECT_DIR$/app/Aforance/Premium/Calculators/PremiumCalculatorInterface.php" />
+        <option value="$PROJECT_DIR$/app/Aforance/Contracts/Business/Policy.php" />
+        <option value="$PROJECT_DIR$/app/Aforance/Service/PremiumService.php" />
+        <option value="$PROJECT_DIR$/app/Providers/FuneralBusinessServiceProvider.php" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/config/company.php" />
+        <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Container/Container.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/app/Aforance/Contracts/Repository/FuneralPolicyRepositoryInterface.php" />
+        <option value="$PROJECT_DIR$/app/Aforance/Repository/FuneralPolicyRepository.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Policy/Funeral/FuneralController.php" />
+        <option value="$PROJECT_DIR$/public/js/custom/policies/funeral/policy-creator.js" />
+        <option value="$PROJECT_DIR$/resources/views/customers/modals/add-customer.blade.php" />
+        <option value="$PROJECT_DIR$/app/Aforance/Business/Funeral/ValidationHandler/FamilyHandler.php" />
+        <option value="$PROJECT_DIR$/resources/views/policies/funeral/includes/creation/policy.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/policies/funeral/includes/creation/beneficiaries.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/policies/funeral/document/coverage.blade.php" />
+        <option value="$PROJECT_DIR$/app/Aforance/Business/Funeral/PolicyStructure.php" />
+        <option value="$PROJECT_DIR$/resources/views/policies/funeral/document/details.blade.php" />
+        <option value="$PROJECT_DIR$/app/FuneralPolicy.php" />
+        <option value="$PROJECT_DIR$/app/Aforance/Premium/Calculators/FuneralPremiumCalculator.php" />
+        <option value="$PROJECT_DIR$/public/css/custom/funeral.css" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/Aforance/Service/PolicyService.php" />
+        <option value="$PROJECT_DIR$/app/Aforance/Contracts/Business/DocumentRenderer.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Policy/PolicyDocumentController.php" />
+        <option value="$PROJECT_DIR$/app/Aforance/Business/Funeral/FuneralBusiness.php" />
         <option value="$PROJECT_DIR$/resources/views/policies/funeral/document.blade.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/config/app.php" />
+        <option value="$PROJECT_DIR$/app/Aforance/Business/Funeral/Document.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/print.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/policies/funeral/document/download.blade.php" />
       </list>
     </option>
   </component>
@@ -222,7 +303,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -237,6 +317,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -342,18 +423,12 @@
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="insurance-app-master" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="insurance-app-master" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="layouts" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -367,11 +442,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Aforance" />
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -385,15 +456,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Aforance" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Business" />
+              <option name="myItemId" value="public" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -407,19 +470,33 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="public" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Aforance" />
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="insurance-app-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="insurance-app-master" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Business" />
+              <option name="myItemId" value="public" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Funeral" />
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="custom" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -432,12 +509,13 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
     <property name="settings.editor.splitter.proportion" value="0.22406967" />
-    <property name="SearchEverywhereHistoryKey" value="Customer&#9;null&#9;null&#10;FuneralPolicy&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/FuneralPolicy.php&#10;company.php&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/config/company.php&#10;Funerepint&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Aforance/Contracts/Repository/FuneralPolicyRepositoryInterface.php&#10;funer&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Providers/FuneralBusinessServiceProvider.php&#10;Funer&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Aforance/Business/Funeral/FuneralBusiness.php&#10;Busin&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Aforance/Business/Business.php&#10;Busi&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Aforance/Business/Business.php&#10;funeralbu&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Aforance/Business/Funeral/FuneralBusiness.php&#10;Business&#9;null&#9;null&#10;PolicySer&#9;null&#9;null&#10;routes&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Http/routes.php&#10;under&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/resources/views/policies/funeral/includes/editing/underwriting.blade.php&#10;funep&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/FuneralPolicy.php&#10;policy&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/resources/views/policies/funeral/includes/editing/policy.blade.php&#10;FuneralPo&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/FuneralPolicy.php&#10;funeb&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Providers/FuneralBusinessServiceProvider.php&#10;Funerpolicy&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/FuneralPolicy.php&#10;funeralpolicyin&#9;null&#9;null&#10;funecon&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Http/Controllers/Policy/Funeral/FuneralController.php&#10;policycon&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Http/Controllers/Policy/PolicyController.php&#10;route&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Http/routes.php&#10;Engine&#9;null&#9;null&#10;policy.bl&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/resources/views/policies/funeral/includes/creation/policy.blade.php&#10;famil&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Aforance/Business/Funeral/ValidationHandler/FamilyHandler.php&#10;policyhand&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Aforance/Business/Funeral/ValidationHandler/PolicyHandler.php&#10;funeral&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/FuneralPolicy.php&#10;create&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/resources/views/policies/funeral/create.blade.php&#10;FuneralNu&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Aforance/Business/Funeral/FuneralNumberGenerator.php&#10;FunerP&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/FuneralPolicy.php&#10;policyval&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Aforance/Validation/FuneralPolicyValidator.php&#10;helpe&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/public/js/custom/helper.js&#10;policycont&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Http/Controllers/Policy/PolicyController.php&#10;beneficia&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/resources/views/policies/funeral/includes/creation/beneficiaries.blade.php&#10;policy.b&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/resources/views/policies/funeral/includes/creation/policy.blade.php&#10;creat&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/resources/views/policies/funeral/create.blade.php&#10;Custome&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Customer.php&#10;customerser&#9;null&#9;null&#10;funeprec&#9;null&#9;null&#10;polichan&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Aforance/Business/Funeral/ValidationHandler/PolicyHandler.php&#10;benefici&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/resources/views/policies/funeral/includes/creation/beneficiaries.blade.php&#10;policyser&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Aforance/Service/PolicyService.php&#10;policyhan&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Aforance/Business/Funeral/ValidationHandler/PolicyHandler.php&#10;funebu&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Aforance/Business/Funeral/FuneralBusiness.php&#10;Unde&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Aforance/Business/Funeral/ValidationHandler/UnderwritingHandler.php&#10;funerv&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Aforance/Validation/FuneralPolicyValidator.php&#10;un&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Aforance/Business/Funeral/ValidationHandler/UnderwritingHandler.php&#10;Fune&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Providers/FuneralBusinessServiceProvider.php&#10;Funeralvalites&#9;null&#9;null&#10;policy.bla&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/resources/views/policies/funeral/includes/creation/policy.blade.php" />
+    <property name="SearchEverywhereHistoryKey" value="funeral&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/public/css/custom/funeral.css&#10;app&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/config/app.php&#10;compo&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/composer.json&#10;app.&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/config/app.php&#10;docum&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/resources/views/policies/funeral/document.blade.php&#10;det&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/resources/views/policies/funeral/document/details.blade.php&#10;app.p&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/config/app.php&#10;Docum&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Aforance/Business/Funeral/Document.php&#10;com&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/composer.json&#10;Document&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Aforance/Business/Funeral/Document.php&#10;FuneralBusi&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Aforance/Business/Funeral/FuneralBusiness.php&#10;PolicyServi&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Aforance/Service/PolicyService.php&#10;PolicyDocu&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Http/Controllers/Policy/PolicyDocumentController.php&#10;routes&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Http/routes.php&#10;funeprec&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Aforance/Premium/Calculators/FuneralPremiumCalculator.php&#10;document.bl&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/resources/views/policies/funeral/document.blade.php&#10;covera&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/resources/views/policies/funeral/document/coverage.blade.php&#10;beneficiar&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/resources/views/policies/funeral/includes/creation/beneficiaries.blade.php&#10;policy.bl&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/resources/views/policies/funeral/includes/creation/policy.blade.php&#10;famihan&#9;null&#9;null&#10;policyhandl&#9;null&#9;null&#10;policstru&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Aforance/Business/Funeral/PolicyStructure.php&#10;Fune&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/FuneralPolicy.php&#10;Funprecal&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Aforance/Premium/Calculators/FuneralPremiumCalculator.php&#10;funeralcontroller&#9;null&#9;null&#10;policy-creator&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/public/js/custom/policies/funeral/policy-creator.js&#10;funeralpoli&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/FuneralPolicy.php&#10;funer&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Aforance/Business/Funeral/FuneralBusiness.php&#10;funese&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Providers/FuneralBusinessServiceProvider.php&#10;PolicyRepo&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Aforance/Contracts/Repository/FuneralPolicyRepositoryInterface.php&#10;Funer&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Aforance/Business/Funeral/FuneralBusiness.php&#10;PolicySer&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Aforance/Service/PolicyService.php&#10;Policy&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Aforance/Business/Funeral/PolicyStructure.php&#10;detai&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/resources/views/policies/funeral/document/details.blade.php&#10;policydo&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Http/Controllers/Policy/PolicyDocumentController.php&#10;.gitigno&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/.gitignore&#10;Container&#9;null&#9;null&#10;company.php&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/config/company.php&#10;.env&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/.env&#10;compa&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/config/company.php&#10;co&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/resources/views/policies/funeral/document/coverage.blade.php&#10;app.php&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/config/app.php&#10;funerser&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Providers/FuneralBusinessServiceProvider.php&#10;premiumser&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Aforance/Service/PremiumService.php&#10;policydocumentcon&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Http/Controllers/Policy/PolicyDocumentController.php&#10;routes.php&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Http/routes.php&#10;policyst&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/app/Aforance/Business/Funeral/PolicyStructure.php&#10;policy.blade&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/resources/views/policies/funeral/includes/creation/policy.blade.php&#10;cove&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app-master/resources/views/policies/funeral/document/coverage.blade.php&#10;PremiumSe&#9;null&#9;null" />
     <property name="JavaScriptPreferStrict" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -511,26 +589,27 @@
       <workItem from="1469186032449" duration="37644000" />
       <workItem from="1469401921930" duration="50777000" />
       <workItem from="1469627005006" duration="24213000" />
-      <workItem from="1469668196286" duration="27606000" />
+      <workItem from="1469668196286" duration="44253000" />
+      <workItem from="1469733869226" duration="13344000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="177640000" />
+    <option name="totallyTimeSpent" value="207631000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1762481" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17246597" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3686636" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3137255" sideWeight="0.4969743" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23567921" sideWeight="0.4969743" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -555,164 +634,181 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="4" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Aforance/Business/Funeral/FuneralNumberGenerator.php">
+    <entry file="file://$PROJECT_DIR$/bootstrap/autoload.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="68" column="13" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="13" />
+        <state relative-caret-position="414">
+          <caret line="36" column="55" selection-start-line="36" selection-start-column="55" selection-end-line="36" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Aforance/Service/PremiumService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="50" column="35" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
           <folding>
-            <element signature="e#139#157#0#PHP" expanded="false" />
+            <element signature="e#46#94#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/policies/funeral/includes/creation/agency.blade.php">
+    <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-          <folding />
+        <state relative-caret-position="320">
+          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/PolicyNumberGenerationTest.php">
+    <entry file="file://$PROJECT_DIR$/config/auth.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="20" column="63" selection-start-line="20" selection-start-column="63" selection-end-line="20" selection-end-column="63" />
-          <folding />
+        <state relative-caret-position="-2139">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/policies/funeral/includes/creation/beneficiaries.blade.php">
+    <entry file="file://$PROJECT_DIR$/config/broadcasting.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1039">
-          <caret line="35" column="48" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
-          <folding />
+        <state relative-caret-position="-834">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/custom/helper.js">
+    <entry file="file://$PROJECT_DIR$/config/cache.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="62" column="30" selection-start-line="62" selection-start-column="30" selection-end-line="62" selection-end-column="30" />
-          <folding />
+        <state relative-caret-position="-1530">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Aforance/Validation/FuneralPolicyValidator.php">
+    <entry file="file://$PROJECT_DIR$/config/company.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="744">
-          <caret line="34" column="6" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
-          <folding />
+        <state relative-caret-position="318">
+          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Aforance/Business/Funeral/ValidationHandler/PolicyHandler.php">
+    <entry file="file://$PROJECT_DIR$/config/compile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-          <folding>
-            <element signature="e#157#231#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="-408">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/policies/funeral/includes/creation/policy.blade.php">
+    <entry file="file://$PROJECT_DIR$/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="99" column="62" selection-start-line="99" selection-start-column="62" selection-end-line="99" selection-end-column="62" />
-          <folding />
+        <state relative-caret-position="-2466">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Aforance/Business/Funeral/ValidationHandler/FamilyHandler.php">
+    <entry file="file://$PROJECT_DIR$/config/filesystems.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-336">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="-1178">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Finder/FinderController.php">
+    <entry file="file://$PROJECT_DIR$/config/mail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
-          <folding>
-            <element signature="e#137#198#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="-2253">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Aforance/Contracts/Finder/FinderEngineInterface.php">
+    <entry file="file://$PROJECT_DIR$/config/policy.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/queue.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1546">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/services.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/session.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3570">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Container/Container.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="810" column="7" selection-start-line="810" selection-start-column="7" selection-end-line="810" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Aforance/Contracts/Repository/FuneralPolicyRepositoryInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="21" column="37" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="37" />
+          <folding>
+            <element signature="e#143#212#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/FuneralBusinessServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="44" column="38" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
+          <folding>
+            <element signature="e#38#86#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Aforance/Repository/FuneralPolicyRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/policies/funeral/modals/new-policy-form.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Policy/Funeral/FuneralController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+        <state relative-caret-position="366">
+          <caret line="54" column="33" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/customers/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/js/custom/policies/funeral/policy-creator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="81" column="72" selection-start-line="81" selection-start-column="72" selection-end-line="81" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Aforance/Finder/EloquentEngine.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/customers/includes/find-customer-form.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" column="42" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/policies/funeral/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="85" column="78" selection-start-line="85" selection-start-column="78" selection-end-line="85" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/customers/modals/find-customer-form.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="17" column="46" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/custom/policies/funeral.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/policies/funeral/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="58" column="31" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
+        <state relative-caret-position="144">
+          <caret line="79" column="36" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -720,151 +816,112 @@
     <entry file="file://$PROJECT_DIR$/app/Aforance/Repository/Contracts/PolicyRepositoryInterface.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Aforance/Repository/FuneralPolicyRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
-          <folding>
-            <element signature="e#49#125#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/custom/vue-mixins.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="56" column="25" selection-start-line="56" selection-start-column="25" selection-end-line="56" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/policies/funeral/includes/editing/beneficiaries.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1208">
-          <caret line="84" column="58" selection-start-line="84" selection-start-column="58" selection-end-line="84" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/custom/policies/funeral/policy-creator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="74" column="36" selection-start-line="0" selection-start-column="0" selection-end-line="198" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/policies/funeral/includes/editing/agency.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bootstrap/autoload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="36" column="55" selection-start-line="36" selection-start-column="55" selection-end-line="36" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Aforance/Support/functions/helper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
-          <folding>
-            <element signature="e#6#90#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Aforance/Support/FormHelper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/policies/funeral/includes/editing/policy.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1497">
-          <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/custom/policies/funeral/policy-editor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="199" column="106" selection-start-line="199" selection-start-column="106" selection-end-line="199" selection-end-column="106" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Policy/PolicyCreationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Policy/PolicyController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/customers/modals/add-customer.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
-          <caret line="45" column="1" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
-          <folding>
-            <element signature="e#137#198#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Policy/Funeral/FuneralController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
-          <folding>
-            <element signature="e#146#222#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="95" column="54" selection-start-line="95" selection-start-column="54" selection-end-line="95" selection-end-column="54" />
+          <caret line="108" column="22" selection-start-line="108" selection-start-column="22" selection-end-line="108" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/policies/funeral/includes/editing/underwriting.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Aforance/Business/Funeral/ValidationHandler/PolicyHandler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="95" selection-start-line="8" selection-start-column="89" selection-end-line="8" selection-end-column="95" />
+        <state relative-caret-position="510">
+          <caret line="60" column="1" selection-start-line="60" selection-start-column="1" selection-end-line="60" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/policies/funeral/view.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/policies/funeral/includes/creation/policy.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="62" column="82" selection-start-line="62" selection-start-column="82" selection-end-line="62" selection-end-column="82" />
+        <state relative-caret-position="222">
+          <caret line="140" column="24" selection-start-line="140" selection-start-column="24" selection-end-line="140" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Aforance/Business/Funeral/ValidationHandler/FamilyHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="44" column="74" selection-start-line="44" selection-start-column="74" selection-end-line="44" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/policies/funeral/includes/creation/beneficiaries.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="52" column="32" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/policies/funeral/document/coverage.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Aforance/Business/Funeral/PolicyStructure.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+          <folding>
+            <element signature="e#139#180#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/FuneralPolicy.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="114" column="10" selection-start-line="114" selection-start-column="4" selection-end-line="114" selection-end-column="10" />
+          <folding>
+            <element signature="e#28#83#0#PHP" expanded="true" />
+            <element signature="e#6850#6962#0#PHP" expanded="false" />
+            <element signature="e#6968#7098#0#PHP" expanded="false" />
+            <element signature="e#7104#7192#0#PHP" expanded="false" />
+            <element signature="e#7198#7299#0#PHP" expanded="false" />
+            <element signature="e#7305#7413#0#PHP" expanded="false" />
+            <element signature="e#7419#7503#0#PHP" expanded="false" />
+            <element signature="e#7509#7600#0#PHP" expanded="false" />
+            <element signature="e#7606#7745#0#PHP" expanded="false" />
+            <element signature="e#7751#7907#0#PHP" expanded="false" />
+            <element signature="e#7913#8034#0#PHP" expanded="false" />
+            <element signature="e#8040#8125#0#PHP" expanded="false" />
+            <element signature="e#8131#8241#0#PHP" expanded="false" />
+            <element signature="e#8247#8330#0#PHP" expanded="false" />
+            <element signature="e#8336#8412#0#PHP" expanded="false" />
+            <element signature="e#8418#8540#0#PHP" expanded="false" />
+            <element signature="e#8546#8663#0#PHP" expanded="false" />
+            <element signature="e#8669#8784#0#PHP" expanded="false" />
+            <element signature="e#8790#8861#0#PHP" expanded="false" />
+            <element signature="e#8867#8936#0#PHP" expanded="false" />
+            <element signature="e#8942#9039#0#PHP" expanded="false" />
+            <element signature="e#9045#9121#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Aforance/Premium/Calculators/FuneralPremiumCalculator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Aforance/Contracts/Business/DocumentRenderer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+        <state relative-caret-position="384">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -872,125 +929,139 @@
     <entry file="file://$PROJECT_DIR$/app/Aforance/Business/Business.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
-          <caret line="94" column="1" selection-start-line="94" selection-start-column="1" selection-end-line="94" selection-end-column="1" />
+          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Aforance/Business/Funeral/FuneralBusiness.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="60" column="31" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="31" />
           <folding>
-            <element signature="e#47#105#0#PHP" expanded="true" />
+            <element signature="e#55#95#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Aforance/Service/PolicyService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="45" column="34" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
-          <folding>
-            <element signature="e#46#86#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="390">
+          <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Policy/PolicyDocumentController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="25" column="45" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
-          <folding>
-            <element signature="e#138#182#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Aforance/Business/Funeral/FuneralBusiness.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="61" column="47" selection-start-line="61" selection-start-column="47" selection-end-line="61" selection-end-column="47" />
+        <state relative-caret-position="414">
+          <caret line="25" column="78" selection-start-line="25" selection-start-column="78" selection-end-line="25" selection-end-column="78" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Aforance/Contracts/Repository/FuneralPolicyRepositoryInterface.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="21" column="37" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="37" />
-          <folding>
-            <element signature="e#143#212#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/FuneralBusinessServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="73" column="41" selection-start-line="73" selection-start-column="41" selection-end-line="73" selection-end-column="41" />
-          <folding>
-            <element signature="e#38#86#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Aforance/Business/Funeral/Document.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-          <folding>
-            <element signature="e#140#188#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Phoenix-fj/policy.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2457">
-          <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
-          <folding>
-            <marker date="1415222755458" expanded="true" signature="15669:15730" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/company.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+        <state relative-caret-position="414">
+          <caret line="100" column="64" selection-start-line="100" selection-start-column="56" selection-end-line="100" selection-end-column="64" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Customer.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/policies/funeral/document/details.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="66" column="29" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
+        <state relative-caret-position="757">
+          <caret line="52" column="29" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/FuneralPolicy.php">
+    <entry file="file://$PROJECT_DIR$/vendor/barryvdh/laravel-snappy/src/ServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="48" column="40" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
+        <state relative-caret-position="333">
+          <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/policies/funeral/document/front.blade.php">
+    <entry file="file://$PROJECT_DIR$/vendor/barryvdh/laravel-snappy/src/PdfWrapper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="37" />
+        <state relative-caret-position="294">
+          <caret line="214" column="11" selection-start-line="214" selection-start-column="11" selection-end-line="214" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/policies/funeral/document/coverage.blade.php">
+    <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="44" column="51" selection-start-line="44" selection-start-column="51" selection-end-line="44" selection-end-column="51" />
+        <state relative-caret-position="24">
+          <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="230" column="47" selection-start-line="230" selection-start-column="47" selection-end-line="230" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="10" selection-start-line="0" selection-start-column="0" selection-end-line="101" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/policies/funeral/document.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="120" column="15" selection-start-line="120" selection-start-column="15" selection-end-line="120" selection-end-column="15" />
+        <state relative-caret-position="168">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/custom/funeral.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="80" column="1" selection-start-line="0" selection-start-column="0" selection-end-line="80" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/print.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/policies/funeral/document/front.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="56" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Aforance/Business/Funeral/Document.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="41" column="81" selection-start-line="41" selection-start-column="81" selection-end-line="41" selection-end-column="81" />
+          <folding>
+            <element signature="e#139#184#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/policies/funeral/document/download.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
           <folding />
         </state>
       </provider>
