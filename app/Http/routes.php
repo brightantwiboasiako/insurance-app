@@ -89,8 +89,14 @@ Route::group(['middleware' => 'auth'], function(){
         ]);
 
         Route::post('create', [
-            'uses' => 'Policy\PolicyController@issue'
+            'uses' => 'Policy\PolicyCreationController@issue'
         ]);
+
+
+        Route::get('/document/{business}/{policyNumber}', [
+            'uses' => 'Policy\PolicyDocumentController@showDocument'
+        ]);
+
 
         // Funeral Policies
         Route::group(['prefix' => 'funeral'], function(){
@@ -101,6 +107,10 @@ Route::group(['middleware' => 'auth'], function(){
 
             Route::get('/create/{customerId}', [
                'uses' => 'Policy\Funeral\FuneralController@getCreationScreen'
+            ]);
+
+            Route::get('/{policyNumber}', [
+                'uses' => 'Policy\Funeral\FuneralController@getViewScreen'
             ]);
 
         });

@@ -28,16 +28,11 @@
 
             setActiveLink('policy');
 
-            $('.date').datepicker({
-                format: 'yyyy-mm-dd',
-                endDate: new Date()
-            });
-
         });
     </script>
 
     <script src="{{ asset('js/wizard.js') }}"></script>
-    <script src="{{ asset('js/custom/utils/customer.js') }}"></script>
+    <script src="{{ asset('js/custom/vue-mixins.js') }}"></script>
     <script src="{{ asset('js/custom/policies/funeral.js') }}"></script>
 @endsection
 
@@ -70,8 +65,6 @@
                                 <h2 class="pull-left"><i class="fa fa-umbrella" aria-hidden="true"></i> Funeral Policy</h2>
 
                                 @include('customers.modals.find-customer-form')
-                                @include('policies.funeral.modals.new-policy-form')
-
                                 <div class="filter-block pull-right">
                                     <a class="btn-sm pull-right btn btn-primary mrg-b-lg" data-toggle="modal"
                                             data-target=".find-customer-form">
@@ -84,14 +77,15 @@
                                 <div class="search-box">
                                     <div class="title">
                                         <h2 class="pull-left"><i class="fa fa-search search-icon"></i> Find Policy</h2>
-                                        <h2 class="pull-right text-danger finder-empty-results">
+                                        <h2 class="pull-right text-danger" v-show="policySearch.emptyResults">
                                             <i class="fa fa-exclamation-circle"></i> No results found</h2>
                                     </div>
-                                    <form class="form-inline finder-form" role="form">
+                                    <form class="form-inline finder-form" role="form" @submit.prevent="findPolicy">
                                         <div class="form-group">
                                             <label class="sr-only" for="search-query">Search Query</label>
-                                            <input autofocus type="text" class="form-control search-query" id="search-query"
-                                                   placeholder="Policy Number">
+                                            <input autofocus autocomplete="off" type="text" class="form-control search-query" id="search-query"
+                                                   placeholder="Policy Number" v-model="policySearch.query"
+                                            @keyup.enter="findPolicy">
                                         </div>
                                         <button type="submit" class="btn btn-success btn-submit">Search</button>
                                         <p class="alt-search">
@@ -100,42 +94,18 @@
                                             </a>
                                         </p>
                                     </form>
+                                    <div class="search-results" v-if="foundPolicies.length > 0">
+                                        <div class="title clearfix">
+                                            <h2 class="pull-left">Matching Policy:</h2>
+                                        </div>
+                                        <h4>@{{{ policyUrl() }}}</h4>
+                                    </div>
                                 </div>
-                                {{--<div class="search-results v-cloak--hidden" v-if="found.length > 0">--}}
-                                    {{--<div class="title clearfix">--}}
-                                        {{--<h2 class="pull-left">Search Results:</h2>--}}
-                                        {{--<h2 class="pull-right"><span class="badge">@{{ found.length }}</span> total</h2>--}}
-                                    {{--</div>--}}
-                                    {{--<div class="table-responsive">--}}
-                                        {{--<table class="table table-hover">--}}
-                                            {{--<thead>--}}
-                                            {{--<tr>--}}
-                                                {{--<th><span>Name</span></th>--}}
-                                                {{--<th><span>Email</span></th>--}}
-                                                {{--<th class="text-center"><span>Phone Number</span></th>--}}
-                                                {{--<th class="text-center"><span>Gender</span></th>--}}
-                                                {{--<th class="text-center"><span>Birth Day</span></th>--}}
-                                                {{--<th class="text-center"><span>Actions</span></th>--}}
-                                            {{--</tr>--}}
-                                            {{--</thead>--}}
-                                            {{--<tbody>--}}
-                                            {{--<tr v-for="customer in found" v-on:click="showEditForm(customer)">--}}
-                                                {{--<td>@{{{ getCustomerName(customer) }}}</td>--}}
-                                                {{--<td>@{{ customer.email }}</td>--}}
-                                                {{--<td class="text-center">@{{ customer.primary_phone_number }}</td>--}}
-                                                {{--<td class="text-center">@{{ customer.gender }}</td>--}}
-                                                {{--<td class="text-center">@{{ date(customer.birth_day) }}</td>--}}
-                                            {{--</tr>--}}
-                                            {{--</tbody>--}}
-                                        {{--</table>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 @endsection

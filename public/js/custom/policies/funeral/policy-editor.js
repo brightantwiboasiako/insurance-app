@@ -1,74 +1,3 @@
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId])
-/******/ 			return installedModules[moduleId].exports;
-
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-
-
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-
-/******/ 	// identity function for calling harmory imports with the correct context
-/******/ 	__webpack_require__.i = function(value) { return value; };
-
-/******/ 	// define getter function for harmory exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		Object.defineProperty(exports, name, {
-/******/ 			configurable: false,
-/******/ 			enumerable: true,
-/******/ 			get: getter
-/******/ 		});
-/******/ 	};
-
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
-/******/ })
-/************************************************************************/
-/******/ ({
-
-/***/ 3:
-/***/ function(module, exports) {
-
 /**
  * Created by Bright on 5/22/2016.
  */
@@ -94,32 +23,38 @@ var funeralPolicy = new Vue({
         trustee: {
             gender: 'Male'
         },
-        newPolicy: {
-            policyDetails: {
-                sum_assured: 0,
+        policy: {
+            policy_details: {
+                sum_assured: null,
                 issue_date: '',
-                automatic_benefit_percentage: '',
-                payment_method: '',
+                automatic_update_percentage: '',
+                mode_of_payment: '',
                 payment_frequency: '',
                 family_rider: 'no',
                 accidental_rider: 'no',
-                family_members: [],
+                accidental_rider_premium: 0,
+                family: [],
                 bank: {
                     name: null,
                     account_number: null
-                },
-                customer_id: null
+                }
             },
             underwriting: {
                 cancer: 'No',
                 hiv: 'No',
                 good_health: 'No',
-                illness: 'No'
+                illness: 'No',
+                height: null,
+                weight: null
             },
             beneficiaries: [],
             agent_id: 1,
-            branch_id: 1
-        }
+            branch_id: 1,
+            business_type: 'funeral',
+            customer_id: null,
+            trustee: {}
+        },
+        rawData: {}
     },
 
     methods: {
@@ -137,13 +72,36 @@ var funeralPolicy = new Vue({
         },
 
         createPolicy: function(){
-            this.$http.post(baseUrl())
+            var model = this;
+            setProcess(formElement.find('.btn-submit'));
+            bindValidator(formElement, 'Create Policy', function(){
+                model.processCreation();
+            });
+        },
+
+        processCreation: function(){
+            this.$http.post(baseUrl() + '/policy/create', this.newPolicy)
+                .then(function(response){
+                    if(response.data.OK){
+                        alert('Policy has been created successfully.', 'success');
+                    }else{
+                        console.log(response.data.errors);
+                        alert('There were some errors that must be checked.', 'danger', function(){
+                            bindErrors(response.data.errors.policy, formElement);
+                            bindErrors(response.data.errors.family, formElement);
+                            bindErrors(response.data.errors.underwriting, formElement);
+                        });
+                    }
+                }, function(response){
+                    alert(response.body);
+                    //alert('There was an error while processing. Please try again!', 'danger');
+                });
         },
 
         addMember: function(){
             var model = this;
             if(model.family.relationship !== ''){
-                model.newPolicy.policyDetails.family_members.push(model.family);
+                model.newPolicy.policy_details.family.push(model.family);
                 model.resetFamily();
             }
 
@@ -161,10 +119,10 @@ var funeralPolicy = new Vue({
         percentageOverflow: function(){
             var total = 0;
             this.newPolicy.beneficiaries.forEach(function(beneficiary){
-                total += beneficiary.percentage;
+                total += parseFloat(beneficiary.percentage);
             });
 
-            return (total + this.beneficiary.percentage) > 100;
+            return (total + parseFloat(this.beneficiary.percentage)) > 100;
         },
 
         setEditableBeneficiary: function(key){
@@ -191,17 +149,17 @@ var funeralPolicy = new Vue({
 
         setEditableMember: function(key){
             this.editing = true;
-            this.family = this.newPolicy.policyDetails.family_members[key];
+            this.family = this.newPolicy.policy_details.family[key];
         },
 
         getFamilyMember: function(key){
-            return this.newPolicy.policyDetails.family_members[key];
+            return this.newPolicy.policy_details.family[key];
         },
 
         removeFamilyMember: function(key){
             var model = this;
             confirm('Are you sure you want to remove '+ model.getFamilyMember(key).name +'?', function(){
-                model.newPolicy.policyDetails.family_members.splice(key, 1);
+                model.newPolicy.policy_details.family.splice(key, 1);
             }, function(){});
         },
 
@@ -214,7 +172,8 @@ var funeralPolicy = new Vue({
                     }else{
                         alert('Something went wrong! Try reloading the page.', 'danger');
                     }
-                }, function(){
+                }, function(response){
+                    // alert(response.body, 'danger'); return;
                     alert('Something went wrong! We try again!', 'danger', function(){
                         return window.location.reload();
                     });
@@ -236,10 +195,16 @@ var funeralPolicy = new Vue({
         this.getPolicyMetadata();
         this.resetFamily();
         this.bootValidator();
+        this.rawData = JSON.parse(this.rawData);
+        this.policy.policy_details.family = JSON.parse(this.rawData.family_members);
+        this.policy.policy_details.automatic_update_percentage = this.rawData.automatic_update_percentage;
+        this.policy.underwriting = JSON.parse(this.rawData.underwriting);
+        this.policy.beneficiaries = JSON.parse(this.rawData.beneficiaries);
+        this.policy.trustee = JSON.parse(this.rawData.trustee);
+        this.policy.agent_id = this.rawData.agent_id;
+        this.policy.customer_id = this.rawData.customer_id;
+        this.policy.policy_details.policy_number = this.rawData.policy_number;
+
     }
 
 });
-
-/***/ }
-
-/******/ });

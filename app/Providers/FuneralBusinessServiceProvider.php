@@ -2,6 +2,7 @@
 
 namespace Aforance\Providers;
 
+use Aforance\Aforance\Business\Funeral\Document;
 use Aforance\Aforance\Business\Funeral\FuneralBusiness;
 use Aforance\Aforance\Business\Funeral\FuneralNumberGenerator;
 use Aforance\Aforance\Business\Funeral\ValidationHandler\FamilyHandler;
@@ -63,6 +64,14 @@ class FuneralBusinessServiceProvider extends ServiceProvider
 
         $this->app->bind('funeral.number_generator', function(){
             return new FuneralNumberGenerator();
+        });
+
+        $this->app->bind('funeral.document', function(){
+            return new Document;
+        });
+
+        $this->app->bind('funeral.name', function(){
+            return 'FAREWELL JOURNEY PLAN';
         });
 
         $this->app->bind('funeral.validators', function(){

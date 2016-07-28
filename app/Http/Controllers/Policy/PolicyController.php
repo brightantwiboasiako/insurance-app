@@ -16,35 +16,8 @@ use Aforance\PolicyType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class PolicyController extends Controller implements PolicyCreationListenerInterface
+class PolicyController extends Controller
 {
-
-    /**
-     * @var PolicyService
-     */
-    private $service;
-
-    public function __construct(PolicyService $service)
-    {
-        $this->service = $service;
-    }
-
-    public function issue(Request $request){
-        return $this->service->issuePolicy(
-            array_merge($request->all(), ['captured_by' => Auth::user()->id])
-            , Auth::user()->role(), $this);
-    }
-
-    public function onSuccessfulCreation()
-    {
-        return response()->json(['OK' => true]);
-    }
-
-    public function onFailedCreation($data)
-    {
-        return response()->json(array_merge(['OK' => false], $data));
-    }
-
 
     public function getMetadata(Request $request){
 

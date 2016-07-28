@@ -2,6 +2,8 @@
 
 namespace Aforance\Aforance\Business;
 
+use Aforance\Aforance\Contracts\Business\DocumentRenderer;
+use Aforance\Aforance\Contracts\Business\PolicyIssuer;
 use Aforance\Aforance\Notification\Contracts\CustomerNotificationInterface;
 use Aforance\Aforance\Policy\PolicyCreationListenerInterface;
 use Aforance\Aforance\Service\PremiumService;
@@ -10,7 +12,7 @@ use Aforance\Aforance\Validation\ValidationException;
 use Aforance\Aforance\Validation\PolicyValidatorInterface;
 use Aforance\Aforance\Repository\Contracts\PolicyRepositoryInterface;
 
-abstract class Business{
+abstract class Business  implements PolicyIssuer, DocumentRenderer{
 
 	use DispatchesErrors;
 

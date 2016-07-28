@@ -11,7 +11,7 @@ use Aforance\Aforance\Repository\CustomerRepository;
 use Aforance\Aforance\Support\DateHelper;
 use Aforance\Aforance\Validation\ValidationException;
 
-class FuneralBusiness extends Business implements PolicyIssuer{
+class FuneralBusiness extends Business{
 
 	/**
 	 * @var CustomerRepository
@@ -53,6 +53,13 @@ class FuneralBusiness extends Business implements PolicyIssuer{
 		// complete the policy issue
 		parent::createPolicy($data);
 		return $listener->onSuccessfulCreation();
+	}
+
+
+	public function renderDocument($policyNumber)
+	{
+		$document = app('funeral.document');
+		return $document->display($policyNumber);
 	}
 
 }

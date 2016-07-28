@@ -13,6 +13,7 @@ use Aforance\Aforance\Policy\PolicyCreationListenerInterface;
 use Aforance\Aforance\Service\PolicyService;
 use Aforance\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PolicyCreationController extends Controller implements PolicyCreationListenerInterface
 {
@@ -24,19 +25,27 @@ class PolicyCreationController extends Controller implements PolicyCreationListe
      */
     private $service;
 
-    public function issuePolicy(Request $request){
-        return $this->service->issuePolicy($request->all(), Auth::user()->role, $this);
+    public function __construct(PolicyService $service)
+    {
+        $this->service = $service;
+    }
+
+
+    public function issue(Request $request){
+        return $this->service->issuePolicy(
+            array_merge($request->all(), ['captured_by' => Auth::user()->id])
+            , Auth::user()->role(), $this);
     }
 
     public function onSuccessfulCreation()
     {
-        // TODO: Implement onSuccessfulCreation() method.
+        return response()->json(['OK' => true]);
     }
-
 
     public function onFailedCreation($data)
     {
-        // TODO: Implement onFailedCreation() method.
+        return response()->json(array_merge(['OK' => false], $data));
     }
+
 
 }

@@ -2,6 +2,7 @@
 
 namespace Aforance\Aforance\Service;
 
+use Aforance\Aforance\Business\Business;
 use Aforance\Aforance\Contracts\Business\PolicyIssuer;
 use Aforance\Aforance\Policy\PolicyCreationListenerInterface;
 use Aforance\Aforance\Service\Contracts\ServiceInterface;
@@ -42,10 +43,22 @@ class PolicyService implements ServiceInterface{
 
 
 	/**
+	 * Generates a policy document
+	 * 
+	 * @param $business
+	 * @param $policyNumber
+	 * @return mixed
+	 */
+	public function policyDocument($business, $policyNumber){
+		return $this->makeBusiness($business)->renderDocument($policyNumber);
+	}
+	
+
+	/**
 	 * Makes a business based on the type
 	 *
 	 * @param $type
-	 * @return PolicyIssuer
+	 * @return Business
 	 */
 	private function makeBusiness($type){
 		$business = null;
