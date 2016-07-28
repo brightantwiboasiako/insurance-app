@@ -11,6 +11,7 @@ namespace Aforance\Aforance\Finder;
 
 use Aforance\Aforance\Contracts\Finder\FinderEngineInterface;
 use Aforance\Customer;
+use Aforance\FuneralPolicy;
 
 class EloquentEngine implements FinderEngineInterface{
 
@@ -50,6 +51,9 @@ class EloquentEngine implements FinderEngineInterface{
         switch($model){
             case 'customer':
                 $this->model = Customer::class;
+                break;
+            case 'funeral policy':
+                $this->model = FuneralPolicy::class;
                 break;
         }
     }

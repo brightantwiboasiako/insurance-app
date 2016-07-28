@@ -2,62 +2,47 @@
  * Created by Bright on 5/22/2016.
  */
 
-var funeralPolicy = new Vue({
+new Vue({
 
     el: '#vue-funeral',
 
     data: {
-        customerSearch: {
+        policySearch: {
             query: null,
-            by: 'surname'
-        },
-        foundCustomers: [],
-        selectedCustomer: null,
+            by: 'policy_number',
+            foundPolicies: []
+        }
     },
 
     methods: {
 
         selectCustomer: function(customer){
-            this.selectedCustomer = customer;
-
-            confirm('Proceed with creating a policy for <strong>' + this.getCustomerName(customer) + '?</strong>'
-                , function(){
-                    // redirect to funeral policy creation form
-                    window.location = baseUrl() + '/policy/funeral/create/'+customer.id;
-                    // // hide search modal
-                    // $('.modal.find-customer-form').modal('hide');
-                    // // show new policy form
-                    // $('.modal.new-policy-form').modal('show');
-                }, function(){});
+            confirm('Proceed with creating a policy for <strong>' + this.getCustomerName(customer)+'</strong> ?', function(){
+                window.location = baseUrl() + '/policy/funeral/create/'+customer.id;
+            }, function(){});
         },
 
-        getPolicyMetadata: function(){
-            var model = this;
-            this.$http.get(baseUrl() + '/policy/metadata?type=funeral')
-                .then(function(response){
-                    if(response.data.OK){
-                        model.options = JSON.parse(response.data.data.options);
-                    }else{
-                        alert('Something went wrong! Try reloading the page.', 'danger');
-                    }
-                }, function(){
-                   alert('Something went wrong! We try again!', 'danger', function(){
-                       return window.location.reload();
-                   });
-                });
+        // findPolicy: function(){
+        //     this.find('finder', {
+        //        query: this.policySearch.query,
+        //        model: 'funeral policy',
+        //        by: this.policySearch.by
+        //     }, this.policySearch.foundPolicies);
+        // },
+        //
+        policyUrl: function(){
+            return '<a href='+baseUrl() + '/policy/funeral/'+this.policyNumber()+'>'+this.policyNumber()+'</a>'
         },
 
-        customerSearchHandler: function(data){
-            this.foundCustomers = JSON.parse(data);
-        },
-
-        findCustomer: function(){
-            findCustomer(this.customerSearch.query, this.customerSearch.by, this.customerSearchHandler);
+        policyNumber: function(){
+            return this.foundPolicies[0].policy_number;
         }
     },
 
     ready: function(){
-        this.getPolicyMetadata();
-    }
+
+    },
+    
+    mixins: [FindCustomer, FindPolicy]
 
 });

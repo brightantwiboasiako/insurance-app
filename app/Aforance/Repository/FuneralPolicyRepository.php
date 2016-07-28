@@ -17,4 +17,13 @@ class FuneralPolicyRepository implements FuneralPolicyRepositoryInterface{
 		FuneralPolicy::issue($data);
 	}
 
+	/**
+	 * @param $policyNumber
+	 * @return FuneralPolicy|null
+	 */
+	public function getByPolicyNumber($policyNumber)
+	{
+		return FuneralPolicy::where('policy_number', $policyNumber)->first();
+	}
+
 }

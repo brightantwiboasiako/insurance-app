@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="main-box-body clearfix">
-                    <div class="search-results" v-if="foundCustomers.length > 0">
+                    <div class="search-results" v-show="foundCustomers.length > 0">
                         <div class="title clearfix">
                             <h2 class="pull-left">Search Results:</h2>
                             <h2 class="pull-right"><span class="badge">@{{ foundCustomers.length }}</span> total</h2>

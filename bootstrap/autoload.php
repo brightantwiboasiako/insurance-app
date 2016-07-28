@@ -32,3 +32,10 @@ $compiledPath = __DIR__.'/cache/compiled.php';
 if (file_exists($compiledPath)) {
     require $compiledPath;
 }
+
+
+$helper = __DIR__ . '/../app/Aforance/Support/functions/helper.php';
+
+if (file_exists($helper)) {
+    require $helper;
+}

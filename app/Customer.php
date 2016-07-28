@@ -63,4 +63,8 @@ class Customer extends Model
         return $this->birth_day;
     }
 
+    public function gender(){
+        return $this->gender;
+    }
+
 }
