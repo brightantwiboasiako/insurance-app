@@ -36,12 +36,9 @@ class Document
 
     private function download($policyNumber){
         $policy = $this->repository->getPolicyByNumber($policyNumber);
-
-        $pdf = app('dompdf.wrapper');
-
-        return $pdf->loadView(static::DOWNLOAD_FILE, compact('policy'))->stream($policyNumber.'.pdf');
-
-        //return PDF::loadHTML(static::DOWNLOAD_FILE, compact('policy'))->inline($policyNumber.'.pdf');
+        
+        $maker = app('pdf');
+        return $maker->displayView(static::DOWNLOAD_FILE, compact('policy'), $policyNumber.'.pdf');
     }
 
 

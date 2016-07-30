@@ -68,6 +68,7 @@
 <!-- this page specific scripts -->
 <script src="{{ asset('js/validation/validate.min.js') }}"></script> <!-- jQuery Form Validation Library -->
 <script src="{{ asset('js/validation/validationEngine.min.js') }}"></script> <!-- jQuery Form Validation Library - requirred with above js -->
+<script src="{{ asset('js/validation/validationEngine-en.js') }}" type="text/javascript" charset="utf-8"></script>
 <script src="{{ asset('js/moment.min.js') }}"></script>
 <!-- theme scripts -->
 <script src="{{ asset('js/scripts.js') }}"></script>

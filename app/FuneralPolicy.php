@@ -3,16 +3,18 @@
 namespace Aforance;
 
 use Aforance\Aforance\Business\Funeral\PolicyStructure;
+use Aforance\Aforance\Contracts\Business\LifePolicy;
 use Aforance\Aforance\Contracts\Business\Policy;
-use Aforance\Aforance\Service\PremiumService;
+use Aforance\Aforance\Support\Database\HasLast;
 use Aforance\Aforance\Support\DateHelper;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Money\Money;
 
-class FuneralPolicy extends Model implements Policy
+class FuneralPolicy extends Model implements LifePolicy
 {
 
+    use HasLast;
 
     protected $table = 'funeral_policies';
     protected $guarded = ['id'];
@@ -20,11 +22,6 @@ class FuneralPolicy extends Model implements Policy
 
     public function customer(){
         return $this->belongsTo(Customer::class);
-    }
-
-
-    public static function generatePolicyNumber(){
-        return app('funeral.number_generator')->generate(static::first());
     }
 
 
@@ -223,11 +220,18 @@ class FuneralPolicy extends Model implements Policy
         return $this->payment_frequency;
     }
 
+    /**
+     * Saves a policy in the database and
+     * returns it
+     *
+     * @param array $data
+     * @return Policy
+     */
     public static function issue(array $data){
         $policy = new static();
         $policy->setSumAssured($data['policy_details']['sum_assured']);
         $policy->setSumAssuredOriginal($data['policy_details']['sum_assured']);
-        $policy->setPolicyNumber(static::generatePolicyNumber());
+        $policy->setPolicyNumber($data['policy_number']);
         $policy->setAccidentalRider($data['policy_details']['accidental_rider']);
         $policy->setAccidentalRiderPremium($data['policy_details']['accidental_rider_premium']);
         $policy->setBank($data['policy_details']['bank']);
@@ -245,7 +249,9 @@ class FuneralPolicy extends Model implements Policy
         $policy->setUnderwriting($data['underwriting']);
         $policy->setPeriodicPremium($data['premium']);
         $policy->setFamilyMembers($data['policy_details']['family']);
-        return $policy->save();
+        $policy->save();
+
+        return $policy;
     }
 
 

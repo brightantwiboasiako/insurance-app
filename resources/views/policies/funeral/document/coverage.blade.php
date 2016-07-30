@@ -1,5 +1,5 @@
 <div v-show="page === 2">
-    <div class="title coverage dashed-bottom-1">
+    <div class="title coverage border-bottom-3">
         <h2>COVERAGE PAGE</h2>
         <div class="table-responsive">
             <table class="table">

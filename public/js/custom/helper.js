@@ -122,6 +122,7 @@ function bindValidator(formContainer, submitBtnText, callback){
     if(submitBtnText === null){
         submitBtnText = 'Submit';
     }
+
     formContainer.validationEngine('attach', {
         onValidationComplete: function(form, status){
             if(status === true){
@@ -131,6 +132,13 @@ function bindValidator(formContainer, submitBtnText, callback){
                 cancelProcess(formContainer.find('.btn-submit'), submitBtnText);
             }
         }
+        // onSuccess: function(){
+        //     callback();
+        //     cancelProcess(formContainer.find('.btn-submit'), submitBtnText);
+        // },
+        // onFailure: function(){
+        //     console.log('failed');
+        // }
     });
 }
 
@@ -149,9 +157,15 @@ function post(url, data, onSuccess, onFailure){
 
 
 function ajax(options, onSuccess, onFailure){
+
+    if(options.dataType === undefined) options.dataType = 'json';
+    if(options.encode === undefined) options.encode = true;
+
     $.ajax(options).done(function(data){
         onSuccess(data);
     }).fail(function(response){
+        response.body = response.responseText;
+        response.data = response.body;
         onFailure(response);
     });
 }

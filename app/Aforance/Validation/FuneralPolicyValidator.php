@@ -2,12 +2,13 @@
 
 namespace Aforance\Aforance\Validation;
 
-use Aforance\Aforance\Contracts\Validation\FuneralValidatorInterface;
-use Aforance\Aforance\Validation\ValidationException;
-use Aforance\Aforance\Validation\Validator;
 use Illuminate\Support\Collection;
 
-class FuneralPolicyValidator extends Validator implements FuneralValidatorInterface{
+class FuneralPolicyValidator extends Validator implements PolicyValidatorInterface{
+
+
+	use CanCheckPolicyData;
+
 
 	/**
 	 * @var Collection
@@ -25,21 +26,7 @@ class FuneralPolicyValidator extends Validator implements FuneralValidatorInterf
 	public function __construct()
 	{
 		$this->errors = new Collection();
-		$this->handlers = app('funeral.validators');
-	}
-
-
-	/**
-	 *
-	 * @param array $data
-	 *
-	* @throws ValidationException
-	*/
-	public function checkPolicyData(array $data){
-		foreach($this->handlers as $handler){
-			$handler->handle($data, $this, $this->errors);
-		}
-		if(!$this->errors->isEmpty()) throw new ValidationException;
+		$this->handlers = app('funeral.validation.handlers');
 	}
 
 

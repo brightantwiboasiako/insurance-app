@@ -38,11 +38,11 @@ class FuneralBusinessServiceProvider extends ServiceProvider
     {
 
         $this->app->bind('funeral.validation_contract', function(){
-            return new FuneralPolicyValidator();
+            return new FuneralPolicyValidator;
         });
 
         $this->app->bind('funeral.repository_contract', function(){
-            return new FuneralPolicyRepository();
+            return new FuneralPolicyRepository;
         });
 
         $this->app->bind('business.funeral', function(){
@@ -53,7 +53,7 @@ class FuneralBusinessServiceProvider extends ServiceProvider
         });
 
         $this->app->bind('funeral.premium_loader', function(){
-            return new JsonFuneralPremiumLoader();
+            return new JsonFuneralPremiumLoader;
         });
 
         $this->app->bind('funeral.calculator', function(){
@@ -74,7 +74,7 @@ class FuneralBusinessServiceProvider extends ServiceProvider
             return 'FAREWELL JOURNEY PLAN';
         });
 
-        $this->app->bind('funeral.validators', function(){
+        $this->app->bind('funeral.validation.handlers', function(){
             return [
                 new UnderwritingHandler,
                 new PolicyHandler,

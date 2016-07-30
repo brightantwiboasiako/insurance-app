@@ -2,7 +2,7 @@
     <div class="title details">
         <h2>SCHEDULE OF LIVES COVERED & BENEFITS</h2>
         <div class="table-responsive">
-            <table class="table table-striped">
+            <table class="table table-bordered">
                 <thead>
                 <tr>
                     <th>#</th>

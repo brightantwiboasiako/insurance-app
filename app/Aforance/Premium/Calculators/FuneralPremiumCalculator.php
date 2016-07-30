@@ -3,6 +3,7 @@
 namespace Aforance\Aforance\Premium\Calculators;
 
 use Aforance\Aforance\Contracts\Business\FuneralPremiumLoader;
+use Aforance\Aforance\Contracts\Business\LifePolicy;
 use Aforance\Aforance\Contracts\Business\Policy;
 use Aforance\Aforance\Support\DateHelper;
 use Aforance\FuneralPolicy;

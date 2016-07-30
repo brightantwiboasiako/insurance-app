@@ -37,7 +37,7 @@
         ----------------------------------<br>
         MANAGING DIRECTOR
     </div>
-    <div class="terms">
+    <div class="terms border-bottom-3">
         <p><strong>Right to Examine and Return Policy Within 15 Days</strong> -
         At any time within 15 days after you receive this policy, you may return it to
         us or the agent through whom you bought it. We will cancel the policy and void

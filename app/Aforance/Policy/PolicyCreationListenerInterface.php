@@ -11,7 +11,7 @@ namespace Aforance\Aforance\Policy;
 
 interface PolicyCreationListenerInterface
 {
-    public function onSuccessfulCreation();
+    public function onSuccessfulCreation(array $data = []);
     public function onFailedCreation($data);
 
 }

@@ -9,12 +9,12 @@
 namespace Aforance\Aforance\Business\Funeral\ValidationHandler;
 
 
-use Aforance\Aforance\Business\Funeral\Contracts\FuneralValidationHandler;
+use Aforance\Aforance\Contracts\Validation\ValidationHandler;
 use Aforance\Aforance\Validation\ValidationException;
 use Aforance\Aforance\Validation\Validator;
 use Illuminate\Support\Collection;
 
-class UnderwritingHandler implements FuneralValidationHandler
+class UnderwritingHandler implements ValidationHandler
 {
     public function handle(array $data, Validator $validator, Collection $errors)
     {

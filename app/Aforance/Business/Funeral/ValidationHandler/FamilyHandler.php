@@ -9,12 +9,12 @@
 namespace Aforance\Aforance\Business\Funeral\ValidationHandler;
 
 
-use Aforance\Aforance\Business\Funeral\Contracts\FuneralValidationHandler;
+use Aforance\Aforance\Contracts\Validation\ValidationHandler;
 use Aforance\Aforance\Validation\ValidationException;
 use Aforance\Aforance\Validation\Validator;
 use Illuminate\Support\Collection;
 
-class FamilyHandler implements FuneralValidationHandler
+class FamilyHandler implements ValidationHandler
 {
 
     public function __construct()
@@ -74,6 +74,6 @@ class FamilyHandler implements FuneralValidationHandler
             return 'Age of '. $parameters[0] .' is invalid.';
         });
     }
-
+    
 
 }

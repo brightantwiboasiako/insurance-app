@@ -37,9 +37,12 @@ class PolicyCreationController extends Controller implements PolicyCreationListe
             , Auth::user()->role(), $this);
     }
 
-    public function onSuccessfulCreation()
+    public function onSuccessfulCreation(array $data = [])
     {
-        return response()->json(['OK' => true]);
+        return response()->json([
+            'OK' => true,
+            'policy' => $data
+        ]);
     }
 
     public function onFailedCreation($data)

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Funeral Policy | {{ config('app.name') }}
+    {{ config('policy.loanprotection.name') }} | {{ config('app.name') }}
     @endsection
 
 
@@ -25,25 +25,17 @@
     <!-- this page specific inline scripts -->
     <script type="text/javascript">
         $(document).ready(function() {
-
             setActiveLink('policy');
-
-            $('.date').datepicker({
-                format: 'yyyy-mm-dd',
-                endDate: new Date()
-            });
-
         });
     </script>
 
     <script src="{{ asset('js/wizard.js') }}"></script>
-    <script src="{{ asset('js/custom/utils/customer.js') }}"></script>
-    <script src="{{ asset('js/custom/policies/funeral.js') }}"></script>
+    <script src="{{ asset('js/custom/policies/loanprotection/loanprotection.js') }}"></script>
 @endsection
 
 
 @section('content')
-    <div class="row" id="vue-funeral">
+    <div class="row" id="vue-loanprotection">
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-lg-12">
@@ -69,12 +61,11 @@
                             <header class="main-box-header clearfix">
                                 <h2 class="pull-left"><i class="fa fa-institution" aria-hidden="true"></i> Loan Protection Plan</h2>
 
-                                @include('customers.modals.find-customer-form')
-                                @include('policies.funeral.modals.new-policy-form')
+                                @include('policies.loanprotection.modals.new-policy-form')
 
                                 <div class="filter-block pull-right">
                                     <a class="btn-sm pull-right btn btn-primary mrg-b-lg" data-toggle="modal"
-                                            data-target=".find-customer-form">
+                                            data-target=".new-policy-form">
                                         <i class="fa fa-plus-circle fa-lg"></i> New Plan
                                     </a>
                                 </div>
@@ -94,42 +85,8 @@
                                                    placeholder="Policy Number">
                                         </div>
                                         <button type="submit" class="btn btn-success btn-submit">Search</button>
-                                       <!-- <p class="alt-search">
-                                            <a href="{{ url('/customer') }}">
-                                                Search by customer?
-                                            </a>
-                                        </p> -->
                                     </form>
                                 </div>
-                                {{--<div class="search-results v-cloak--hidden" v-if="found.length > 0">--}}
-                                    {{--<div class="title clearfix">--}}
-                                        {{--<h2 class="pull-left">Search Results:</h2>--}}
-                                        {{--<h2 class="pull-right"><span class="badge">@{{ found.length }}</span> total</h2>--}}
-                                    {{--</div>--}}
-                                    {{--<div class="table-responsive">--}}
-                                        {{--<table class="table table-hover">--}}
-                                            {{--<thead>--}}
-                                            {{--<tr>--}}
-                                                {{--<th><span>Name</span></th>--}}
-                                                {{--<th><span>Email</span></th>--}}
-                                                {{--<th class="text-center"><span>Phone Number</span></th>--}}
-                                                {{--<th class="text-center"><span>Gender</span></th>--}}
-                                                {{--<th class="text-center"><span>Birth Day</span></th>--}}
-                                                {{--<th class="text-center"><span>Actions</span></th>--}}
-                                            {{--</tr>--}}
-                                            {{--</thead>--}}
-                                            {{--<tbody>--}}
-                                            {{--<tr v-for="customer in found" v-on:click="showEditForm(customer)">--}}
-                                                {{--<td>@{{{ getCustomerName(customer) }}}</td>--}}
-                                                {{--<td>@{{ customer.email }}</td>--}}
-                                                {{--<td class="text-center">@{{ customer.primary_phone_number }}</td>--}}
-                                                {{--<td class="text-center">@{{ customer.gender }}</td>--}}
-                                                {{--<td class="text-center">@{{ date(customer.birth_day) }}</td>--}}
-                                            {{--</tr>--}}
-                                            {{--</tbody>--}}
-                                        {{--</table>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
                             </div>
                         </div>
                     </div>

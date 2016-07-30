@@ -3,6 +3,7 @@
 namespace Aforance\Aforance\Business;
 
 use Aforance\Aforance\Contracts\Business\DocumentRenderer;
+use Aforance\Aforance\Contracts\Business\Policy;
 use Aforance\Aforance\Contracts\Business\PolicyIssuer;
 use Aforance\Aforance\Notification\Contracts\CustomerNotificationInterface;
 use Aforance\Aforance\Policy\PolicyCreationListenerInterface;
@@ -39,23 +40,15 @@ abstract class Business  implements PolicyIssuer, DocumentRenderer{
 
 	/**
 	*
-	* @var string
-	*/
-	protected $type;
-
-
-	/**
-	*
 	* @var CustomerNotificationInterface
 	*/
-	private $notifier;
+	protected $notifier;
 
 
-	public function __construct(PolicyValidatorInterface $validator, PolicyRepositoryInterface $policyRepository){
+	public function __construct(PolicyValidatorInterface $validator, PolicyRepositoryInterface $policies){
 		$this->validator = $validator;
-		$this->policies = $policyRepository;
+		$this->policies = $policies;
 		$this->premiumService = app('premium');
-		$this->notifier = app('customer.notifier');
 	}
 
 
@@ -63,15 +56,18 @@ abstract class Business  implements PolicyIssuer, DocumentRenderer{
 	* Issues a new policy
 	*
 	* @param array $data
-	* @return null
+	* @return Policy
 	*
 	*/
 	public function createPolicy(array $data){
+
 		// create policy
-		$this->policies->create($data);
+		$policy = $this->policies->create($data);
 
 		// notify customer of policy creation
 		$this->notifier->notify($data, 'policy creation');
+
+		return $policy;
 	}
 
 

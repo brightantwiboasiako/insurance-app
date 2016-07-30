@@ -2,6 +2,7 @@
 
 namespace Aforance\Aforance\Repository;
 
+use Aforance\Aforance\Contracts\Business\Policy;
 use Aforance\Aforance\Contracts\Repository\FuneralPolicyRepositoryInterface;
 use Aforance\FuneralPolicy;
 
@@ -12,9 +13,10 @@ class FuneralPolicyRepository implements FuneralPolicyRepositoryInterface{
 	 * data source
 	 *
 	 * @param array $data
+	 * @return Policy
 	 */
 	public function create(array $data){
-		FuneralPolicy::issue($data);
+		return FuneralPolicy::issue($data);
 	}
 
 	/**
@@ -24,6 +26,10 @@ class FuneralPolicyRepository implements FuneralPolicyRepositoryInterface{
 	public function getPolicyByNumber($policyNumber)
 	{
 		return FuneralPolicy::where('policy_number', $policyNumber)->first();
+	}
+
+	public function last(){
+		return FuneralPolicy::last();
 	}
 
 }

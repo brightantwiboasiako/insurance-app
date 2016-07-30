@@ -141,9 +141,15 @@ return [
         Aforance\Providers\CustomerServiceProvider::class,
         Aforance\Providers\PremiumServiceProvider::class,
         Aforance\Providers\PermissionServiceProvider::class,
-        Aforance\Providers\FuneralBusinessServiceProvider::class,
         Aforance\Providers\FinderServiceProvider::class,
         Aforance\Providers\AgencyServiceProvider::class,
+
+        /**
+         * Businesses
+         */
+        Aforance\Providers\FuneralBusinessServiceProvider::class,
+        Aforance\Providers\LoanProtectionBusinessServiceProvider::class,
+
 
         /**
          * Libraries

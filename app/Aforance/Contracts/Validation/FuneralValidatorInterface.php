@@ -13,5 +13,5 @@ use Aforance\Aforance\Validation\PolicyValidatorInterface;
 
 interface FuneralValidatorInterface extends PolicyValidatorInterface
 {
-    public function errors();
+
 }

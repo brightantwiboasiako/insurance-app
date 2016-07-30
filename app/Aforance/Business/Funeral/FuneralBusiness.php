@@ -8,9 +8,12 @@ use Aforance\Aforance\Contracts\Validation\FuneralValidatorInterface;
 use Aforance\Aforance\Policy\PolicyCreationListenerInterface;
 use Aforance\Aforance\Repository\CustomerRepository;
 use Aforance\Aforance\Support\DateHelper;
+use Aforance\Aforance\Validation\CanCheckPolicyData;
 use Aforance\Aforance\Validation\ValidationException;
 
 class FuneralBusiness extends Business{
+
+	use CanCheckPolicyData;
 
 	/**
 	 * @var CustomerRepository
@@ -19,8 +22,13 @@ class FuneralBusiness extends Business{
 	
 	public function __construct(FuneralValidatorInterface $validator, FuneralPolicyRepositoryInterface $repository){
 		parent::__construct($validator, $repository);
-		$this->type = 'funeral';
 		$this->customers = app('customer.repository');
+		$this->notifier = app('customer.notifier');
+	}
+
+
+	public static function last(){
+		return static::orderBy('id', 'DESC')->first();
 	}
 
 
@@ -34,6 +42,8 @@ class FuneralBusiness extends Business{
 	* @throws ValidationException
 	*/
 	public function issue(array $data, PolicyCreationListenerInterface $listener){
+
+		// handle policy data validation
 		try{
 			// validate policy data
 			parent::validate($data);
@@ -44,14 +54,22 @@ class FuneralBusiness extends Business{
 			]);
 		}
 
+
 		// get customer's age
 		$data['age'] = DateHelper::ageNextBirthday($this->customers->find($data['customer_id'])->birthday());
 
 		// get first premium
 		$data['premium'] = $this->premiumService->getFirstPremium('funeral', $data);
+
+		// set policy number
+		$data['policy_number'] = app('funeral.number_generator').generate($this->policies->last());
+
 		// complete the policy issue
-		parent::createPolicy($data);
-		return $listener->onSuccessfulCreation();
+		$policy = parent::createPolicy($data);
+
+		return $listener->onSuccessfulCreation([
+			'number' => $policy->policyNumber()
+		]);
 	}
 
 

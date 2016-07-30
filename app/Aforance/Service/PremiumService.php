@@ -3,10 +3,8 @@
 namespace Aforance\Aforance\Service;
 
 use Aforance\Aforance\Contracts\Business\Policy;
-use Aforance\Aforance\Premium\Calculators\PremiumCalculatorInterface;
 use Aforance\Aforance\Service\Contracts\ServiceInterface;
-
-
+use Aforance\Aforance\Premium\Calculators\PremiumCalculatorInterface;
 class PremiumService implements ServiceInterface{
 
 
@@ -47,6 +45,9 @@ class PremiumService implements ServiceInterface{
 	private function makeCalculator($businessType){
 		$calculator = null;
 		switch($businessType){
+			case 'loan protection':
+				$calculator = app('loanprotection.calculator');
+				break;
 			default: 
 				$calculator = app("funeral.calculator");
 		}

@@ -8,9 +8,16 @@
 
 return [
 
-    // Funeral policy code
+    // Funeral Business
     'funeral' => [
-        'code' => 'FP'
+        'code' => 'FP',
+        'name' => 'FAREWELL JOURNEY PLAN'
+    ],
+
+    // Loan Protection Business
+    'loanprotection' => [
+        'code' => 'LP',
+        'name' => 'Loan Protection Plan'
     ]
 
 ];
