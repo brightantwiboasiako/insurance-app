@@ -14,4 +14,6 @@ use Aforance\Aforance\Repository\Contracts\PolicyRepositoryInterface;
 interface LoanProtectionRepositoryInterface extends PolicyRepositoryInterface
 {
     
+    
+    
 }

@@ -1,7 +1,7 @@
 <div class="title" v-show="page === 1">
     <div class="company-info">
         <div class="logo">
-            <img src="{{ config('company.logo') }}" alt="Logo"/>
+            <img src="{{ asset(config('company.logo')) }}" alt="Logo"/>
         </div>
         <div class="address">
             {!! config('company.address') !!}

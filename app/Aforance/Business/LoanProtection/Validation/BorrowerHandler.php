@@ -26,10 +26,10 @@ class BorrowerHandler implements ValidationHandler
         foreach($data['borrowers'] as $key => $borrower){
 
             try{
-                $validator->validate($data, $this->rules());
+                $validator->validate($borrower, $this->rules());
             }catch (ValidationException $e){
                 $borrowerErrors[$key] = $validator->getErrors();
-            }
+            }catch(\Exception $e){/*intentionally left blank*/}
 
         }
 
@@ -43,9 +43,10 @@ class BorrowerHandler implements ValidationHandler
             'loan_amount' => 'required|numeric|min:0',
             'issue_date' => 'required|date',
             'term' => 'required|numeric|min:0',
+            'premium' => 'required|numeric|min:0',
             'name' => 'required|min:2|max:64',
-            'birthday' => 'required|date|before:today',
-            'phone' => 'min:15|max:15',
+            'birthday' => 'required|date',
+            'phone' => 'min:10|max:15',
             'gender' => 'in:Male,Female'
         ];
     }

@@ -14,8 +14,14 @@ abstract class Validator implements ValidationInterface{
 	 * @param $data
 	 * @param $rules
 	 * @throws ValidationException
+	 * @throws \Exception
 	 */
 	public function validate($data, $rules){
+
+		if(!is_array($data)){
+			throw new \Exception('Validation data must be an array.');
+		}
+
 		$this->validator = \Validator::make($data, $rules);
 		if(!$this->passes()){
 			throw new ValidationException;

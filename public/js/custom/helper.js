@@ -3,6 +3,16 @@
  */
 
 
+function moneyFromRaw(amount){
+    return "GH&#8373;" + numeral(amount).format('0,0.00');
+}
+
+
+function moneyFromSecure(amount){
+    return moneyFromRaw(amount/100);
+}
+
+
 /**
  * Gets the base of the application
  * @returns {string}
@@ -215,7 +225,7 @@ function alert(message, type, onOk){
 
 }
 
-function confirm(message, onOk, onCancel, onClose){
+function confirm(message, onOk, onCancel, theme){
     alertify.confirm("<i class='fa fa-exclamation-circle'></i> CONFIRMATION", message, function(){
         onOk();
     },function(){
@@ -223,9 +233,10 @@ function confirm(message, onOk, onCancel, onClose){
     })
     .setting({
         'closable': false,
-        'transition':'zoom',
-        'onclose': onClose
+        'transition':'zoom'
     }).show();
 
-    $('.ajs-header').addClass('ajs-warning');
+    var style = (theme === undefined) ? 'warning' : theme;
+
+    $('.ajs-header').addClass('ajs-'+style);
 }

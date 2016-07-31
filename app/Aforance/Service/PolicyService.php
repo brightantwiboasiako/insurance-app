@@ -3,7 +3,9 @@
 namespace Aforance\Aforance\Service;
 
 use Aforance\Aforance\Business\Business;
+use Aforance\Aforance\Contracts\Business\Policy;
 use Aforance\Aforance\Contracts\Business\PolicyIssuer;
+use Aforance\Aforance\Policy\PolicyActionListenerInterface;
 use Aforance\Aforance\Policy\PolicyCreationListenerInterface;
 use Aforance\Aforance\Service\Contracts\ServiceInterface;
 use Aforance\Aforance\Support\Contracts\Checker;
@@ -25,6 +27,28 @@ class PolicyService implements ServiceInterface{
 		$this->checker->service('policy');
 	}
 
+
+	public function getPolicyByNumber($business, $policyNumber, $role, PolicyActionListenerInterface $listener){
+		if($this->isPermittedTo('view', $role)){
+			$business = $this->makeBusiness($business);
+			$policy = $business->getPolicyByNumber($policyNumber);
+
+			if($policy)
+				return $listener->onSuccessfulAction($listener->getAction(),
+						['policy' => $business->getPolicyByNumber($policyNumber)]);
+			else
+				return $listener->onFailedAction($listener->getAction(), ['reason' => 'not found']);
+		}else{
+			return $listener->onFailedAction($listener->getAction(), ['reason' => 'permission']);
+		}
+	}
+
+
+	public function business($type){
+		return $this->makeBusiness($type);
+	}
+
+
 	/**
 	 * Handles the issuance of a policy
 	 *
@@ -37,7 +61,7 @@ class PolicyService implements ServiceInterface{
 		if($this->isPermittedTo('create', $role)){
 			return $this->makeBusiness($data['business_type'])->issue($data, $listener);
 		}else{
-			return $this->failedCheck($listener);
+			return $listener->onFailedCreation(['reason' => 'permission']);
 		}
 	}
 
@@ -73,15 +97,5 @@ class PolicyService implements ServiceInterface{
 		return $business;
 	}
 
-
-	/**
-	 * Handles a denied permission
-	 *
-	 * @param PolicyCreationListenerInterface $listener
-	 * @return mixed
-	 */
-	private function failedCheck(PolicyCreationListenerInterface $listener){
-		return $listener->onFailedCreation(['reason' => 'permission']);
-	}
 
 }

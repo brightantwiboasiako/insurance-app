@@ -12,7 +12,6 @@ namespace Aforance\Aforance\Support\Contracts;
 interface Parser{
 
 	public function read($key);
-
 	public function raw();
 
 }

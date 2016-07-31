@@ -23,11 +23,11 @@ class Borrower implements \JsonSerializable
     }
 
     public function loanAmount(){
-        return Money::withSecure($this->get('loan_amount'));
+        return Money::withRaw((float)$this->get('loan_amount'));
     }
 
     public function premium(){
-        return Money::withSecure($this->get('premium'));
+        return Money::withRaw((float)$this->get('premium'));
     }
 
     public function loanIssueDate(){
@@ -35,7 +35,7 @@ class Borrower implements \JsonSerializable
     }
 
     public function loanTerm(){
-        return $this->get('loan_term');
+        return $this->get('term');
     }
 
     public function loanMaturityDate(){
@@ -56,6 +56,10 @@ class Borrower implements \JsonSerializable
 
     public function phone(){
         return $this->get('phone');
+    }
+
+    public function birthday(){
+        return new Carbon($this->get('birthday'));
     }
 
     private function get($key){

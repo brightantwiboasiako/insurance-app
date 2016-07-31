@@ -32,16 +32,20 @@ class LoanProtectionPolicyValidator extends Validator implements PolicyValidator
 
     public function __construct()
     {
-        $this->handlers = app('loanprotection.validation.handlers');
+        $this->handlers = $this->setHandlers(app('loanprotection.validation.handlers'));
         $this->errors = new Collection();
     }
 
+
+    public function setHandlers(array $handlers)
+    {
+        $this->handlers = $handlers;
+    }
 
 
     public function errors()
     {
         return $this->errors;
     }
-
 
 }

@@ -21,4 +21,13 @@ interface PolicyRepositoryInterface{
 	 */
 	public function last();
 
+
+	/**
+	 * Gets a policy by the policy number
+	 *
+	 * @param string $policyNumber
+	 * @return Policy
+	 */
+	public function getPolicyByNumber($policyNumber);
+	
 }

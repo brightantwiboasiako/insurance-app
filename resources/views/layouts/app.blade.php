@@ -77,6 +77,7 @@
 <script src="{{ asset('js/vue.js') }}"></script>
 <script src="{{ asset('js/vue-resource.js') }}"></script>
 <script src="{{ asset('js/alertify.min.js') }}"></script>
+<script src="{{ asset('js/numeral.js') }}"></script>
 
 <script src="{{ asset('js/custom/helper.js') }}"></script>
 <script src="{{ asset('js/custom/vuejs-prototypes.js') }}"></script>

@@ -152,6 +152,12 @@ return [
 
 
         /**
+         * Support
+         */
+        Aforance\Providers\FileReaderServiceProvider::class,
+
+
+        /**
          * Libraries
          */
         Barryvdh\DomPDF\ServiceProvider::class,

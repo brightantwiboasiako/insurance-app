@@ -27,6 +27,6 @@ return [
     /**
      * Company Logo
      */
-    'logo' => asset('img/app/company-logo.gif')
+    'logo' => 'img/app/company-logo.gif'
 
 ];

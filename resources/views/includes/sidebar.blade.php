@@ -36,8 +36,8 @@
                                 </a>
                             </li>-->
                             <li>
-                                <a href="{{ url('/policy/loan') }}">
-                                    <i class="fa fa-institution" aria-hidden="true"></i> Loan Proctection Plan
+                                <a href="{{ url('/policy/loanprotection') }}">
+                                    <i class="fa fa-institution" aria-hidden="true"></i> Loan Protection
                                 </a>
                             </li>
                         </ul>

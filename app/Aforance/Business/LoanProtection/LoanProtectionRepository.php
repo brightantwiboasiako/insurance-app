@@ -10,6 +10,7 @@ namespace Aforance\Aforance\Business\LoanProtection;
 
 
 use Aforance\Aforance\Business\LoanProtection\Contracts\LoanProtectionRepositoryInterface;
+use Aforance\Aforance\Contracts\Business\Policy;
 use Aforance\LoanProtectionPolicy;
 
 class LoanProtectionRepository implements LoanProtectionRepositoryInterface
@@ -19,8 +20,22 @@ class LoanProtectionRepository implements LoanProtectionRepositoryInterface
         return LoanProtectionPolicy::issue($data);
     }
 
+    /**
+     * Gets the last policy in the repository
+     *
+     * @return Policy
+     */
     public function last(){
         return LoanProtectionPolicy::last();
+    }
+
+    /**
+     * @param string $policyNumber
+     * @return Policy
+     */
+    public function getPolicyByNumber($policyNumber)
+    {
+        return LoanProtectionPolicy::where('policy_number', $policyNumber)->first();
     }
 
 

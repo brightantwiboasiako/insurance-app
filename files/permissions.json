@@ -11,6 +11,12 @@
 	"policy": {
 		"create_policy": [
 			"manager", "staff"
+		],
+		"view_policy": [
+			"manager", "staff"
+		],
+		"modify_policy": [
+			"manager", "staff"
 		]
 	}
 }

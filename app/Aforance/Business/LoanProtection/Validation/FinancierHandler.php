@@ -19,6 +19,8 @@ class FinancierHandler implements ValidationHandler
 
     public function handle(array $data, Validator $validator, Collection $errors)
     {
+        if(!isset($data['financier'])) return;
+
         try{
             $validator->validate($data['financier'], $this->rules());
         }catch (ValidationException $e){

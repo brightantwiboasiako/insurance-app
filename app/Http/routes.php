@@ -121,10 +121,22 @@ Route::group(['middleware' => 'auth'], function(){
         });
 
         //Loan protection plan
-        Route::group(['prefix' => 'loan'], function(){
+        Route::group(['prefix' => 'loanprotection'], function(){
 
             Route::get('/', [
                 'uses' => 'Policy\LoanProtection\LoanProtectionController@index'
+            ]);
+
+            Route::get('{policyNumber}', [
+                'uses' => 'Policy\LoanProtection\LoanProtectionController@getViewScreen'
+            ]);
+
+            Route::post('borrower/add/{policyNumber}', [
+                'uses' => 'Policy\LoanProtection\LoanProtectionController@addBorrowers'
+            ]);
+
+            Route::post('borrower/upload/{policyNumber}', [
+                'uses' => 'Policy\LoanProtection\BorrowerUploadController@upload'
             ]);
 
         });

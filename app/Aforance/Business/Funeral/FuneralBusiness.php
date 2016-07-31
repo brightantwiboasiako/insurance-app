@@ -9,6 +9,7 @@ use Aforance\Aforance\Policy\PolicyCreationListenerInterface;
 use Aforance\Aforance\Repository\CustomerRepository;
 use Aforance\Aforance\Support\DateHelper;
 use Aforance\Aforance\Validation\CanCheckPolicyData;
+use Aforance\Aforance\Validation\PolicyValidatorInterface;
 use Aforance\Aforance\Validation\ValidationException;
 
 class FuneralBusiness extends Business{
@@ -20,7 +21,7 @@ class FuneralBusiness extends Business{
 	 */
 	private $customers;
 	
-	public function __construct(FuneralValidatorInterface $validator, FuneralPolicyRepositoryInterface $repository){
+	public function __construct(PolicyValidatorInterface $validator, FuneralPolicyRepositoryInterface $repository){
 		parent::__construct($validator, $repository);
 		$this->customers = app('customer.repository');
 		$this->notifier = app('customer.notifier');

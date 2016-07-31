@@ -79,13 +79,22 @@ abstract class Business  implements PolicyIssuer, DocumentRenderer{
 	* @return null
 	*
 	* @throws ValidationException
+	 * @throws \Exception
 	*/
 	public function validate(array $data){
 		try{
 			$this->validator->checkPolicyData($data);
 		}catch(ValidationException $e){
 			throw $e;
+		}catch(\Exception $e){
+			throw $e;
 		}
 	}
+
+
+	public function getPolicyByNumber($policyNumber){
+		return $this->policies->getPolicyByNumber($policyNumber);
+	}
+
 
 }

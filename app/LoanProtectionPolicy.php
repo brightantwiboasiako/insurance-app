@@ -10,6 +10,7 @@ namespace Aforance;
 
 
 use Aforance\Aforance\Business\LoanProtection\Borrower;
+use Aforance\Aforance\Business\LoanProtection\BorrowersPaginator;
 use Aforance\Aforance\Contracts\Business\Policy;
 use Aforance\Aforance\Support\Database\HasLast;
 use Illuminate\Database\Eloquent\Model;
@@ -32,6 +33,8 @@ class LoanProtectionPolicy extends Model implements Policy
      */
     private $policyBorrowers;
 
+
+
     public function policyNumber()
     {
         return $this->policy_number;
@@ -47,39 +50,60 @@ class LoanProtectionPolicy extends Model implements Policy
         return 1;
     }
 
-
     /**
      * Gets all the borrowers under the plan
      *
      * @return Collection
      */
     public function borrowers(){
-        return ($this->policyBorrowers === null) ? new Collection : $this->policyBorrowers;
+
+        $borrowers = new Collection;
+        $data = json_decode($this->borrowers, true);
+
+        foreach($data as $borrower){
+            $borrowers->push(new Borrower($borrower));
+        }
+
+        return $borrowers;
+    }
+
+
+    public function totalLoanAmount(){
+        $borrowers = $this->borrowers();
+        $amount = new Money(0);
+
+        $borrowers->each(function($borrower) use ($amount){
+            $amount->add($borrower->loanAmount());
+        });
+
+        return $amount;
+    }
+
+
+    public function premium(){
+        $borrowers = $this->borrowers();
+        $amount = new Money(0);
+
+        $borrowers->each(function($borrower) use ($amount){
+            $amount->add($borrower->premium());
+        });
+
+        return $amount;
     }
 
 
     /**
-     * Adds a borrower to the loan protection
+     * Adds borrowers to the loan protection
      * plan
      *
-     * @param array $details
-     * @return $this
-     */
-    public function addBorrower(array $details){
-        $this->policyBorrowers->push(new Borrower($details));
-        return $this;
-    }
-
-
-    /**
-     * Adds multiple borrowers to the plan
-     *
      * @param array $borrowers
+     * @return bool
      */
-    public function addAll(array $borrowers){
-        foreach($borrowers as $key => $borrower){
-            $this->addBorrower($borrowers);
-        }
+    public function addBorrowers(array $borrowers){
+
+        // add all to borrowers and save
+        $this->setBorrowers($borrowers);
+        return $this->save();
     }
 
 
@@ -96,6 +120,27 @@ class LoanProtectionPolicy extends Model implements Policy
             'borrowers' => $this->borrowers()->toJson()
         ]);
         return $this;
+    }
+
+
+    public function institutionName(){
+        return $this->institution_name;
+    }
+
+    public function institutionEmail(){
+        return $this->institution_email;
+    }
+
+    public function institutionAddress(){
+        return $this->institution_address;
+    }
+
+    public function institutionPhone(){
+        return $this->institution_phone;
+    }
+
+    public function institutionBranch(){
+        return $this->institution_branch;
     }
 
 
@@ -152,8 +197,34 @@ class LoanProtectionPolicy extends Model implements Policy
     }
 
     public function setBorrowers(array $borrowers){
-        $this->addAll($borrowers);
-        $this->borrowers = $this->borrowers()->toJson();
+
+        if($this->borrowers === null || empty(json_decode($this->borrowers, true))){
+            $data = [];
+        }else{
+            $data = json_decode($this->borrowers, true);
+        }
+
+        // first time
+        foreach($borrowers as $borrower){
+            $b = new Borrower($borrower);
+            $data[] = $this->extractBorrowerInfo($b);
+        }
+
+        $this->borrowers = json_encode($data, true);
+    }
+
+    private function extractBorrowerInfo(Borrower $borrower){
+
+        return [
+            'loan_amount' => $borrower->loanAmount()->getAmount(),
+            'term' => $borrower->loanTerm(),
+            'issue_date' => $borrower->loanIssueDate()->format('Y-m-d'),
+            'premium' => $borrower->premium()->getAmount(),
+            'name' => $borrower->name(),
+            'gender' => $borrower->gender(),
+            'phone' => $borrower->phone(),
+            'birthday' => $borrower->birthday()->format('Y-m-d')
+        ];
     }
 
     public function setPolicyNumber($number){

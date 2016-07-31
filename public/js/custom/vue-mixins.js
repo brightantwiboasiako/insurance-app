@@ -2,6 +2,66 @@
  * Created by Bright on 7/25/2016.
  */
 
+
+var Moment = {
+
+    methods: {
+
+        date: function(d){
+            return moment(d).format('DD/MM/YYYY');
+        }
+
+    }
+
+};
+
+
+var Money = {
+
+    methods: {
+        moneyFromRaw: function(amount){
+            return moneyFromRaw(amount);
+        },
+        moneyFromSecure: function(amount){
+            return moneyFromSecure(amount);
+        }
+    }
+
+};
+
+
+var Paginator = {
+    data: {
+        pagerItems: [],
+        perPage: 5,
+        currentPage: 1
+    },
+
+    methods: {
+        totalPages: function(){
+            if(this.totalPagerItems() < this.perPage) return 1;
+            else if(this.totalPagerItems() === this.perPage) return this.perPage;
+            return Math.floor(this.totalPagerItems()/this.perPage) + 1;
+        },
+        nextPage: function(){
+            if(this.currentPage < this.totalPages()) this.currentPage++;
+        },
+        previousPage: function(){
+            if(this.currentPage > 1) this.currentPage--;
+        },
+        totalPagerItems: function(){
+            return this.pagerItems.length;
+        }
+    },
+
+    computed: {
+        pageData: function(){
+            return this.pagerItems.slice((this.currentPage - 1) * this.perPage, this.currentPage * this.perPage);
+        }
+    }
+};
+
+
 var FindCustomer = {
     data: {
         foundCustomers: [],
