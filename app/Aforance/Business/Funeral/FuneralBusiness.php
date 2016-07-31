@@ -28,11 +28,6 @@ class FuneralBusiness extends Business{
 	}
 
 
-	public static function last(){
-		return static::orderBy('id', 'DESC')->first();
-	}
-
-
 	/**
 	* Handles the issuing of a funeral policy
 	*

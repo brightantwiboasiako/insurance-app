@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 class LoanProtectionController extends Controller implements PolicyActionListenerInterface
 {
 
-    const BUSINESS_TYPE = 'loan protection';
+    const BUSINESS_TYPE = 'loanprotection';
 
 
     private $action;

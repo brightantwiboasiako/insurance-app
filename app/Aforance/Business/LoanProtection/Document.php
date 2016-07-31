@@ -2,19 +2,20 @@
 /**
  * Created by PhpStorm.
  * User: Bright
- * Date: 7/28/2016
- * Time: 11:27 AM
+ * Date: 7/31/2016
+ * Time: 7:15 PM
  */
 
-namespace Aforance\Aforance\Business\Funeral;
+namespace Aforance\Aforance\Business\LoanProtection;
+
 
 use Aforance\Aforance\Business\PolicyDocument;
 
 class Document extends PolicyDocument
 {
 
-    const VIEW_FILE = 'policies.funeral.document';
-    const DOWNLOAD_FILE = 'policies.funeral.document.download';
+    const VIEW_FILE = 'policies.loanprotection.document';
+    const DOWNLOAD_FILE = 'policies.loanprotection.document.download';
 
 
     public function __construct()
@@ -23,6 +24,5 @@ class Document extends PolicyDocument
         $this->viewFile = static::VIEW_FILE;
         $this->downloadFile = static::DOWNLOAD_FILE;
     }
-
 
 }

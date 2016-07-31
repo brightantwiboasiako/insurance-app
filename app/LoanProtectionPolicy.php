@@ -170,27 +170,27 @@ class LoanProtectionPolicy extends Model implements Policy
         return $policy;
     }
 
-    public function setInstitutionName($name){
+    private function setInstitutionName($name){
         $this->institution_name = $name;
     }
 
-    public function setInstitutionEmail($email){
+    private function setInstitutionEmail($email){
         $this->institution_email = $email;
     }
 
-    public function setInstitutionAddress($address){
+    private function setInstitutionAddress($address){
         $this->institution_address = $address;
     }
 
-    public function setInstitutionPhone($number){
+    private function setInstitutionPhone($number){
         $this->institution_phone = $number;
     }
     
-    public function setInstitutionBranch($branch){
+    private function setInstitutionBranch($branch){
         $this->institution_branch = $branch;
     }
 
-    public function setBorrowers(array $borrowers){
+    private function setBorrowers(array $borrowers){
 
         if($this->borrowers === null || empty(json_decode($this->borrowers, true))){
             $data = [];
@@ -221,7 +221,7 @@ class LoanProtectionPolicy extends Model implements Policy
         ];
     }
 
-    public function setPolicyNumber($number){
+    private function setPolicyNumber($number){
         $this->policy_number = $number;
     }
 

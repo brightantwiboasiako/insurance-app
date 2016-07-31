@@ -29,7 +29,8 @@ class LoanProtectionBusiness extends Business
 
     public function renderDocument($policyNumber, $action)
     {
-        // TODO: Implement renderDocument() method.
+        $document = app('loanprotection.document');
+        return $document->handle($policyNumber, $action);
     }
 
     /**
@@ -53,7 +54,7 @@ class LoanProtectionBusiness extends Business
         }
 
         // get first premium
-        $data['premium'] = $this->premiumService->getFirstPremium('loan protection', $data);
+        $data['premium'] = $this->premiumService->getFirstPremium('loanprotection', $data);
 
         // add policy number
         $data['policy_number'] = app('loanprotection.number_generator')->generate($this->policies->last());

@@ -8,6 +8,7 @@
 
 namespace Aforance\Providers;
 
+use Aforance\Aforance\Business\LoanProtection\Document;
 use Aforance\Aforance\Business\LoanProtection\LoanProtectionNumberGenerator;
 use Aforance\Aforance\Business\LoanProtection\Validation\CsvFileHandler;
 use Illuminate\Support\ServiceProvider;
@@ -71,6 +72,12 @@ class LoanProtectionBusinessServiceProvider extends ServiceProvider
         });
 
 
+        // Bind loan protection document render
+        $this->app->bind('loanprotection.document', function(){
+            return new Document;
+        });
+
+
         // Bind validation handlers
         $this->app->bind('loanprotection.validation.handlers', function(){
             return [
@@ -86,7 +93,6 @@ class LoanProtectionBusinessServiceProvider extends ServiceProvider
         $this->app->bind('loanprotection.validation.upload', function(){
             return new CsvFileHandler;
         });
-
 
     }
 }

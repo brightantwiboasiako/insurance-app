@@ -40,5 +40,10 @@ class FuneralPolicyValidator extends Validator implements PolicyValidatorInterfa
 		return $this->errors->toArray();
 	}
 
+	public function setHandlers(array $handlers)
+	{
+		$this->handlers = $handlers;
+	}
+
 
 }
