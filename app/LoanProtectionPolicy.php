@@ -153,8 +153,7 @@ class LoanProtectionPolicy extends Model implements Policy
      */
     public static function issue(array $data){
 
-        // Check and set premium and borrowers appropriately
-        $data['premium'] = isset($data['premium']) ? $data['premium'] : 0;
+        // Check and set borrowers appropriately
         $data['borrowers'] = isset($data['borrowers']) ? $data['borrowers'] : [];
 
         $policy = new static();
@@ -163,7 +162,6 @@ class LoanProtectionPolicy extends Model implements Policy
         $policy->setInstitutionEmail($data['financier']['email']);
         $policy->setInstitutionPhone($data['financier']['phone']);
         $policy->setInstitutionBranch($data['financier']['branch']);
-        $policy->setPremium($data['premium']);
         $policy->setBorrowers($data['borrowers']);
         $policy->setPolicyNumber($data['policy_number']);
 
@@ -190,10 +188,6 @@ class LoanProtectionPolicy extends Model implements Policy
     
     public function setInstitutionBranch($branch){
         $this->institution_branch = $branch;
-    }
-
-    public function setPremium($amount){
-        $this->premium = Money::withRaw($amount)->getSecure();
     }
 
     public function setBorrowers(array $borrowers){
