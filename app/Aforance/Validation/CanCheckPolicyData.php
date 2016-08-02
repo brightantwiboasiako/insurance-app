@@ -9,8 +9,6 @@
 namespace Aforance\Aforance\Validation;
 
 
-use Aforance\Aforance\Policy\PolicyCreationListenerInterface;
-
 trait CanCheckPolicyData
 {
 

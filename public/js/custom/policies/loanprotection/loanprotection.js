@@ -20,11 +20,14 @@ new Vue({
                 branch:null
             },
             borrowers: [],
-            business_type: 'loan protection',
+            business_type: 'loanprotection',
             borrower: {},
             number: null
         },
-        borrowers: []
+        borrowers: [],
+
+        // for FindPolicy Mixin
+        finderModel: 'loanprotection'
     },
     
     methods: {
@@ -74,14 +77,15 @@ new Vue({
                         bindErrors(data.errors.financier, addPolicyForm);
                     }
                 }, function(response){
-                    alert('Something went wrong while processing. Please try again.', 'danger');
+                    alert(response.responseText);
+                    //alert('Something went wrong while processing. Please try again.', 'danger');
                 });
 
             });
         }
     },
 
-    mixins: [Paginator, Money, Moment],
+    mixins: [Paginator, Money, Moment, FindPolicy],
 
     ready: function(){
         bindValidator(addPolicyForm, 'Create', function(){});

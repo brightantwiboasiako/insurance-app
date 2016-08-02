@@ -42,7 +42,7 @@ class ChildEducationPolicy extends Model implements LifePolicy, InvestmentLinked
     /**
      * Gets the children covered by the policy
      */
-    public function children(){
+    public function coveredChildren(){
 
         $children = [];
         $raw = json_decode($this->children, true);
@@ -102,10 +102,11 @@ class ChildEducationPolicy extends Model implements LifePolicy, InvestmentLinked
 
     private function setChildren(array $children){
 
+        // Check if there are existing children
         if($this->children == null || empty(json_decode($this->children, true))){
             $data = [];
             $lastId = 0;
-        }else{
+        }else{ // Children do exist
             $data = json_decode($this->children, true);
             $lastId = end($data)['id'];
         }

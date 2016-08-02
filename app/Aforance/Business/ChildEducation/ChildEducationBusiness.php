@@ -57,7 +57,7 @@ class ChildEducationBusiness extends Business
         $data['premium'] = $this->premiumService->getFirstPremium('childeducation', $data);
 
         // set policy number
-        $data['policy_number'] = app('childeducation.number_generator').generate($this->policies->last());
+        $data['policy_number'] = app('childeducation.number_generator')->generate($this->policies->last());
 
         $policy = parent::createPolicy($data);
         return $listener->onSuccessfulCreation([

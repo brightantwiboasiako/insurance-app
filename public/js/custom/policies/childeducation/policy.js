@@ -9,31 +9,7 @@ new Vue({
     el: '#vue-childeducation',
     data: {
         editing: false,
-        policy: {
-            policy_details: {
-                sum_assured: null,
-                issue_date: null,
-                bank: {
-                    name: null,
-                    account_number: null
-                },
-                mode_of_payment: '',
-                payment_frequency: ''
-            },
-            underwriting: {
-                cancer: 'No',
-                hiv: 'No',
-                good_health: 'No',
-                illness: 'No',
-                height: '',
-                weight: ''
-            },
-            children: [],
-            customer_id: null,
-            agent_id: 1,
-            branch_id: 1,
-            business_type: 'childeducation'
-        },
+        policy: {},
         child: {
             name: null,
             birthday: null,
@@ -60,6 +36,7 @@ new Vue({
                 }, function(data){
                     if(data.OK){
                         alert('Policy has been created successfully.', 'success');
+                        model.resetPolicy();
                     }else{
                         console.log(data.errors);
                         alert('There were some errors that must be checked.', 'danger', function(){
@@ -124,6 +101,34 @@ new Vue({
             };
         },
 
+        resetPolicy: function(){
+            this.policy =  {
+                policy_details: {
+                    sum_assured: null,
+                    issue_date: null,
+                    bank: {
+                        name: null,
+                        account_number: null
+                    },
+                    mode_of_payment: '',
+                    payment_frequency: ''
+                },
+                underwriting: {
+                    cancer: 'No',
+                    hiv: 'No',
+                    good_health: 'No',
+                    illness: 'No',
+                    height: '',
+                    weight: ''
+                },
+                children: [],
+                customer_id: null,
+                agent_id: 1,
+                branch_id: 1,
+                business_type: 'childeducation'
+            }
+        },
+
         bootValidator: function(){
             bindValidator(formElement, null, function(){});
             //bindValidator($('.creation-family-members'), null, function(){});
@@ -133,7 +138,10 @@ new Vue({
     mixins: [FindCustomer, AgencyMixin, BranchMixin],
 
     ready: function(){
+        // bind validator to form
         this.bootValidator();
+        // set the policy defaults
+        this.resetPolicy();
     }
 
 });

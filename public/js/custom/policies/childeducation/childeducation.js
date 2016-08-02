@@ -7,6 +7,8 @@ new Vue({
     el: '#vue-childeducation',
     data: {
 
+        // Needed by FindPolicy mixin
+        finderModel: 'childeducation'
     },
 
     methods: {
@@ -15,8 +17,13 @@ new Vue({
             function(){
                 window.location = buildUrlFromBase('policy','childeducation', 'create', customer.id);
             }, function(){});
+        },
+
+        // Needed by FindPolicy mixin
+        policyUrl: function(){
+            return '<a href='+baseUrl() + '/policy/childeducation/'+this.policyNumber()+'>'+this.policyNumber()+'</a>'
         }
     },
 
-    mixins: [FindCustomer]
+    mixins: [FindCustomer, FindPolicy]
 });

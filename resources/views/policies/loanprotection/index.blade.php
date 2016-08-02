@@ -71,23 +71,8 @@
                                 </div>
                             </header>
 
-                            <div class="main-box-body clearfix">
-                                <div class="search-box">
-                                    <div class="title">
-                                        <h2 class="pull-left"><i class="fa fa-search search-icon"></i> Find Plan</h2>
-                                        <h2 class="pull-right text-danger finder-empty-results">
-                                            <i class="fa fa-exclamation-circle"></i> No results found</h2>
-                                    </div>
-                                    <form class="form-inline finder-form" role="form">
-                                        <div class="form-group">
-                                            <label class="sr-only" for="search-query">Search Query</label>
-                                            <input autofocus type="text" class="form-control search-query" id="search-query"
-                                                   placeholder="Policy Number">
-                                        </div>
-                                        <button type="submit" class="btn btn-success btn-submit">Search</button>
-                                    </form>
-                                </div>
-                            </div>
+                            <!-- include policy finder -->
+                            @include('policies.includes.policy-finder')
                         </div>
                     </div>
                 </div>

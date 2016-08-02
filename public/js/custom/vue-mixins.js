@@ -109,7 +109,7 @@ var FindPolicy = {
         findPolicy: function(){
             var mixin = this;
             Finder.methods.find('finder', {
-                model: 'funeral policy',
+                model: this.finderModel,
                 by: this.policySearch.by,
                 like: this.policySearch.like,
                 query: this.policySearch.query
@@ -122,6 +122,14 @@ var FindPolicy = {
                     mixin.policySearch.emptyResults = true;
                 }
             })
+        },
+        policyNumber: function(){
+            return this.foundPolicies[0].policy_number;
+        },
+
+        // Needed by FindPolicy mixin
+        policyUrl: function(){
+            return '<a href='+baseUrl() + '/policy/'+this.finderModel+'/'+this.policyNumber()+'>'+this.policyNumber()+'</a>'
         }
     }
 };

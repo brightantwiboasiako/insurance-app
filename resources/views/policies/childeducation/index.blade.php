@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="{{ asset('css/custom/form-validation.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/libs/nifty-component.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/libs/datepicker.css') }}" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/compiled/wizard.css') }}">
     @endsection
 
 
@@ -72,23 +71,8 @@
                                 </div>
                             </header>
 
-                            <div class="main-box-body clearfix">
-                                <div class="search-box">
-                                    <div class="title">
-                                        <h2 class="pull-left"><i class="fa fa-search search-icon"></i> Find Plan</h2>
-                                        <h2 class="pull-right text-danger finder-empty-results">
-                                            <i class="fa fa-exclamation-circle"></i> No results found</h2>
-                                    </div>
-                                    <form class="form-inline finder-form" role="form">
-                                        <div class="form-group">
-                                            <label class="sr-only" for="search-query">Search Query</label>
-                                            <input autofocus type="text" class="form-control search-query" id="search-query"
-                                                   placeholder="Policy Number">
-                                        </div>
-                                        <button type="submit" class="btn btn-success btn-submit">Search</button>
-                                    </form>
-                                </div>
-                            </div>
+                            <!-- Include policy finder form -->
+                            @include('policies.includes.policy-finder')
                         </div>
                     </div>
                 </div>

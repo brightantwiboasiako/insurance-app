@@ -11,7 +11,9 @@ new Vue({
             query: null,
             by: 'policy_number',
             foundPolicies: []
-        }
+        },
+        // Needed by FindPolicy mixin
+        finderModel: 'funeral'
     },
 
     methods: {
@@ -20,22 +22,6 @@ new Vue({
             confirm('Proceed with creating a policy for <strong>' + this.getCustomerName(customer)+'</strong> ?', function(){
                 window.location = baseUrl() + '/policy/funeral/create/'+customer.id;
             }, function(){});
-        },
-
-        // findPolicy: function(){
-        //     this.find('finder', {
-        //        query: this.policySearch.query,
-        //        model: 'funeral policy',
-        //        by: this.policySearch.by
-        //     }, this.policySearch.foundPolicies);
-        // },
-        //
-        policyUrl: function(){
-            return '<a href='+baseUrl() + '/policy/funeral/'+this.policyNumber()+'>'+this.policyNumber()+'</a>'
-        },
-
-        policyNumber: function(){
-            return this.foundPolicies[0].policy_number;
         }
     },
 
