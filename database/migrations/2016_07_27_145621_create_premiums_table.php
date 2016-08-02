@@ -14,15 +14,17 @@ class CreatePremiumsTable extends Migration
     {
         Schema::create('premiums', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('policy_type');
+            $table->integer('business');
             $table->string('policy_number', 16);
-            $table->bigInteger('amount');
+            $table->bigInteger('amount_expected');
+            $table->bigInteger('amount_paid');
             $table->dateTime('period');
-            $table->integer('adequacy_status');
-            $table->string('cheque_number', 16);
+            $table->integer('is_complete');
+            $table->string('cheque_number', 16)->nullable();
             $table->string('receipt_code', 16);
-            $table->dateTime('date_received');
+            $table->dateTime('received_at');
             $table->integer('captured_by', false, true);
+            $table->foreign('captured_by')->references('id')->on('users');
             $table->timestamps();
         });
     }

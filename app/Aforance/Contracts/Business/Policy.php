@@ -14,4 +14,5 @@ interface Policy
     public function policyNumber();
     public function premiumStructure();
     public function premiumFrequency();
+    public function premium();
 }

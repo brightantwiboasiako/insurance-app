@@ -139,7 +139,7 @@ class FuneralPolicy extends Model implements LifePolicy
      */
     protected function premiumComponents(){
         $premiumService = app('premium');
-        return $premiumService->getPremiumAmount('funeral', $this);
+        return $premiumService->getPremium('funeral', $this);
     }
 
 

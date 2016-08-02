@@ -30,7 +30,7 @@ class PremiumService implements ServiceInterface{
 	*
 	* @return mixed
 	*/
-	public function getPremiumAmount($businessType, Policy $policy){
+	public function getPremium($businessType, Policy $policy){
 		return $this->makeCalculator($businessType)->getPremium($policy);
 	}
 

@@ -69,7 +69,8 @@ class ChildEducationBusiness extends Business
 
     public function renderDocument($policyNumber, $action)
     {
-        // TODO: Implement renderDocument() method.
+        $document = app('childeducation.document');
+        return $document->handle($policyNumber, $action);
     }
 
 }
