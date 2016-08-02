@@ -153,6 +153,10 @@ Route::group(['middleware' => 'auth'], function(){
                 'uses' => 'Policy\ChildEducation\ChildEducationController@getCreationScreen'
             ]);
 
+            Route::get('/{policyNumber}', [
+                'uses' => 'Policy\ChildEducation\ChildEducationController@getViewScreen'
+            ]);
+
         });
 
     });

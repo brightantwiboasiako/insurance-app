@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f3f44a77-29af-4112-a953-5cca73142adc" name="Default" comment="" />
+    <list default="true" id="f3f44a77-29af-4112-a953-5cca73142adc" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Policy/ChildEducation/ChildEducationController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Policy/ChildEducation/ChildEducationController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+    </list>
     <ignored path="insurance-app-master.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -23,26 +26,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="vue-mixins.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/custom/vue-mixins.js">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="157" column="0" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
+            <state relative-caret-position="467">
+              <caret line="156" column="63" selection-start-line="156" selection-start-column="63" selection-end-line="156" selection-end-column="63" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FuneralController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Policy/Funeral/FuneralController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="354">
+              <caret line="55" column="12" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChildEducationController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Policy/ChildEducation/ChildEducationController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="214">
+              <caret line="65" column="18" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
               <folding>
-                <element signature="e#58#174#0" expanded="false" />
-                <element signature="e#190#405#0" expanded="false" />
-                <element signature="e#425#1281#0" expanded="false" />
-                <element signature="e#1304#2176#0" expanded="false" />
+                <element signature="e#152#211#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FuneralNumberGenerator.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Aforance/Business/Funeral/FuneralNumberGenerator.php">
+      <file leaf-file-name="LoanProtectionController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Policy/LoanProtection/LoanProtectionController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+            <state relative-caret-position="379">
+              <caret line="43" column="9" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -65,8 +85,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/policies/includes/payment-methods.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/policies/childeducation/includes/creation/underwriting.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/policies/childeducation/includes/creation/agency.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/policies/childeducation/create.blade.php" />
         <option value="$PROJECT_DIR$/app/Aforance/Business/Funeral/ValidationHandler/PolicyHandler.php" />
@@ -116,6 +134,8 @@
         <option value="$PROJECT_DIR$/app/Aforance/Business/Funeral/FuneralNumberGenerator.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_07_27_145346_create_funeral_policies_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_07_31_181311_creates_loanprotection_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Policy/ChildEducation/ChildEducationController.php" />
       </list>
     </option>
   </component>
@@ -292,7 +312,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
     <property name="settings.editor.splitter.proportion" value="0.22406967" />
-    <property name="SearchEverywhereHistoryKey" value="create_lo&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/database/migrations/2016_07_31_181311_creates_loanprotection_table.php&#10;create_ch&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/database/migrations/2016_08_01_020134_create_child_education_policies_table.php&#10;crea&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/database/migrations/2016_07_27_145346_create_funeral_policies_table.php&#10;FuneralNumb&#9;null&#9;null&#10;vue-m&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/public/js/custom/vue-mixins.js&#10;create&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/database/migrations/2016_07_27_145346_create_funeral_policies_table.php&#10;create_fu&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/database/migrations/2016_07_27_145346_create_funeral_policies_table.php&#10;FunePoli&#9;null&#9;null&#10;FuneralBu&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Business/Funeral/FuneralBusiness.php&#10;policy-c&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/public/js/custom/policies/funeral/policy-creator.js&#10;policy.b&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/resources/views/policies/funeral/includes/creation/policy.blade.php&#10;.gitig&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/.gitignore&#10;PolicySer&#9;null&#9;null&#10;BorrowerCon&#9;null&#9;null&#10;view.bla&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/resources/views/policies/loanprotection/view.blade.php&#10;loan.js&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/public/js/custom/policies/loanprotection/loanprotection.js&#10;Finan&#9;null&#9;null&#10;LoanProtec&#9;null&#9;null&#10;Loanval&#9;null&#9;null&#10;Funeval&#9;null&#9;null&#10;LoanProte&#9;null&#9;null&#10;Can&#9;null&#9;null&#10;Eloque&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Finder/EloquentEngine.php&#10;chil&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/public/js/custom/policies/childeducation/childeducation.js&#10;loanpro&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/public/js/custom/policies/loanprotection/loanprotection.js&#10;loanpro.js&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/public/js/custom/policies/loanprotection/loanprotection.js&#10;index.&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/resources/views/policies/loanprotection/index.blade.php&#10;fune&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/public/js/custom/policies/funeral.js&#10;child.&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/public/js/custom/policies/childeducation/childeducation.js&#10;funeral.js&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/public/js/custom/policies/funeral.js&#10;Eloquen&#9;null&#9;null&#10;childed.js&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/public/js/custom/policies/childeducation/childeducation.js&#10;index.blade&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/resources/views/policies/funeral/index.blade.php&#10;policy.js&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/public/js/custom/policies/childeducation/policy.js&#10;Child&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/ChildEducationPolicy.php&#10;childed&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Business/ChildEducation/ChildEducationBusiness.php&#10;Branch&#9;null&#9;null&#10;create_age&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/database/migrations/2016_07_27_145033_create_agents_table.php&#10;create_cu&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/database/migrations/2016_07_27_145305_create_customers_table.php&#10;create_cl&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/database/migrations/2016_07_27_145208_create_claims_table.php&#10;polityse&#9;null&#9;null&#10;ModelFac&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/database/factories/ModelFactory.php&#10;NumberGenera&#9;null&#9;null&#10;chilser&#9;null&#9;null&#10;child&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Business/ChildEducation/ChildEducationBusiness.php&#10;funeb&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Business/Funeral/FuneralBusiness.php&#10;create.blade&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/resources/views/policies/loanprotection/create.blade.php&#10;policy.blade&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/resources/views/policies/childeducation/includes/creation/policy.blade.php&#10;polic&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/resources/views/policies/funeral/includes/creation/policy.blade.php&#10;policy.bla&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/resources/views/policies/funeral/includes/creation/policy.blade.php" />
+    <property name="SearchEverywhereHistoryKey" value="loancont&#9;null&#9;null&#10;funecon&#9;null&#9;null&#10;childeducon&#9;null&#9;null&#10;routes.php&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Http/routes.php&#10;create_lo&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/database/migrations/2016_07_31_181311_creates_loanprotection_table.php&#10;create_ch&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/database/migrations/2016_08_01_020134_create_child_education_policies_table.php&#10;crea&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/database/migrations/2016_07_27_145346_create_funeral_policies_table.php&#10;FuneralNumb&#9;null&#9;null&#10;vue-m&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/public/js/custom/vue-mixins.js&#10;create&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/database/migrations/2016_07_27_145346_create_funeral_policies_table.php&#10;create_fu&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/database/migrations/2016_07_27_145346_create_funeral_policies_table.php&#10;FunePoli&#9;null&#9;null&#10;FuneralBu&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Business/Funeral/FuneralBusiness.php&#10;policy-c&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/public/js/custom/policies/funeral/policy-creator.js&#10;policy.b&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/resources/views/policies/funeral/includes/creation/policy.blade.php&#10;.gitig&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/.gitignore&#10;PolicySer&#9;null&#9;null&#10;BorrowerCon&#9;null&#9;null&#10;view.bla&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/resources/views/policies/loanprotection/view.blade.php&#10;loan.js&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/public/js/custom/policies/loanprotection/loanprotection.js&#10;Finan&#9;null&#9;null&#10;LoanProtec&#9;null&#9;null&#10;Loanval&#9;null&#9;null&#10;Funeval&#9;null&#9;null&#10;LoanProte&#9;null&#9;null&#10;Can&#9;null&#9;null&#10;Eloque&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Finder/EloquentEngine.php&#10;chil&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/public/js/custom/policies/childeducation/childeducation.js&#10;loanpro&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/public/js/custom/policies/loanprotection/loanprotection.js&#10;loanpro.js&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/public/js/custom/policies/loanprotection/loanprotection.js&#10;index.&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/resources/views/policies/loanprotection/index.blade.php&#10;fune&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/public/js/custom/policies/funeral.js&#10;child.&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/public/js/custom/policies/childeducation/childeducation.js&#10;funeral.js&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/public/js/custom/policies/funeral.js&#10;Eloquen&#9;null&#9;null&#10;childed.js&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/public/js/custom/policies/childeducation/childeducation.js&#10;index.blade&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/resources/views/policies/funeral/index.blade.php&#10;policy.js&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/public/js/custom/policies/childeducation/policy.js&#10;Child&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/ChildEducationPolicy.php&#10;childed&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Business/ChildEducation/ChildEducationBusiness.php&#10;Branch&#9;null&#9;null&#10;create_age&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/database/migrations/2016_07_27_145033_create_agents_table.php&#10;create_cu&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/database/migrations/2016_07_27_145305_create_customers_table.php&#10;create_cl&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/database/migrations/2016_07_27_145208_create_claims_table.php&#10;polityse&#9;null&#9;null&#10;ModelFac&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/database/factories/ModelFactory.php&#10;NumberGenera&#9;null&#9;null&#10;chilser&#9;null&#9;null&#10;child&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Business/ChildEducation/ChildEducationBusiness.php&#10;funeb&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Business/Funeral/FuneralBusiness.php" />
     <property name="JavaScriptPreferStrict" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -377,15 +397,15 @@
       <workItem from="1469775391317" duration="36770000" />
       <workItem from="1469874043782" duration="30048000" />
       <workItem from="1469918516110" duration="61721000" />
-      <workItem from="1470111293665" duration="17608000" />
+      <workItem from="1470111293665" duration="18735000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="358110000" />
+    <option name="totallyTimeSpent" value="359237000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -427,38 +447,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/seeds/MotorPolicyTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/PolicyTypeTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/.gitkeep">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1726">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/PolicyTypesTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
@@ -804,19 +792,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/custom/vue-mixins.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="157" column="0" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
-          <folding>
-            <element signature="e#58#174#0" expanded="false" />
-            <element signature="e#190#405#0" expanded="false" />
-            <element signature="e#425#1281#0" expanded="false" />
-            <element signature="e#1304#2176#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2016_07_27_145346_create_funeral_policies_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -846,6 +821,53 @@
         <state relative-caret-position="322">
           <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/custom/vue-mixins.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="157" column="0" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
+          <folding>
+            <element signature="e#58#174#0" expanded="false" />
+            <element signature="e#190#405#0" expanded="false" />
+            <element signature="e#425#1281#0" expanded="false" />
+            <element signature="e#1304#2176#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Policy/Funeral/FuneralController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="55" column="12" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Policy/LoanProtection/LoanProtectionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="43" column="9" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="156" column="63" selection-start-line="156" selection-start-column="63" selection-end-line="156" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Policy/ChildEducation/ChildEducationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="65" column="18" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
+          <folding>
+            <element signature="e#152#211#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
