@@ -40,7 +40,7 @@ class BorrowerUploadController extends Controller implements PolicyActionListene
             ]);
         }
 
-        $business = $this->service->business('loan protection');
+        $business = $this->service->business('loanprotection');
         $include = $request->has('include_first') ? e($request->input('include_first')) : null;
         return $business->addUploadedBorrowers($policyNumber, $request->file('loans'), $include, $this);
 
