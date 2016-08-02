@@ -14,7 +14,7 @@ class CreateFuneralPoliciesTable extends Migration
     {
         Schema::create('funeral_policies', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('policy_number', 16);
+            $table->string('policy_number', 16)->unique();
             $table->integer('customer_id');
             $table->string('staff_id', 16);
             $table->integer('identifier');

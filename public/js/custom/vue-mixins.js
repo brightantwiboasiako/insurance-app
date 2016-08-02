@@ -154,7 +154,7 @@ var Finder = {
             }, function(data){
                 callback(null, data);
             }, function(response){
-                console.log(response);
+                alert(response.responseText);
             });
             //
             // Vue.http.get(baseUrl()

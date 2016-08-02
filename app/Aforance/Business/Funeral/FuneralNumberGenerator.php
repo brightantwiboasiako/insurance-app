@@ -19,20 +19,4 @@ class FuneralNumberGenerator extends NumberGenerator
         $this->policyCode = config('policy.funeral.code');
     }
 
-
-    /**
-     * The algorithm to generate funeral policy numbers
-     *
-     * @param int $number
-     * @return string
-     * @override
-     */
-    public function combine($number){
-        return $this->companyCode().
-        $this->policyCode().
-        $this->year().
-        $this->month().
-        str_pad($number, $this->digits, '0', STR_PAD_LEFT);
-    }
-
 }

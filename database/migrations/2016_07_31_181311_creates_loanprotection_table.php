@@ -14,7 +14,7 @@ class CreatesLoanprotectionTable extends Migration
     {
         Schema::create('loan_protection_policies', function(Blueprint $table){
             $table->increments('id');
-            $table->string('policy_number', 20);
+            $table->string('policy_number', 20)->unique();
             $table->string('institution_name', 64);
             $table->string('institution_branch', 64);
             $table->string('institution_phone', 15);
