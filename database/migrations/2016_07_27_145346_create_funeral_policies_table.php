@@ -20,7 +20,7 @@ class CreateFuneralPoliciesTable extends Migration
             $table->integer('identifier');
             $table->bigInteger('sum_assured');
             $table->bigInteger('sum_assured_original');
-            $table->text('period_premium');
+            $table->text('periodic_premium');
             $table->bigInteger('underwriting_premium');
             $table->text('underwriting');
             $table->bigInteger('staff_discount');
@@ -29,9 +29,9 @@ class CreateFuneralPoliciesTable extends Migration
             $table->string('mode_of_payment', 32);
             $table->string('automatic_update_percentage', 5);
             $table->dateTime('next_automatic_update');
-            $table->string('accident_rider', 4);
-            $table->bigInteger('accident_rider_premium');
-            $table->bigInteger('original_accident_rider_premium');
+            $table->string('accidental_rider', 4);
+            $table->bigInteger('accidental_rider_premium');
+            $table->bigInteger('original_accidental_rider_premium');
             $table->string('family_rider', 4);
             $table->text('family_members');
             $table->dateTime('issue_date');

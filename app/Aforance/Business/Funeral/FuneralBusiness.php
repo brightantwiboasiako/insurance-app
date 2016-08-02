@@ -58,7 +58,7 @@ class FuneralBusiness extends Business{
 		$data['premium'] = $this->premiumService->getFirstPremium('funeral', $data);
 
 		// set policy number
-		$data['policy_number'] = app('funeral.number_generator').generate($this->policies->last());
+		$data['policy_number'] = app('funeral.number_generator')->generate($this->policies->last());
 
 		// complete the policy issue
 		$policy = parent::createPolicy($data);

@@ -9,7 +9,7 @@
                    v-model="newPolicy.policy_details.sum_assured"  placeholder="Sum Assured">
         </div>
         <div class="form-group col-md-3">
-            <input type="text" class="form-control date validate[required]"
+            <input type="text" class="form-control date datepicker validate[required]"
                    v-model="newPolicy.policy_details.issue_date" placeholder="Issue Date">
         </div>
         <div class="form-group col-md-4">

@@ -96,7 +96,7 @@ var funeralPolicy = new Vue({
                     });
                 }
             }, function(response){
-                alert(response);
+                alert(response.responseText);
                 //alert('There was an error while processing. Please try again!', 'danger');
             });
 
