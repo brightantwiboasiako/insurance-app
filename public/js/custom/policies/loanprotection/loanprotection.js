@@ -70,7 +70,7 @@ new Vue({
                 post(baseUrl() + '/policy/create', model.policy, function(data){
                     if(data.OK){
                         confirm('Policy has been created successfully. Proceed with adding clients now?', function(){
-                            window.location = baseUrl() + '/loanprotection/' + data.policy.number;
+                            window.location = baseUrl() + '/policy/loanprotection/' + data.policy.number;
                         }, function(){}, 'info');
                     }else{
                         //alert('There were some errors. Please check them and try again.', 'danger');

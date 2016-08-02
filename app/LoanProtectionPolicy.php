@@ -55,7 +55,7 @@ class LoanProtectionPolicy extends Model implements Policy
      *
      * @return Collection
      */
-    public function borrowers(){
+    public function loanBorrowers(){
 
         $borrowers = new Collection;
         $data = json_decode($this->borrowers, true);
