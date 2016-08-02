@@ -6,33 +6,30 @@ use Aforance\Aforance\Contracts\Business\DocumentRenderer;
 use Aforance\Aforance\Contracts\Business\Policy;
 use Aforance\Aforance\Contracts\Business\PolicyIssuer;
 use Aforance\Aforance\Notification\Contracts\CustomerNotificationInterface;
-use Aforance\Aforance\Policy\PolicyCreationListenerInterface;
-use Aforance\Aforance\Service\PremiumService;
-use Aforance\Aforance\Validation\DispatchesErrors;
-use Aforance\Aforance\Validation\ValidationException;
-use Aforance\Aforance\Validation\PolicyValidatorInterface;
+use Aforance\Aforance\Policy\PolicyActionListenerInterface;
 use Aforance\Aforance\Repository\Contracts\PolicyRepositoryInterface;
+use Aforance\Aforance\Service\PremiumService;
+use Aforance\Aforance\Validation\ValidationException;
+use Aforance\Aforance\Validation\ValidationInterface;
 
 abstract class Business  implements PolicyIssuer, DocumentRenderer{
 
-	use DispatchesErrors;
-
 	/**
-	*
-	* @var PolicyValidatorInterface
+	* The validator instance
+	* @var ValidationInterface
 	*/
 	protected $validator;
 
 
 	/**
-	*
+	* The premium service instance
 	* @var PremiumService
 	*/
 	protected $premiumService;	
 
 
 	/**
-	*
+	* The policy repository instance
 	* @var PolicyRepositoryInterface
 	*/
 	protected $policies;
@@ -45,9 +42,16 @@ abstract class Business  implements PolicyIssuer, DocumentRenderer{
 	protected $notifier;
 
 
-	public function __construct(PolicyValidatorInterface $validator, PolicyRepositoryInterface $policies){
-		$this->validator = $validator;
+	/**
+	 * Business constructor.
+	 * @param PolicyRepositoryInterface $policies
+	 */
+	public function __construct(PolicyRepositoryInterface $policies){
+		// Get global validator instance
+		$this->validator = app('aforance.validator');
+		// Set the policy repository
 		$this->policies = $policies;
+		// Get an instance of the premium service
 		$this->premiumService = app('premium');
 	}
 
@@ -60,10 +64,8 @@ abstract class Business  implements PolicyIssuer, DocumentRenderer{
 	*
 	*/
 	public function createPolicy(array $data){
-
 		// create policy
 		$policy = $this->policies->create($data);
-
 		// notify customer of policy creation
 		$this->notifier->notify($data, 'policy creation');
 
@@ -83,7 +85,7 @@ abstract class Business  implements PolicyIssuer, DocumentRenderer{
 	*/
 	public function validate(array $data){
 		try{
-			$this->validator->checkPolicyData($data);
+			$this->validator->check($data);
 		}catch(ValidationException $e){
 			throw $e;
 		}catch(\Exception $e){
@@ -92,9 +94,23 @@ abstract class Business  implements PolicyIssuer, DocumentRenderer{
 	}
 
 
+	/**
+	 * Gets a policy using the policy's number
+	 *
+	 * @param $policyNumber
+	 * @return Policy
+	 */
 	public function getPolicyByNumber($policyNumber){
 		return $this->policies->getPolicyByNumber($policyNumber);
 	}
 
+	/**
+	 * Sets the validation handlers for validation
+	 *
+	 * @param array $handlers
+	 */
+	protected function setValidationHandlers(array $handlers){
+		$this->validator->setHandlers($handlers);
+	}
 
 }

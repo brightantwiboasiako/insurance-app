@@ -24,7 +24,7 @@ class FinancierHandler implements ValidationHandler
         try{
             $validator->validate($data['financier'], $this->rules());
         }catch (ValidationException $e){
-            $errors->put('financier', $validator->getErrors());
+            $errors->put('financier', $validator->engineErrors());
         }
     }
 

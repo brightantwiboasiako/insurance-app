@@ -25,7 +25,7 @@ class Premium extends Model
     public static function record(array $data){
         $premium = new static();
 
-        $premium->setBusiness($data['business']);
+        $premium->setBusinessType($data['business_type']);
         $premium->setAmountExpected($data['amount_expected']);
         $premium->setAmountPaid($data['amount_paid']);
         $premium->setCapturedBy($data['captured_by']);
@@ -43,8 +43,8 @@ class Premium extends Model
 
 
     // Getters
-    public function business(){
-        return $this->business;
+    public function businessType(){
+        return $this->business_type;
     }
 
     public function amountExpected(){
@@ -85,8 +85,8 @@ class Premium extends Model
 
 
     // Setters
-    private function setBusiness($business){
-        $this->business = $business;
+    private function setBusinessType($business){
+        $this->business_type = $business;
     }
 
     private function setAmountExpected($amount){

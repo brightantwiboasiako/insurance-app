@@ -43,7 +43,6 @@ class LoanProtectionBusinessServiceProvider extends ServiceProvider
         // Bind this business
         $this->app->bind('business.loanprotection', function(){
             return new LoanProtectionBusiness(
-                app('loanprotection.validation_contract'),
                 app('loanprotection.repository_contract')
             ); 
         });
@@ -66,12 +65,6 @@ class LoanProtectionBusinessServiceProvider extends ServiceProvider
         });
 
 
-        // Bind validation contract
-        $this->app->bind('loanprotection.validation_contract', function(){
-            return new LoanProtectionPolicyValidator;
-        });
-
-
         // Bind loan protection document render
         $this->app->bind('loanprotection.document', function(){
             return new Document;
@@ -81,8 +74,10 @@ class LoanProtectionBusinessServiceProvider extends ServiceProvider
         // Bind validation handlers
         $this->app->bind('loanprotection.validation.handlers', function(){
             return [
-                new FinancierHandler,
-                new BorrowerHandler
+                'issue' => [
+                    new FinancierHandler,
+                    new BorrowerHandler
+                ]
             ];
         });
 

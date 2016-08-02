@@ -14,7 +14,7 @@ class CreatePremiumsTable extends Migration
     {
         Schema::create('premiums', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('business');
+            $table->string('business_type', 32);
             $table->string('policy_number', 16);
             $table->bigInteger('amount_expected');
             $table->bigInteger('amount_paid');

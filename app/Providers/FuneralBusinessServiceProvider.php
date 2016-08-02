@@ -11,7 +11,6 @@ use Aforance\Aforance\Business\Funeral\ValidationHandler\UnderwritingHandler;
 use Aforance\Aforance\Business\PremiumLoader\JsonPremiumLoader;
 use Aforance\Aforance\Premium\Calculators\FuneralPremiumCalculator;
 use Aforance\Aforance\Repository\FuneralPolicyRepository;
-use Aforance\Aforance\Validation\FuneralPolicyValidator;
 use Illuminate\Support\ServiceProvider;
 
 class FuneralBusinessServiceProvider extends ServiceProvider
@@ -37,17 +36,12 @@ class FuneralBusinessServiceProvider extends ServiceProvider
     public function register()
     {
 
-        $this->app->bind('funeral.validation_contract', function(){
-            return new FuneralPolicyValidator;
-        });
-
         $this->app->bind('funeral.repository_contract', function(){
             return new FuneralPolicyRepository;
         });
 
         $this->app->bind('business.funeral', function(){
             return new FuneralBusiness(
-                app('funeral.validation_contract'),
                 app('funeral.repository_contract')
             );
         });
@@ -77,9 +71,11 @@ class FuneralBusinessServiceProvider extends ServiceProvider
 
         $this->app->bind('funeral.validation.handlers', function(){
             return [
-                new UnderwritingHandler,
-                new PolicyHandler,
-                new FamilyHandler
+                'issue' => [
+                    new UnderwritingHandler,
+                    new PolicyHandler,
+                    new FamilyHandler
+                ]
 
             ];
         });

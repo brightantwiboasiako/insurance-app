@@ -140,6 +140,7 @@ return [
          */
         Aforance\Providers\CustomerServiceProvider::class,
         Aforance\Providers\PremiumServiceProvider::class,
+        Aforance\Providers\PolicyServiceProvider::class,
         Aforance\Providers\PermissionServiceProvider::class,
         Aforance\Providers\FinderServiceProvider::class,
         Aforance\Providers\AgencyServiceProvider::class,

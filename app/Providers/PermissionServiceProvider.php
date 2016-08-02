@@ -2,6 +2,7 @@
 
 namespace Aforance\Providers;
 
+use Aforance\Aforance\Support\Permission\JsonPermissionChecker;
 use Illuminate\Support\ServiceProvider;
 
 class PermissionServiceProvider extends ServiceProvider
@@ -23,7 +24,8 @@ class PermissionServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('Aforance\Aforance\Support\Contracts\Checker',
-                        'Aforance\Aforance\Support\Permission\JsonPermissionChecker');
+        $this->app->singleton('permission.checker', function(){
+            return new JsonPermissionChecker;
+        });
     }
 }

@@ -14,7 +14,6 @@ use Aforance\Aforance\Policy\PolicyCreationListenerInterface;
 use Aforance\Aforance\Repository\Contracts\PolicyRepositoryInterface;
 use Aforance\Aforance\Repository\CustomerRepository;
 use Aforance\Aforance\Support\DateHelper;
-use Aforance\Aforance\Validation\PolicyValidatorInterface;
 use Aforance\Aforance\Validation\ValidationException;
 
 class ChildEducationBusiness extends Business
@@ -25,9 +24,9 @@ class ChildEducationBusiness extends Business
      */
     private $customers;
 
-    public function __construct(PolicyValidatorInterface $validator, PolicyRepositoryInterface $policies)
+    public function __construct(PolicyRepositoryInterface $policies)
     {
-        parent::__construct($validator, $policies);
+        parent::__construct($policies);
         $this->notifier = app('customer.notifier');
         $this->customers = app('customer.repository');
     }
@@ -35,6 +34,10 @@ class ChildEducationBusiness extends Business
 
     public function issue(array $data, PolicyCreationListenerInterface $listener)
     {
+
+        // Set validation handlers
+        $this->setValidationHandlers(app('childeducation.validation.handlers')['issue']);
+
         // Validate all policy data
         try{
             parent::validate($data);

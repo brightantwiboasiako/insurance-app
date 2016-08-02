@@ -50,7 +50,6 @@ class ChildEducationBusinessServiceProvider extends ServiceProvider
         // Bind the child education business
         $this->app->bind('business.childeducation', function(){
             return new ChildEducationBusiness(
-                app('childeducation.contracts.validator'),
                 app('childeducation.contracts.repository')
             ) ;
         });
@@ -68,17 +67,13 @@ class ChildEducationBusinessServiceProvider extends ServiceProvider
         });
 
 
-        // Validator
-        $this->app->bind('childeducation.contracts.validator', function(){
-            return new ChildEducationPolicyValidator;
-        });
-
-
         // Validation handlers
         $this->app->bind('childeducation.validation.handlers', function(){
             return [
-                new PolicyHandler,
-                new ChildHandler
+                'issue' => [
+                    new PolicyHandler,
+                    new ChildHandler
+                ]
             ];
         });
 

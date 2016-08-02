@@ -20,7 +20,7 @@ class Document extends PolicyDocument
 
     public function __construct()
     {
-        parent::__construct(app('funeral.repository_contract'));
+        parent::__construct(app('loanprotection.repository_contract'));
         $this->viewFile = static::VIEW_FILE;
         $this->downloadFile = static::DOWNLOAD_FILE;
     }

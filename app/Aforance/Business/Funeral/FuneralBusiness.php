@@ -4,26 +4,23 @@ namespace Aforance\Aforance\Business\Funeral;
 
 use Aforance\Aforance\Business\Business;
 use Aforance\Aforance\Contracts\Repository\FuneralPolicyRepositoryInterface;
-use Aforance\Aforance\Contracts\Validation\FuneralValidatorInterface;
 use Aforance\Aforance\Policy\PolicyCreationListenerInterface;
 use Aforance\Aforance\Repository\CustomerRepository;
 use Aforance\Aforance\Support\DateHelper;
-use Aforance\Aforance\Validation\CanCheckPolicyData;
-use Aforance\Aforance\Validation\PolicyValidatorInterface;
 use Aforance\Aforance\Validation\ValidationException;
 
 class FuneralBusiness extends Business{
-
-	use CanCheckPolicyData;
 
 	/**
 	 * @var CustomerRepository
 	 */
 	private $customers;
 	
-	public function __construct(PolicyValidatorInterface $validator, FuneralPolicyRepositoryInterface $repository){
-		parent::__construct($validator, $repository);
+	public function __construct(FuneralPolicyRepositoryInterface $repository){
+		parent::__construct($repository);
+		// Get a customer repository
 		$this->customers = app('customer.repository');
+		// Get a customer notification instance
 		$this->notifier = app('customer.notifier');
 	}
 
@@ -39,7 +36,11 @@ class FuneralBusiness extends Business{
 	*/
 	public function issue(array $data, PolicyCreationListenerInterface $listener){
 
-		// handle policy data validation
+		// Register policy issue validation handlers
+		$this->setValidationHandlers(app('funeral.validation.handlers')['issue']);
+
+		// Handle policy data validation against
+		// registered handlers
 		try{
 			// validate policy data
 			parent::validate($data);
@@ -49,7 +50,6 @@ class FuneralBusiness extends Business{
 				'errors' => $this->validator->errors()
 			]);
 		}
-
 
 		// get customer's age
 		$data['age'] = DateHelper::ageNextBirthday($this->customers->find($data['customer_id'])->birthday());
@@ -74,5 +74,7 @@ class FuneralBusiness extends Business{
 		$document = app('funeral.document');
 		return $document->handle($policyNumber, $action);
 	}
+	
+
 
 }

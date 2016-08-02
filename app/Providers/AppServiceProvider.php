@@ -2,8 +2,8 @@
 
 namespace Aforance\Providers;
 
-use Aforance\Aforance\Support\DataParser\JsonDataParser;
 use Aforance\Aforance\Support\DOMPDF;
+use Aforance\Aforance\Validation\Validator;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -28,6 +28,11 @@ class AppServiceProvider extends ServiceProvider
         // Bind pdf maker
         $this->app->singleton('pdf', function(){
             return new DOMPDF;
+        });
+
+        // Validator instance for the app-wide validation
+        $this->app->bind('aforance.validator', function(){
+            return new Validator;
         });
         
     }

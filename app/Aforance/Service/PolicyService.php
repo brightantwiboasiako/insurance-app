@@ -3,8 +3,6 @@
 namespace Aforance\Aforance\Service;
 
 use Aforance\Aforance\Business\Business;
-use Aforance\Aforance\Contracts\Business\Policy;
-use Aforance\Aforance\Contracts\Business\PolicyIssuer;
 use Aforance\Aforance\Policy\PolicyActionListenerInterface;
 use Aforance\Aforance\Policy\PolicyCreationListenerInterface;
 use Aforance\Aforance\Service\Contracts\ServiceInterface;
@@ -21,13 +19,27 @@ class PolicyService implements ServiceInterface{
 	 */
 	private $checker;
 
-	public function __construct(Checker $checker)
+	/**
+	 * PolicyService constructor.
+	 */
+	public function __construct()
 	{
-		$this->checker = $checker;
+		$this->checker = app('permission.checker');
 		$this->checker->service('policy');
 	}
 
 
+	/**
+	 * Gets a policy by it's number for viewing.
+	 * It checks first if the role/user is permitted
+	 * to view policies before proceeding.
+	 *
+	 * @param $business
+	 * @param $policyNumber
+	 * @param $role
+	 * @param PolicyActionListenerInterface $listener
+	 * @return mixed
+	 */
 	public function getPolicyByNumber($business, $policyNumber, $role, PolicyActionListenerInterface $listener){
 		if($this->isPermittedTo('view', $role)){
 			$business = $this->makeBusiness($business);
@@ -44,6 +56,13 @@ class PolicyService implements ServiceInterface{
 	}
 
 
+	/**
+	 * Public interface for getting a business
+	 * instance based on the type
+	 *
+	 * @param $type
+	 * @return Business
+	 */
 	public function business($type){
 		return $this->makeBusiness($type);
 	}

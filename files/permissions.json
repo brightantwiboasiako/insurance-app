@@ -18,5 +18,10 @@
 		"modify_policy": [
 			"manager", "staff"
 		]
+	},
+	"premium": {
+		"pay_premium": [
+			"manager staff"
+		]
 	}
 }

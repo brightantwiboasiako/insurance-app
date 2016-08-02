@@ -13,16 +13,15 @@ use Aforance\Aforance\Business\Business;
 use Aforance\Aforance\Business\LoanProtection\Contracts\LoanProtectionRepositoryInterface;
 use Aforance\Aforance\Policy\PolicyActionListenerInterface;
 use Aforance\Aforance\Policy\PolicyCreationListenerInterface;
-use Aforance\Aforance\Validation\PolicyValidatorInterface;
 use Aforance\Aforance\Validation\ValidationException;
 use Illuminate\Http\UploadedFile;
 
 class LoanProtectionBusiness extends Business
 {
 
-    public function __construct(PolicyValidatorInterface $validator, LoanProtectionRepositoryInterface $repository)
+    public function __construct(LoanProtectionRepositoryInterface $repository)
     {
-        parent::__construct($validator, $repository);
+        parent::__construct($repository);
         $this->notifier = app('loanprotection.customer_notifier');
     }
 
@@ -42,6 +41,9 @@ class LoanProtectionBusiness extends Business
      */
     public function issue(array $data, PolicyCreationListenerInterface $listener)
     {
+        // Register validation handlers
+        $this->setValidationHandlers(app('loanprotection.validation.handlers')['issue']);
+        
         // handle policy validation
         try{
             // validate policy data
