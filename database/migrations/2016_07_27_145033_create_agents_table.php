@@ -16,7 +16,7 @@ class CreateAgentsTable extends Migration
             $table->increments('id');
             $table->string('identifier', 15);
             $table->string('name', 64);
-            $table->integer('branch');
+            $table->integer('branch_id', false, true);
             $table->integer('status');
             $table->integer('added_by');
             $table->timestamps();

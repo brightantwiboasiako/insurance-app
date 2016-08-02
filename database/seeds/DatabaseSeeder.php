@@ -19,6 +19,9 @@ class DatabaseSeeder extends Seeder
         // Create 10 customers
         factory(\Aforance\Customer::class, 10)->create();
 
+        // create 5 agents, this will create 5 branches
+        factory(\Aforance\Agent::class, 5)->create();
+
         // Policy types
         $this->call(PolicyTypesTableSeeder::class);
 

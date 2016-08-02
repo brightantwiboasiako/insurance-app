@@ -20,7 +20,32 @@ $factory->define(Aforance\User::class, function (Faker\Generator $faker) {
     ];
 });
 
+// agents factory
+$factory->define(\Aforance\Agent::class, function(\Faker\Generator $faker){
 
+    return [
+        'identifier' => $faker->randomNumber(6),
+        'name' => $faker->name,
+        'branch_id' => function(){
+            return factory(\Aforance\Branch::class)->create()->id;
+        },
+        'status' => 1,
+        'added_by' => 1
+    ];
+
+});
+
+
+// branches factory
+$factory->define(\Aforance\Branch::class, function(\Faker\Generator $faker){
+     return [
+        'name' => $faker->city,
+         'created_by' => 1
+     ];
+});
+
+
+// customers factory
 $factory->define(\Aforance\Customer::class, function(\Faker\Generator $faker){
     return [
         'title' => $faker->title,
