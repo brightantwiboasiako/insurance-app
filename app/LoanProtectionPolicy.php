@@ -74,7 +74,7 @@ class LoanProtectionPolicy extends Model implements Policy
      * @return Money
      */
     public function totalLoanAmount(){
-        $borrowers = $this->borrowers();
+        $borrowers = $this->loanBorrowers();
         $amount = new Money(0);
 
         $borrowers->each(function($borrower) use ($amount){
@@ -91,7 +91,7 @@ class LoanProtectionPolicy extends Model implements Policy
      * @return Money
      */
     public function premium(){
-        $borrowers = $this->borrowers();
+        $borrowers = $this->loanBorrowers();
         $amount = new Money(0);
 
         $borrowers->each(function($borrower) use ($amount){
@@ -109,10 +109,10 @@ class LoanProtectionPolicy extends Model implements Policy
      * @param array $borrowers
      * @return bool
      */
-    public function addBorrowers(array $borrowers){
+    public function addloanBorrowers(array $borrowers){
 
         // add all to borrowers and save
-        $this->setBorrowers($borrowers);
+        $this->setloanBorrowers($borrowers);
         return $this->save();
     }
 
@@ -167,7 +167,7 @@ class LoanProtectionPolicy extends Model implements Policy
         $policy->setInstitutionEmail($data['financier']['email']);
         $policy->setInstitutionPhone($data['financier']['phone']);
         $policy->setInstitutionBranch($data['financier']['branch']);
-        $policy->setBorrowers($data['borrowers']);
+        $policy->setloanBorrowers($data['borrowers']);
         $policy->setPolicyNumber($data['policy_number']);
 
         $policy->save();
@@ -195,7 +195,7 @@ class LoanProtectionPolicy extends Model implements Policy
         $this->institution_branch = $branch;
     }
 
-    private function setBorrowers(array $borrowers){
+    private function setloanBorrowers(array $borrowers){
 
         if($this->borrowers === null || empty(json_decode($this->borrowers, true))){
             $data = [];

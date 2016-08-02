@@ -44,7 +44,7 @@
 @section('content')
     <div class="row" id="vue-loanprotection">
         <input type="hidden" v-model="policy.number" value="{{ e($policy->policyNumber()) }}"/>
-        <input type="hidden" v-model="borrowers" value="{{ e($policy->borrowers()) }}"/>
+        <input type="hidden" v-model="borrowers" value="{{ e($policy->loanBorrowers()) }}"/>
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-md-12">
