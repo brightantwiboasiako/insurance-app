@@ -86,7 +86,7 @@ class PolicyService implements ServiceInterface{
 	 * @return Business
 	 */
 	private function makeBusiness($type){
-		return app('business.'.$type);
+		return app('business.'.preg_replace('/\s+/','',$type));
 	}
 
 
