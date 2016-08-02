@@ -54,11 +54,7 @@
             </div>
             <select class="form-control validate[required]" name="mode_of_payment"
                     v-model="policy.policy_details.mode_of_payment">
-                <option {{ default_select('CASH', $policy->paymentMode()) }} value="CASH">CASH</option>
-                <option {{ default_select('CHEQUE', $policy->paymentMode()) }} value="CHEQUE">CHEQUE</option>
-                <option {{ default_select('STANDING ORDER', $policy->paymentMode()) }} value="STANDING ORDER">STANDING ORDER</option>
-                <option {{ default_select('DIRECT DEBIT', $policy->paymentMode()) }} value="DIRECT DEBIT">DIRECT DEBIT</option>
-                <option {{ default_select('CAG', $policy->paymentMode()) }} value="CAG">CAG</option>
+                @include('policies.includes.payment-methods')
             </select>
         </div>
         <div class="form-group col-md-3">
@@ -67,10 +63,7 @@
             </div>
             <select class="form-control validate[required]" name="payment_frequency"
                     v-model="policy.policy_details.payment_frequency">
-                <option {{ default_select('MONTHLY', $policy->paymentFrequency()) }} value="MONTHLY">MONTHLY</option>
-                <option {{ default_select('QUARTERLY', $policy->paymentFrequency()) }} value="QUARTERLY">QUARTERLY</option>
-                <option {{ default_select('SEMI ANNUALLY', $policy->paymentFrequency()) }} value="SEMI ANNUALLY">SEMI ANNUALLY</option>
-                <option {{ default_select('ANNUALLY', $policy->paymentFrequency()) }} value="ANNUALLY">ANNUALLY</option>
+                @include('policies.includes.payment-frequencies')
             </select>
         </div>
         <div class="col-md-12">

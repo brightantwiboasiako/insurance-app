@@ -60,7 +60,17 @@ abstract class NumberGenerator implements PolicyNumberGenerator
     }
 
 
-    public abstract function combine($number);
+    /**
+     * The algorithm to generate the policy number
+     *
+     * @param $number
+     * @return string
+     */
+    public function combine($number){
+        return $this->companyCode().
+        $this->policyCode().
+        str_pad($number, $this->digits, '0', STR_PAD_LEFT);
+    }
 
 
     /**

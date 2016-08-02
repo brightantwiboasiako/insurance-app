@@ -18,10 +18,10 @@ class CreateClaimsTable extends Migration
             $table->integer('policy_type');
             $table->integer('cover_type');
             $table->integer('cover_id');
-            $table->bigInteger('amount', 20);
+            $table->bigInteger('amount');
             $table->integer('status');
             $table->integer('captured_by');
-            $table->dateTime('created_at');
+            $table->timestamps();
         });
     }
 

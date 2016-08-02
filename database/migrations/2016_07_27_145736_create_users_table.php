@@ -20,8 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('password', 60);
             $table->string('remember_token', 100);
             $table->string('phone', 15);
-            $table->integer('role', 10);
-            $table->integer('status', 4);
+            $table->string('role', 32);
+            $table->integer('status');
             $table->timestamps();
         });
     }

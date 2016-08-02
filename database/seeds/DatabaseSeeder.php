@@ -12,14 +12,15 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run()
-    {   //tables truncation
-        foreach ($this->tables as $table) {
-            DB::table($table)->truncate();
-        }
+    {
+        // Create users
+        $this->call(UsersTableSeeder::class);
 
-        $this->call(MotorPolicyTableSeeder::class);
-        $this->call(LifePolicyTableSeeder::class);
-        $this->call(FuneralPolicyTableSeeder::class);
-        $this->call(PolicyTypeTableSeeder::class);
+        // Create 10 customers
+        factory(\Aforance\Customer::class, 10)->create();
+
+        // Policy types
+        $this->call(PolicyTypesTableSeeder::class);
+
     }
 }

@@ -8,8 +8,8 @@ use Aforance\Aforance\Business\Funeral\FuneralNumberGenerator;
 use Aforance\Aforance\Business\Funeral\ValidationHandler\FamilyHandler;
 use Aforance\Aforance\Business\Funeral\ValidationHandler\PolicyHandler;
 use Aforance\Aforance\Business\Funeral\ValidationHandler\UnderwritingHandler;
+use Aforance\Aforance\Business\PremiumLoader\JsonPremiumLoader;
 use Aforance\Aforance\Premium\Calculators\FuneralPremiumCalculator;
-use Aforance\Aforance\Premium\Loaders\JsonFuneralPremiumLoader;
 use Aforance\Aforance\Repository\FuneralPolicyRepository;
 use Aforance\Aforance\Validation\FuneralPolicyValidator;
 use Illuminate\Support\ServiceProvider;
@@ -53,7 +53,8 @@ class FuneralBusinessServiceProvider extends ServiceProvider
         });
 
         $this->app->bind('funeral.premium_loader', function(){
-            return new JsonFuneralPremiumLoader;
+            $premiumFile = base_path().'/files/premiums/funeral.json';
+            return new JsonPremiumLoader($premiumFile);
         });
 
         $this->app->bind('funeral.calculator', function(){

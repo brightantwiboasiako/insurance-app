@@ -141,6 +141,20 @@ Route::group(['middleware' => 'auth'], function(){
 
         });
 
+
+        // Child Education policy
+        Route::group(['prefix' => 'childeducation'], function(){
+
+            Route::get('/', [
+                'uses' => 'Policy\ChildEducation\ChildEducationController@index'
+            ]);
+
+            Route::get('/create/{customerId}', [
+                'uses' => 'Policy\ChildEducation\ChildEducationController@getCreationScreen'
+            ]);
+
+        });
+
     });
 
 

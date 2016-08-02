@@ -18,10 +18,9 @@ class CreateCustomersTable extends Migration
             $table->string('surname', 64);
             $table->string('first_name', 32);
             $table->string('other_name', 32);
-            $table->char('gender', 1);
+            $table->string('gender', 6);
             $table->date('birth_day');
             $table->string('email', 1024);
-            $table->string('phone_numbers', 1024);
             $table->string('primary_phone_number', 15);
             $table->string('occupation', 124);
             $table->string('employer_name', 64);

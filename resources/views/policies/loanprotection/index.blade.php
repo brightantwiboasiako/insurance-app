@@ -29,7 +29,7 @@
         });
     </script>
 
-    <script src="{{ asset('js/wizard.js') }}"></script>
+    <script src="{{ asset('js/custom/vue-mixins.js') }}"></script>
     <script src="{{ asset('js/custom/policies/loanprotection/loanprotection.js') }}"></script>
 @endsection
 

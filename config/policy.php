@@ -18,6 +18,12 @@ return [
     'loanprotection' => [
         'code' => 'LP',
         'name' => 'Loan Protection Plan'
+    ],
+
+    // Child Education Business
+    'childeducation' => [
+        'code' => 'CE',
+        'name' => 'Child Education Plan'
     ]
 
 ];

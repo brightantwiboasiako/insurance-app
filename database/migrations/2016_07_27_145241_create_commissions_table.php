@@ -18,9 +18,9 @@ class CreateCommissionsTable extends Migration
             $table->integer('agent_id');
             $table->integer('policy_number');
             $table->integer('policy_type');
-            $table->bigInteger('amount', 20);
+            $table->bigInteger('amount');
             $table->integer('rate_earned');
-            $table->bigInteger('tax', 20);
+            $table->bigInteger('tax');
             $table->timestamps();
         });
     }

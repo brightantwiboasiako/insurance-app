@@ -26,7 +26,7 @@ class FuneralPolicyValidator extends Validator implements PolicyValidatorInterfa
 	public function __construct()
 	{
 		$this->errors = new Collection();
-		$this->handlers = app('funeral.validation.handlers');
+		$this->setHandlers(app('funeral.validation.handlers'));
 	}
 
 

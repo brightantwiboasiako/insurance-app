@@ -22,7 +22,7 @@ class LoanProtectionPolicy extends Model implements Policy
 
     use HasLast;
 
-    protected $table = 'loanprotection';
+    protected $table = 'loan_protection_policies';
 
     protected $guarded = ['id'];
 
@@ -68,6 +68,11 @@ class LoanProtectionPolicy extends Model implements Policy
     }
 
 
+    /**
+     * Gets the total loan amount for the policy
+     *
+     * @return Money
+     */
     public function totalLoanAmount(){
         $borrowers = $this->borrowers();
         $amount = new Money(0);
@@ -80,6 +85,11 @@ class LoanProtectionPolicy extends Model implements Policy
     }
 
 
+    /**
+     * Gets the premium amount under the policy
+     *
+     * @return Money
+     */
     public function premium(){
         $borrowers = $this->borrowers();
         $amount = new Money(0);
@@ -114,12 +124,7 @@ class LoanProtectionPolicy extends Model implements Policy
      * @return $this
      */
     public function removeBorrower($key){
-        $this->policyBorrowers->pull($key);
-        $this->setBorrowers($this->policyBorrowers->toArray());
-        $this->save([
-            'borrowers' => $this->borrowers()->toJson()
-        ]);
-        return $this;
+        //
     }
 
 

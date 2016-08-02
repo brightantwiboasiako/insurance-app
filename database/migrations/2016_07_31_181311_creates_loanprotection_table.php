@@ -12,7 +12,8 @@ class CreatesLoanprotectionTable extends Migration
      */
     public function up()
     {
-        Schema::create('loanprotection', function(Blueprint $table){
+        Schema::create('loan_protection_policies', function(Blueprint $table){
+            $table->increments('id');
             $table->string('policy_number', 20);
             $table->string('institution_name', 64);
             $table->string('institution_branch', 64);
@@ -31,6 +32,6 @@ class CreatesLoanprotectionTable extends Migration
      */
     public function down()
     {
-        Schema::drop('loanprotection');
+        Schema::drop('loan_protection_policies');
     }
 }

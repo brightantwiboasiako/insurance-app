@@ -86,15 +86,7 @@ class PolicyService implements ServiceInterface{
 	 * @return Business
 	 */
 	private function makeBusiness($type){
-		$business = null;
-		switch($type){
-			case 'loanprotection':
-				$business = app('business.loanprotection');
-				break;
-			default:
-				$business = app('business.funeral');
-		}
-		return $business;
+		return app('business.'.$type);
 	}
 
 

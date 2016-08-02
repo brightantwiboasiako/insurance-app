@@ -43,15 +43,7 @@ class PremiumService implements ServiceInterface{
 	* @return PremiumCalculatorInterface
 	*/
 	private function makeCalculator($businessType){
-		$calculator = null;
-		switch($businessType){
-			case 'loanprotection':
-				$calculator = app('loanprotection.calculator');
-				break;
-			default: 
-				$calculator = app("funeral.calculator");
-		}
-		return $calculator;
+		return app($businessType.'.calculator');
 	}
 
 }

@@ -9,7 +9,7 @@
 namespace Aforance\Aforance\Contracts\Business;
 
 
-interface FuneralPremiumLoader
+interface PremiumLoader
 {
 
     public function loadRates();

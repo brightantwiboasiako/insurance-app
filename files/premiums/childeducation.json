@@ -1,0 +1,62 @@
+[
+  {
+    "age_limit": 10,
+    "amount": 0
+  },
+  {
+    "age_limit": 15,
+    "amount": 0
+  },
+  {
+    "age_limit": 20,
+    "amount": 1.2420
+  },
+  {
+    "age_limit": 25,
+    "amount": 1.4153
+  },
+  {
+    "age_limit": 30,
+    "amount": 1.6596
+  },
+  {
+    "age_limit": 35,
+    "amount": 2.0091
+  },
+  {
+    "age_limit": 40,
+    "amount": 2.5148
+  },
+  {
+    "age_limit": 45,
+    "amount": 3.2559
+  },
+  {
+    "age_limit": 50,
+    "amount": 4.3844
+  },
+  {
+    "age_limit": 55,
+    "amount": 6.3046
+  },
+  {
+    "age_limit": 60,
+    "amount": 10.7015
+  },
+  {
+    "age_limit": 65,
+    "amount": 0
+  },
+  {
+    "age_limit": 70,
+    "amount": 0
+  },
+  {
+    "age_limit": 75,
+    "amount": 0  
+  },
+  {
+    "age_limit": 80,
+    "amount": 0
+  }
+]

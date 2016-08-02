@@ -21,7 +21,7 @@ class LoanProtectionPremiumCalculator implements PremiumCalculatorInterface
 
     public function getPremium(Policy $policy)
     {
-        // TODO: Implement getPremium() method.
+        return $policy->premium();
     }
 
 }

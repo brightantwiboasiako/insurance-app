@@ -149,7 +149,7 @@ return [
          */
         Aforance\Providers\FuneralBusinessServiceProvider::class,
         Aforance\Providers\LoanProtectionBusinessServiceProvider::class,
-
+        Aforance\Providers\ChildEducationBusinessServiceProvider::class,
 
         /**
          * Support

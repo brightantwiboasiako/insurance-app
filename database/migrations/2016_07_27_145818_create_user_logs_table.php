@@ -15,7 +15,7 @@ class CreateUserLogsTable extends Migration
         Schema::create('user_logs', function (Blueprint $table) {
             $table->increments('id');
             $table->text('description');
-            $table->integer('user_id');
+            $table->integer('user_id',false, true);
             $table->dateTime('date_captured');
         });
     }

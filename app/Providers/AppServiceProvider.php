@@ -2,6 +2,7 @@
 
 namespace Aforance\Providers;
 
+use Aforance\Aforance\Support\DataParser\JsonDataParser;
 use Aforance\Aforance\Support\DOMPDF;
 use Illuminate\Support\ServiceProvider;
 
@@ -28,5 +29,6 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton('pdf', function(){
             return new DOMPDF;
         });
+        
     }
 }

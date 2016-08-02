@@ -16,13 +16,13 @@ class CreatePremiumsTable extends Migration
             $table->increments('id');
             $table->integer('policy_type');
             $table->string('policy_number', 16);
-            $table->bigInteger('amount', 20);
+            $table->bigInteger('amount');
             $table->dateTime('period');
-            $table->integer('adequacy_status',);
+            $table->integer('adequacy_status');
             $table->string('cheque_number', 16);
             $table->string('receipt_code', 16);
             $table->dateTime('date_received');
-            $table->integer('captured_by');
+            $table->integer('captured_by', false, true);
             $table->timestamps();
         });
     }

@@ -21,8 +21,11 @@ class FuneralNumberGenerator extends NumberGenerator
 
 
     /**
+     * The algorithm to generate funeral policy numbers
+     *
      * @param int $number
      * @return string
+     * @override
      */
     public function combine($number){
         return $this->companyCode().

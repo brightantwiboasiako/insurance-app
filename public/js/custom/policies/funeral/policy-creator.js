@@ -43,8 +43,8 @@ var funeralPolicy = new Vue({
                 hiv: 'No',
                 good_health: 'No',
                 illness: 'No',
-                height: 120,
-                weight: 60
+                height: '',
+                weight: ''
             },
             beneficiaries: [],
             agent_id: 1,
