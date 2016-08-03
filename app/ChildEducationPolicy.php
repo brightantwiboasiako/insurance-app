@@ -14,6 +14,12 @@ class ChildEducationPolicy extends Model implements LifePolicy, InvestmentLinked
     protected $table = 'child_education_policies';
     protected $guarded = ['id'];
 
+    //abstract class needed implementation
+    public function premium()
+    {
+        
+    }
+
     public function customer(){
         return $this->belongsTo(Customer::class);
     }

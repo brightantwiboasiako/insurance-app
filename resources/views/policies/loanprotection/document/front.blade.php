@@ -15,7 +15,7 @@
                 <p><strong>{{ e(strtoupper($policy->institutionName())) }}</strong></p>
             </div>
             <div class="col-md-3 text-left">
-                <p>SUM ASSURED</p>
+                <p>LOAN AMOUNT</p>
                 <p><strong>{{ e($policy->totalLoanAmount()) }}</strong></p>
             </div>
             <div class="col-md-3 text-left">
