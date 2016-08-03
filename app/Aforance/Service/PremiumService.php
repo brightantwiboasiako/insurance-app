@@ -2,8 +2,10 @@
 
 namespace Aforance\Aforance\Service;
 
+use Aforance\Aforance\Business\Business;
 use Aforance\Aforance\Contracts\Business\Policy;
 use Aforance\Aforance\Policy\PolicyActionListenerInterface;
+use Aforance\Aforance\Premium\Calculators\PeriodicPremiumCalculator;
 use Aforance\Aforance\Premium\FatalVerificationException;
 use Aforance\Aforance\Premium\PremiumRepository;
 use Aforance\Aforance\Service\Contracts\ServiceInterface;
@@ -70,7 +72,11 @@ class PremiumService implements ServiceInterface{
 				$this->checkPremiumData($data);
 
 				// Bind necessary data
-				
+				$business = $this->policyService->business($data['business_type']);
+				$policy = $business->getPolicyByNumber($policyNumber);
+
+				// The expected premium amount
+				$data['expected_amount'] = $policy->premium()->getAmount();
 
 				// Verify premium data
 				$verifiers = app('premium.verifiers');
@@ -90,9 +96,7 @@ class PremiumService implements ServiceInterface{
 				]);
 			}
 
-
-			// Save premium data to repository
-			$this->premiums->create($data);
+			$business->handlePremiumPayment($data, $policy, $this->premiums);
 
 			// TODO: Notify client about premium payment
 

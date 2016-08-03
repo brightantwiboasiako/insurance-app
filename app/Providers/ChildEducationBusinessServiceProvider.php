@@ -4,6 +4,7 @@ namespace Aforance\Providers;
 
 use Aforance\Aforance\Business\ChildEducation\ChildEducationBusiness;
 use Aforance\Aforance\Business\ChildEducation\ChildEducationRepository;
+use Aforance\Aforance\Business\ChildEducation\Document;
 use Aforance\Aforance\Business\ChildEducation\NumberGenerator;
 use Aforance\Aforance\Business\ChildEducation\Premium\PremiumCalculator;
 use Aforance\Aforance\Business\ChildEducation\Validation\ChildEducationPolicyValidator;
@@ -58,6 +59,12 @@ class ChildEducationBusinessServiceProvider extends ServiceProvider
         // Policy number generator
         $this->app->bind('childeducation.number_generator', function(){
             return new NumberGenerator;
+        });
+
+
+        // Bind Policy Document
+        $this->app->bind('childeducation.document', function(){
+            return new Document;
         });
 
 

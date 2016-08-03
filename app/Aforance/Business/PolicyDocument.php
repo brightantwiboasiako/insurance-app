@@ -43,7 +43,9 @@ class PolicyDocument
 
     private function display($policyNumber){
         $policy = $this->repository->getPolicyByNumber($policyNumber);
-        return $this->loadView($policy);
+        if($policy)
+            return $this->loadView($policy);
+        return abort(404);
     }
 
 

@@ -43,7 +43,7 @@ abstract class NumberGenerator implements PolicyNumberGenerator
     }
 
     /**
-     * Generates a policy number for funeral policies
+     * Generates a policy number for policies
      *
      * @param Policy|null $policy
      * @return string
@@ -55,7 +55,6 @@ abstract class NumberGenerator implements PolicyNumberGenerator
             $number = substr($policy->policyNumber(), $start);
             return $this->combine(((int)$number) + 1);
         }
-
         return $this->combine(1);
     }
 

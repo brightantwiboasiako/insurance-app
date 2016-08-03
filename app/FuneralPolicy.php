@@ -117,6 +117,9 @@ class FuneralPolicy extends Model implements LifePolicy
         return $this->premiumComponents()['underwriting'];
     }
 
+    /**
+     * @return Money
+     */
     public function premium()
     {
         $premiums = $this->premiumComponents();
