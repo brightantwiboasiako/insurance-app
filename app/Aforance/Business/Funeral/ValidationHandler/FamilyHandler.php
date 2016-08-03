@@ -25,7 +25,11 @@ class FamilyHandler implements ValidationHandler
 
     public function handle(array $data, Validator $validator, Collection $errors)
     {
+<<<<<<< HEAD
         
+=======
+        if(!isset($data['policy_details']['family'])) return;
+>>>>>>> 90fa9077a7a24723731060aab431e5583f7b0562
         $familyErrors = [];
         foreach($data['policy_details']['family'] as $key => $family){
             try{

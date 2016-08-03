@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3f44a77-29af-4112-a953-5cca73142adc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Aforance/Business/Funeral/ValidationHandler/FamilyHandler.php" afterPath="$PROJECT_DIR$/app/Aforance/Business/Funeral/ValidationHandler/FamilyHandler.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Aforance/Premium/Calculators/FuneralPremiumCalculator.php" afterPath="$PROJECT_DIR$/app/Aforance/Premium/Calculators/FuneralPremiumCalculator.php" />
     </list>
     <ignored path="insurance-app-master.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -103,17 +101,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FamilyHandler.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FamilyHandler.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Aforance/Business/Funeral/ValidationHandler/FamilyHandler.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+            <state relative-caret-position="46">
+              <caret line="27" column="61" selection-start-line="27" selection-start-column="61" selection-end-line="27" selection-end-column="61" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FuneralPremiumCalculator.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FuneralPremiumCalculator.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Aforance/Premium/Calculators/FuneralPremiumCalculator.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="186">
@@ -199,8 +197,8 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Policy/PolicyDocumentController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Policy/ChildEducation/ChildEducationController.php" />
         <option value="$PROJECT_DIR$/resources/views/policies/childeducation/view.blade.php" />
-        <option value="$PROJECT_DIR$/app/Aforance/Business/Funeral/ValidationHandler/FamilyHandler.php" />
         <option value="$PROJECT_DIR$/app/Aforance/Premium/Calculators/FuneralPremiumCalculator.php" />
+        <option value="$PROJECT_DIR$/app/Aforance/Business/Funeral/ValidationHandler/FamilyHandler.php" />
       </list>
     </option>
   </component>
@@ -374,15 +372,15 @@
       <workItem from="1469918516110" duration="61721000" />
       <workItem from="1470111293665" duration="47125000" />
       <workItem from="1470218963158" duration="1779000" />
-      <workItem from="1470243183008" duration="2621000" />
+      <workItem from="1470243183008" duration="3014000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="392027000" />
+    <option name="totallyTimeSpent" value="392420000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -781,14 +779,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Aforance/Business/Funeral/ValidationHandler/FamilyHandler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/custom/policies/funeral/policy-creator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1712">
@@ -801,6 +791,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
           <caret line="74" column="68" selection-start-line="74" selection-start-column="68" selection-end-line="74" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Aforance/Business/Funeral/ValidationHandler/FamilyHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="27" column="61" selection-start-line="27" selection-start-column="61" selection-end-line="27" selection-end-column="61" />
           <folding />
         </state>
       </provider>
