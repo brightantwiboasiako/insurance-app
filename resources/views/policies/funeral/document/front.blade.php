@@ -6,7 +6,7 @@
         <div class="address">
             {!! config('company.address') !!}
         </div>
-        <h2 class="business">{{ app('funeral.name') }}</h2>
+        <h2 class="business">{{ e(config('policy.funeral.name')) }}</h2>
     </div>
     <div class="policy-summary border-bottom-3">
         <div class="row">

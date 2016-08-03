@@ -63,7 +63,10 @@ class ChildEducationController extends Controller implements PolicyActionListene
 
     public function onSuccessfulAction($action, $data)
     {
-        dd($data);
+        switch($action){
+            case 'view':
+                return view('policies.childeducation.view', ['policy' => $data['policy']]);
+        }
     }
 
     public function onFailedAction($action, $data)

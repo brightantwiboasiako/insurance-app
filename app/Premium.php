@@ -2,11 +2,12 @@
 
 namespace Aforance;
 
+use Money\Money;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
-use Money\Money;
+use Aforance\Aforance\Contracts\Premium as PremiumContract;
 
-class Premium extends Model
+class Premium extends Model implements PremiumContract
 {
 
     protected $table = 'premiums';

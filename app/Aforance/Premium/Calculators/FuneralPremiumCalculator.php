@@ -72,7 +72,8 @@ class FuneralPremiumCalculator extends PeriodicPremiumCalculator{
 
 		return [
 			'primary' => $this->getRate($data['age'], 'primary', $this->rates),
-			'family' => $this->familyPremiumRates($data['policy_details']['family'])
+			'family' => (isset($data['policy_details']['family'])) ?
+					$this->familyPremiumRates($data['policy_details']['family']) : []
 		];
 	}
 

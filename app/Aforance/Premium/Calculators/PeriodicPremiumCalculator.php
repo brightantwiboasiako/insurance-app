@@ -115,4 +115,30 @@ abstract  class PeriodicPremiumCalculator implements PremiumCalculatorInterface
         }
     }
 
+
+    /**
+     * Gets the premium factor of the
+     * calculator
+     *
+     * @return int
+     */
+    public function factor(){
+        return $this->factor;
+    }
+
+
+    /**
+     * Gets the premium factor corresponding
+     * to a given payment frequency
+     *
+     * @param $frequency
+     * @return mixed
+     */
+    public static function getFrequencyFactor($frequency){
+        $calculator = new static();
+        $calculator->setFactor($frequency);
+
+        return $calculator->factor();
+    }
+
 }

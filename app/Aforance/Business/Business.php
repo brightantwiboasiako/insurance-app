@@ -7,10 +7,14 @@ use Aforance\Aforance\Contracts\Business\Policy;
 use Aforance\Aforance\Contracts\Business\PolicyIssuer;
 use Aforance\Aforance\Notification\Contracts\CustomerNotificationInterface;
 use Aforance\Aforance\Policy\PolicyActionListenerInterface;
+use Aforance\Aforance\Premium\Calculators\PeriodicPremiumCalculator;
+use Aforance\Aforance\Premium\PremiumRepository;
 use Aforance\Aforance\Repository\Contracts\PolicyRepositoryInterface;
 use Aforance\Aforance\Service\PremiumService;
 use Aforance\Aforance\Validation\ValidationException;
 use Aforance\Aforance\Validation\ValidationInterface;
+use Carbon\Carbon;
+use Money\Money;
 
 abstract class Business  implements PolicyIssuer, DocumentRenderer{
 
@@ -111,6 +115,37 @@ abstract class Business  implements PolicyIssuer, DocumentRenderer{
 	 */
 	protected function setValidationHandlers(array $handlers){
 		$this->validator->setHandlers($handlers);
+	}
+
+	/**
+	 * Processes premium payments of a given policy
+	 * Other businesses may override this algorithm
+	 *
+	 * @param array $data
+	 * @param Policy $policy
+	 * @param PremiumRepository $premiums
+	 */
+	public function handlePremiumPayment(array $data, Policy $policy, PremiumRepository $premiums){
+
+		$frequencyFactor = PeriodicPremiumCalculator::getFrequencyFactor($policy->premiumFrequency());
+
+		// Get start period
+		$period = new Carbon($data['period']);
+		// Weight amounts by the payment frequency factor
+		$amountPaid = Money::withRaw($data['amount_paid']);
+		$amountPaid->times((double)(1/$frequencyFactor));
+
+		$amountExpected = Money::withRaw($data['amount_expected']);
+		$amountExpected->times((double)(1/$frequencyFactor));
+
+		// Loop through all periods and credit premium
+		for($i = 0; $i < $frequencyFactor; $i++){
+			$data['period'] = $period->addMonths($i);
+			$data['amount_paid'] = $amountPaid->getSecure();
+			$data['amount_expected'] = $amountExpected->getSecure();
+			$data['receipt_code'] = 1; // Generate receipt code
+			$premiums->create($data);
+		}
 	}
 
 }

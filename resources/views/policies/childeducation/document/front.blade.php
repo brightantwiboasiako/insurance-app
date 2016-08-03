@@ -1,12 +1,12 @@
 <div class="title" v-show="page === 1">
     <div class="company-info">
         <div class="logo">
-            <img src="{{ config('company.logo') }}" alt="Logo"/>
+            <img src="{{ asset(config('company.logo')) }}" alt="Logo"/>
         </div>
         <div class="address">
             {!! config('company.address') !!}
         </div>
-        <h2 class="business">{{ app('childeducation.name') }}</h2>
+        <h2 class="business">{{ e(config('policy.childeducation.name')) }}</h2>
     </div>
     <div class="policy-summary border-bottom-3">
         <div class="row">

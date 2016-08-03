@@ -3,11 +3,16 @@
 namespace Aforance\Aforance\Business\Funeral;
 
 use Aforance\Aforance\Business\Business;
+use Aforance\Aforance\Contracts\Business\Policy;
 use Aforance\Aforance\Contracts\Repository\FuneralPolicyRepositoryInterface;
 use Aforance\Aforance\Policy\PolicyCreationListenerInterface;
+use Aforance\Aforance\Premium\Calculators\PeriodicPremiumCalculator;
+use Aforance\Aforance\Premium\PremiumRepository;
 use Aforance\Aforance\Repository\CustomerRepository;
 use Aforance\Aforance\Support\DateHelper;
 use Aforance\Aforance\Validation\ValidationException;
+use Carbon\Carbon;
+use Money\Money;
 
 class FuneralBusiness extends Business{
 
@@ -74,7 +79,7 @@ class FuneralBusiness extends Business{
 		$document = app('funeral.document');
 		return $document->handle($policyNumber, $action);
 	}
-	
+
 
 
 }
