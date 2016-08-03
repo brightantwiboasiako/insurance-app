@@ -25,6 +25,8 @@ class FamilyHandler implements ValidationHandler
 
     public function handle(array $data, Validator $validator, Collection $errors)
     {
+        if(!isset($data['policy_details']['family'])) return;
+
         $familyErrors = [];
         foreach($data['policy_details']['family'] as $key => $family){
             try{
@@ -57,7 +59,7 @@ class FamilyHandler implements ValidationHandler
         switch($relationship){
             case 'child':
                 return $age >= 10 && $age <= 20;
-            case 'spouse' || 'business_partner':
+            case 'spouse' || 'business partner':
                 return $age >= 20 && $age <= 60;
             default:
                 return $age >= 45 && $age <= 80;

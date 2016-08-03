@@ -2,24 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3f44a77-29af-4112-a953-5cca73142adc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Aforance/Contracts/Premium/Premium.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Aforance/Contracts/Premium/ReceiptCodeGeneratorInterface.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Aforance/Business/Business.php" afterPath="$PROJECT_DIR$/app/Aforance/Business/Business.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Aforance/Business/Funeral/FuneralBusiness.php" afterPath="$PROJECT_DIR$/app/Aforance/Business/Funeral/FuneralBusiness.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Aforance/Business/PolicyDocument.php" afterPath="$PROJECT_DIR$/app/Aforance/Business/PolicyDocument.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Aforance/Contracts/Business/Policy.php" afterPath="$PROJECT_DIR$/app/Aforance/Contracts/Business/Policy.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Aforance/Contracts/Business/PolicyNumberGenerator.php" afterPath="$PROJECT_DIR$/app/Aforance/Contracts/Business/PolicyNumberGenerator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Aforance/Policy/NumberGenerator.php" afterPath="$PROJECT_DIR$/app/Aforance/Policy/NumberGenerator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Aforance/Premium/Calculators/PeriodicPremiumCalculator.php" afterPath="$PROJECT_DIR$/app/Aforance/Premium/Calculators/PeriodicPremiumCalculator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Aforance/Service/PremiumService.php" afterPath="$PROJECT_DIR$/app/Aforance/Service/PremiumService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/FuneralPolicy.php" afterPath="$PROJECT_DIR$/app/FuneralPolicy.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Policy/ChildEducation/ChildEducationController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Policy/ChildEducation/ChildEducationController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Premium.php" afterPath="$PROJECT_DIR$/app/Premium.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/ChildEducationBusinessServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/ChildEducationBusinessServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/policies/childeducation/document/front.blade.php" afterPath="$PROJECT_DIR$/resources/views/policies/childeducation/document/front.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/policies/funeral/document/front.blade.php" afterPath="$PROJECT_DIR$/resources/views/policies/funeral/document/front.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/policies/loanprotection/document/front.blade.php" afterPath="$PROJECT_DIR$/resources/views/policies/loanprotection/document/front.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Aforance/Business/Funeral/ValidationHandler/FamilyHandler.php" afterPath="$PROJECT_DIR$/app/Aforance/Business/Funeral/ValidationHandler/FamilyHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Aforance/Premium/Calculators/FuneralPremiumCalculator.php" afterPath="$PROJECT_DIR$/app/Aforance/Premium/Calculators/FuneralPremiumCalculator.php" />
     </list>
     <ignored path="insurance-app-master.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,7 +30,7 @@
       <file leaf-file-name="Business.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Aforance/Business/Business.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
+            <state relative-caret-position="130">
               <caret line="131" column="27" selection-start-line="131" selection-start-column="27" selection-end-line="131" selection-end-column="27" />
               <folding>
                 <element signature="e#47#105#0#PHP" expanded="true" />
@@ -69,18 +54,8 @@
       <file leaf-file-name="PeriodicPremiumCalculator.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Aforance/Premium/Calculators/PeriodicPremiumCalculator.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3151">
-              <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Policy.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Aforance/Contracts/Business/Policy.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
+            <state relative-caret-position="186">
+              <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -99,7 +74,7 @@
       <file leaf-file-name="FuneralBusiness.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Aforance/Business/Funeral/FuneralBusiness.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
+            <state relative-caret-position="528">
               <caret line="80" column="5" selection-start-line="80" selection-start-column="5" selection-end-line="80" selection-end-column="5" />
               <folding>
                 <element signature="e#55#95#0#PHP" expanded="true" />
@@ -111,18 +86,48 @@
       <file leaf-file-name="PolicyDocumentController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Policy/PolicyDocumentController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
+            <state relative-caret-position="414">
               <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChildEducationController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ChildEducationController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Policy/ChildEducation/ChildEducationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+            <state relative-caret-position="92">
+              <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FamilyHandler.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Aforance/Business/Funeral/ValidationHandler/FamilyHandler.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="321">
+              <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FuneralPremiumCalculator.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Aforance/Premium/Calculators/FuneralPremiumCalculator.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="186">
+              <caret line="74" column="68" selection-start-line="74" selection-start-column="68" selection-end-line="74" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="policy-creator.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/custom/policies/funeral/policy-creator.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1712">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -145,8 +150,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/js/custom/policies/funeral/policy-creator.js" />
-        <option value="$PROJECT_DIR$/public/js/custom/vue-mixins.js" />
         <option value="$PROJECT_DIR$/app/Aforance/Business/Funeral/FuneralNumberGenerator.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_07_27_145346_create_funeral_policies_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_07_31_181311_creates_loanprotection_table.php" />
@@ -196,6 +199,8 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Policy/PolicyDocumentController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Policy/ChildEducation/ChildEducationController.php" />
         <option value="$PROJECT_DIR$/resources/views/policies/childeducation/view.blade.php" />
+        <option value="$PROJECT_DIR$/app/Aforance/Business/Funeral/ValidationHandler/FamilyHandler.php" />
+        <option value="$PROJECT_DIR$/app/Aforance/Premium/Calculators/FuneralPremiumCalculator.php" />
       </list>
     </option>
   </component>
@@ -251,6 +256,16 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="insurance-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -265,208 +280,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="insurance-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="insurance-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="insurance-app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="insurance-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="insurance-app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="insurance-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="insurance-app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="policies" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="insurance-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="insurance-app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="policies" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="childeducation" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="insurance-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="insurance-app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="insurance-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="insurance-app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="insurance-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="insurance-app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Aforance" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="insurance-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="insurance-app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Aforance" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Policy" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="insurance-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="insurance-app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Aforance" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Contracts" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="insurance-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="insurance-app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Aforance" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Contracts" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Premium" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -474,7 +287,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
     <property name="settings.editor.splitter.proportion" value="0.22406967" />
-    <property name="SearchEverywhereHistoryKey" value="childeducco&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Http/Controllers/Policy/ChildEducation/ChildEducationController.php&#10;Documen&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Http/Controllers/Policy/PolicyDocumentController.php&#10;ChildEd&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Business/ChildEducation/ChildEducationBusiness.php&#10;Document&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Business/ChildEducation/Document.php&#10;front&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/resources/views/policies/loanprotection/document/front.blade.php&#10;front.blade&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/resources/views/policies/funeral/document/front.blade.php&#10;front.bl&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/resources/views/policies/childeducation/document/front.blade.php&#10;Funeral&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Providers/FuneralBusinessServiceProvider.php&#10;ChildEducationBusinessServic&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Providers/ChildEducationBusinessServiceProvider.php&#10;Funer&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Business/Funeral/FuneralBusiness.php&#10;Fu&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/FuneralPolicy.php&#10;LoanP&#9;null&#9;null&#10;P&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Premium/Calculators/PeriodicPremiumCalculator.php&#10;Premiu&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Premium.php&#10;POlicyN\&#9;null&#9;null&#10;convertPre&#9;null&#9;null&#10;Fune&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/FuneralPolicy.php&#10;Policy&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Contracts/Business/Policy.php&#10;Policydoc&#9;null&#9;null&#10;Premium&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Premium.php&#10;crea&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/database/migrations/2016_07_27_145621_create_premiums_table.php&#10;PolicySer&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Service/PolicyService.php&#10;permissions.j\&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/files/permissions.json&#10;create_pre&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/database/migrations/2016_07_27_145621_create_premiums_table.php&#10;Pre&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Providers/PremiumServiceProvider.php&#10;LoanPro&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Business/LoanProtection/LoanProtectionBusiness.php&#10;PremiumSe&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Service/PremiumService.php&#10;V&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Validation/Validator.php&#10;Valid&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Validation/ValidationInterface.php&#10;Valida&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Validation/ValidationInterface.php&#10;Validato&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Validation/Validator.php&#10;Busine&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Business/Business.php&#10;app.php&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/config/app.php&#10;Prem&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Providers/PremiumServiceProvider.php&#10;PolicyServiceP&#9;null&#9;null&#10;PremiSe&#9;null&#9;null&#10;PremiumSer&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Service/PremiumService.php&#10;App&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Providers/AppServiceProvider.php&#10;Apps&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Providers/AppServiceProvider.php&#10;Business.php&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Business/Business.php&#10;loanpro.js&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/public/js/custom/policies/loanprotection/loanprotection.js&#10;child&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Providers/ChildEducationBusinessServiceProvider.php&#10;Loan&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Providers/LoanProtectionBusinessServiceProvider.php&#10;Loanpr&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Business/LoanProtection/LoanProtectionBusiness.php&#10;Ap&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Providers/AppServiceProvider.php&#10;Child&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Providers/ChildEducationBusinessServiceProvider.php&#10;LoanProtectionSer&#9;null&#9;null&#10;FuneralBu&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Providers/FuneralBusinessServiceProvider.php&#10;AppServ&#9;null&#9;null&#10;Finan&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Business/LoanProtection/Validation/FinancierHandler.php" />
+    <property name="SearchEverywhereHistoryKey" value="policy-crea&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/public/js/custom/policies/funeral/policy-creator.js&#10;Funerpremcal&#9;null&#9;null&#10;Famil&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Business/Funeral/ValidationHandler/FamilyHandler.php&#10;PolicyHandle&#9;null&#9;null&#10;FamiH&#9;null&#9;null&#10;Documen&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Business/ChildEducation/Document.php&#10;Business&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Business/Business.php&#10;Periodic&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Premium/Calculators/PeriodicPremiumCalculator.php&#10;childeducco&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Http/Controllers/Policy/ChildEducation/ChildEducationController.php&#10;ChildEd&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Business/ChildEducation/ChildEducationBusiness.php&#10;Document&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Business/ChildEducation/Document.php&#10;front&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/resources/views/policies/loanprotection/document/front.blade.php&#10;front.blade&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/resources/views/policies/funeral/document/front.blade.php&#10;front.bl&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/resources/views/policies/childeducation/document/front.blade.php&#10;Funeral&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Providers/FuneralBusinessServiceProvider.php&#10;ChildEducationBusinessServic&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Providers/ChildEducationBusinessServiceProvider.php&#10;Funer&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Business/Funeral/FuneralBusiness.php&#10;Fu&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/FuneralPolicy.php&#10;LoanP&#9;null&#9;null&#10;P&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Premium/Calculators/PeriodicPremiumCalculator.php&#10;Premiu&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Premium.php&#10;POlicyN\&#9;null&#9;null&#10;convertPre&#9;null&#9;null&#10;Fune&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/FuneralPolicy.php&#10;Policy&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Contracts/Business/Policy.php&#10;Policydoc&#9;null&#9;null&#10;Premium&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Premium.php&#10;crea&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/database/migrations/2016_07_27_145621_create_premiums_table.php&#10;PolicySer&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Service/PolicyService.php&#10;permissions.j\&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/files/permissions.json&#10;create_pre&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/database/migrations/2016_07_27_145621_create_premiums_table.php&#10;Pre&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Providers/PremiumServiceProvider.php&#10;LoanPro&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Business/LoanProtection/LoanProtectionBusiness.php&#10;PremiumSe&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Service/PremiumService.php&#10;V&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Validation/Validator.php&#10;Valid&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Validation/ValidationInterface.php&#10;Valida&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Validation/ValidationInterface.php&#10;Validato&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Validation/Validator.php&#10;Busine&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Business/Business.php&#10;app.php&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/config/app.php&#10;Prem&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Providers/PremiumServiceProvider.php&#10;PolicyServiceP&#9;null&#9;null&#10;PremiSe&#9;null&#9;null&#10;PremiumSer&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Service/PremiumService.php&#10;App&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Providers/AppServiceProvider.php&#10;Apps&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Providers/AppServiceProvider.php&#10;Business.php&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Aforance/Business/Business.php&#10;loanpro.js&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/public/js/custom/policies/loanprotection/loanprotection.js&#10;child&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Providers/ChildEducationBusinessServiceProvider.php&#10;Loan&#9;FILE&#9;file://C:/xampp/htdocs/insurance-app/app/Providers/LoanProtectionBusinessServiceProvider.php" />
     <property name="JavaScriptPreferStrict" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -560,19 +373,20 @@
       <workItem from="1469874043782" duration="30048000" />
       <workItem from="1469918516110" duration="61721000" />
       <workItem from="1470111293665" duration="47125000" />
-      <workItem from="1470218963158" duration="1774000" />
+      <workItem from="1470218963158" duration="1779000" />
+      <workItem from="1470243183008" duration="2621000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="389401000" />
+    <option name="totallyTimeSpent" value="392027000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2118003" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16792738" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3686636" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -610,16 +424,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Aforance/Contracts/Business/LifePolicy.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_08_02_114323_create_premia_table.php" />
-    <entry file="file://$PROJECT_DIR$/app/Aforance/Validation/PolicyValidatorInterface.php" />
-    <entry file="file://$PROJECT_DIR$/app/Aforance/Validation/CanCheckPolicyData.php" />
     <entry file="file://$PROJECT_DIR$/app/Aforance/Business/Funeral/FuneralPolicyValidator.php" />
     <entry file="file://$PROJECT_DIR$/app/Aforance/Business/LoanProtection/Validation/FinancierHandler.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -639,7 +443,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -682,7 +485,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -765,7 +567,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="444">
           <caret line="47" column="26" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -825,14 +626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Aforance/Premium/Calculators/PeriodicPremiumCalculator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3151">
-          <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/LoanProtectionPolicy.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -876,23 +669,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Aforance/Business/Business.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="131" column="27" selection-start-line="131" selection-start-column="27" selection-end-line="131" selection-end-column="27" />
-          <folding>
-            <element signature="e#47#105#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Providers/FuneralBusinessServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-155">
           <caret line="46" column="11" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="11" />
-          <folding>
-            <element signature="e#38#86#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -900,7 +680,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="259">
           <caret line="61" column="11" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -908,15 +687,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
           <caret line="3" column="54" selection-start-line="3" selection-start-column="54" selection-end-line="3" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Aforance/Business/ChildEducation/Document.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -924,7 +694,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
           <caret line="3" column="54" selection-start-line="3" selection-start-column="54" selection-end-line="3" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -932,13 +701,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
           <caret line="3" column="71" selection-start-line="3" selection-start-column="71" selection-end-line="3" selection-end-column="71" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Policy/PolicyDocumentController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
+        <state relative-caret-position="414">
           <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
           <folding />
         </state>
@@ -954,9 +722,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/policies/childeducation/view.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="45" column="84" selection-start-line="45" selection-start-column="84" selection-end-line="45" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Aforance/Premium/Calculators/PeriodicPremiumCalculator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Aforance/Business/Funeral/FuneralBusiness.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
+        <state relative-caret-position="528">
           <caret line="80" column="5" selection-start-line="80" selection-start-column="5" selection-end-line="80" selection-end-column="5" />
           <folding>
             <element signature="e#55#95#0#PHP" expanded="true" />
@@ -964,18 +747,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/policies/childeducation/view.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Aforance/Business/Business.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="45" column="84" selection-start-line="45" selection-start-column="84" selection-end-line="45" selection-end-column="84" />
+        <state relative-caret-position="130">
+          <caret line="131" column="27" selection-start-line="131" selection-start-column="27" selection-end-line="131" selection-end-column="27" />
+          <folding>
+            <element signature="e#47#105#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Aforance/Business/Funeral/ValidationHandler/PolicyHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-144">
+          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Aforance/Business/ChildEducation/Document.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Policy/ChildEducation/ChildEducationController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+        <state relative-caret-position="92">
+          <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Aforance/Business/Funeral/ValidationHandler/FamilyHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/custom/policies/funeral/policy-creator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1712">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Aforance/Premium/Calculators/FuneralPremiumCalculator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="74" column="68" selection-start-line="74" selection-start-column="68" selection-end-line="74" selection-end-column="68" />
           <folding />
         </state>
       </provider>
