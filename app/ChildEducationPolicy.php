@@ -5,6 +5,7 @@ namespace Aforance;
 use Aforance\Aforance\Business\ChildEducation\Child;
 use Aforance\Aforance\Contracts\Business\InvestmentLinked;
 use Aforance\Aforance\Contracts\Business\LifePolicy;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Money\Money;
 
@@ -12,6 +13,10 @@ class ChildEducationPolicy extends Model implements LifePolicy, InvestmentLinked
 {
     protected $table = 'child_education_policies';
     protected $guarded = ['id'];
+
+    public function customer(){
+        return $this->belongsTo(Customer::class);
+    }
 
     public function policyNumber()
     {
@@ -36,6 +41,10 @@ class ChildEducationPolicy extends Model implements LifePolicy, InvestmentLinked
     
     public function investmentYieldRate(){
         return $this->investment_yield_rate / 100;
+    }
+
+    public function issueDate(){
+        return new Carbon($this->created_at);
     }
     
 

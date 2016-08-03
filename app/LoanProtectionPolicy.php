@@ -13,6 +13,7 @@ use Aforance\Aforance\Business\LoanProtection\Borrower;
 use Aforance\Aforance\Business\LoanProtection\BorrowersPaginator;
 use Aforance\Aforance\Contracts\Business\Policy;
 use Aforance\Aforance\Support\Database\HasLast;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Money\Money;
@@ -99,6 +100,11 @@ class LoanProtectionPolicy extends Model implements Policy
         });
 
         return $amount;
+    }
+
+
+    public function issueDate(){
+        return new Carbon($this->created_at);
     }
 
 

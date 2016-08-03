@@ -44,6 +44,8 @@
                                 </tbody>
                             </table>
                         </div>
+                    @else
+                    <div class="panel-body"><strong>No claim registered!</strong></div>
                     @endif
             </div>
         </div>
