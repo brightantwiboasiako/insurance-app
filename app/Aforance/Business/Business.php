@@ -6,7 +6,6 @@ use Aforance\Aforance\Contracts\Business\DocumentRenderer;
 use Aforance\Aforance\Contracts\Business\Policy;
 use Aforance\Aforance\Contracts\Business\PolicyIssuer;
 use Aforance\Aforance\Notification\Contracts\CustomerNotificationInterface;
-use Aforance\Aforance\Policy\PolicyActionListenerInterface;
 use Aforance\Aforance\Premium\Calculators\PeriodicPremiumCalculator;
 use Aforance\Aforance\Premium\PremiumRepository;
 use Aforance\Aforance\Repository\Contracts\PolicyRepositoryInterface;
