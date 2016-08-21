@@ -41,6 +41,12 @@ class LoanProtectionPolicy extends Model implements Policy
         return $this->policy_number;
     }
 
+
+    public function commissionRate()
+    {
+        return 0.0;
+    }
+
     public function premiumStructure()
     {
         // TODO: Implement premiumStructure() method.

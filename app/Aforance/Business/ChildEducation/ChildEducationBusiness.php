@@ -10,6 +10,8 @@ namespace Aforance\Aforance\Business\ChildEducation;
 
 
 use Aforance\Aforance\Business\Business;
+use Aforance\Aforance\Contracts\Business\Policy;
+use Aforance\Aforance\Contracts\Premium;
 use Aforance\Aforance\Policy\PolicyCreationListenerInterface;
 use Aforance\Aforance\Repository\Contracts\PolicyRepositoryInterface;
 use Aforance\Aforance\Repository\CustomerRepository;
@@ -29,6 +31,8 @@ class ChildEducationBusiness extends Business
         parent::__construct($policies);
         $this->notifier = app('customer.notifier');
         $this->customers = app('customer.repository');
+
+        $this->type = 'childeducation';
     }
 
 
@@ -75,5 +79,6 @@ class ChildEducationBusiness extends Business
         $document = app('childeducation.document');
         return $document->handle($policyNumber, $action);
     }
+
 
 }

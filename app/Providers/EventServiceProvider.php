@@ -16,6 +16,10 @@ class EventServiceProvider extends ServiceProvider
         'Aforance\Events\CustomerCreated' => [
             'Aforance\Listeners\SendWelcomeNotification',
         ],
+        'Aforance\Events\PremiumPaid' => [
+            'Aforance\Listeners\CreditAgentCommission',
+            'Aforance\Listeners\SendPaymentNotification'
+        ]
     ];
 
     /**

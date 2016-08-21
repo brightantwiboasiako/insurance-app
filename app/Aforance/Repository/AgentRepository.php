@@ -19,4 +19,8 @@ class AgentRepository implements AgentRepositoryInterface
         return Agent::where('status', 1)->get();
     }
 
+    public function find($id){
+        return Agent::findOrFail($id);
+    }
+
 }

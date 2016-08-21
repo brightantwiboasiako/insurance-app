@@ -25,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+
         // Bind pdf maker
         $this->app->singleton('pdf', function(){
             return new DOMPDF;
@@ -34,6 +35,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind('aforance.validator', function(){
             return new Validator;
         });
+
         
     }
 }

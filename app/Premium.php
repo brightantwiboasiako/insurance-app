@@ -56,6 +56,10 @@ class Premium extends Model implements PremiumContract
         return Money::withSecure($this->amount_paid);
     }
 
+    public function id(){
+        return $this->id;
+    }
+
     public function policyNumber(){
         return $this->policy_number;
     }

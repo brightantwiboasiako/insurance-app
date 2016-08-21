@@ -29,6 +29,13 @@ class ChildEducationPolicy extends Model implements LifePolicy, InvestmentLinked
         return $this->policy_number;
     }
 
+
+    public function commissionRate()
+    {
+        return 0.10;
+    }
+
+
     public function sumAssured()
     {
         return Money::withSecure($this->sum_assured);

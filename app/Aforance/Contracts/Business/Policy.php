@@ -40,4 +40,10 @@ interface Policy
      * @return Money
      */
     public function premium();
+    /**
+     * The commission rate to be applied on the policy
+     *
+     * @return float
+     */
+    public function commissionRate();
 }

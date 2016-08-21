@@ -3,12 +3,15 @@
 namespace Aforance\Aforance\Business\Funeral;
 
 use Aforance\Aforance\Business\Business;
+use Aforance\Aforance\Contracts\Business\Policy;
+use Aforance\Aforance\Contracts\Premium;
 use Aforance\Aforance\Contracts\Repository\FuneralPolicyRepositoryInterface;
 use Aforance\Aforance\Policy\PolicyCreationListenerInterface;
 use Aforance\Aforance\Repository\CustomerRepository;
 use Aforance\Aforance\Support\DateHelper;
 use Aforance\Aforance\Validation\ValidationException;
 use Illuminate\Support\Facades\App;
+use Money\Money;
 
 class FuneralBusiness extends Business{
 
@@ -23,6 +26,8 @@ class FuneralBusiness extends Business{
 		$this->customers = app('customer.repository');
 		// Get a customer notification instance
 		$this->notifier = app('customer.notifier');
+
+        $this->type = 'funeral';
 	}
 
 
@@ -75,6 +80,7 @@ class FuneralBusiness extends Business{
 		$document = app('funeral.document');
 		return $document->handle($policyNumber, $action);
 	}
+
 
 
 

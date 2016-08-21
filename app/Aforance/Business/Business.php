@@ -5,6 +5,7 @@ namespace Aforance\Aforance\Business;
 use Aforance\Aforance\Contracts\Business\DocumentRenderer;
 use Aforance\Aforance\Contracts\Business\Policy;
 use Aforance\Aforance\Contracts\Business\PolicyIssuer;
+use Aforance\Aforance\Contracts\Premium;
 use Aforance\Aforance\Notification\Contracts\CustomerNotificationInterface;
 use Aforance\Aforance\Premium\Calculators\PeriodicPremiumCalculator;
 use Aforance\Aforance\Premium\PremiumRepository;
@@ -43,6 +44,13 @@ abstract class Business  implements PolicyIssuer, DocumentRenderer{
 	* @var CustomerNotificationInterface
 	*/
 	protected $notifier;
+
+    /**
+     * The business type
+     *
+     * @var string
+     */
+    protected $type;
 
 
 	/**
@@ -116,35 +124,38 @@ abstract class Business  implements PolicyIssuer, DocumentRenderer{
 		$this->validator->setHandlers($handlers);
 	}
 
-	/**
-	 * Processes premium payments of a given policy
-	 * Other businesses may override this algorithm
-	 *
-	 * @param array $data
-	 * @param Policy $policy
-	 * @param PremiumRepository $premiums
-	 */
-	public function handlePremiumPayment(array $data, Policy $policy, PremiumRepository $premiums){
 
-		$frequencyFactor = PeriodicPremiumCalculator::getFrequencyFactor($policy->premiumFrequency());
 
-		// Get start period
-		$period = new Carbon($data['period']);
-		// Weight amounts by the payment frequency factor
-		$amountPaid = Money::withRaw($data['amount_paid']);
-		$amountPaid->times((double)(1/$frequencyFactor));
+    /**
+     * Handles the crediting of premiums by businesses
+     *
+     * @param Policy $policy
+     * @param Premium $premium
+     * @return mixed
+     */
+    public function creditCommission(Policy $policy, Premium $premium)
+    {
+        $taxRate = app('agency.rates')['tax'];
+        $commissionRate = $policy->commissionRate();
 
-		$amountExpected = Money::withRaw($data['amount_expected']);
-		$amountExpected->times((double)(1/$frequencyFactor));
 
-		// Loop through all periods and credit premium
-		for($i = 0; $i < $frequencyFactor; $i++){
-			$data['period'] = $period->addMonths($i);
-			$data['amount_paid'] = $amountPaid->getSecure();
-			$data['amount_expected'] = $amountExpected->getSecure();
-			$data['receipt_code'] = 1; // Generate receipt code
-			$premiums->create($data);
-		}
-	}
+        $tax = Money::withRaw($taxRate * $premium->amountPaid()->getAmount());
+
+        $amountEarned = $premium->amountPaid();
+        $amountEarned->times($commissionRate);
+        $amountEarned->subtract($tax);
+
+        $commissions = app('agency.commissions');
+
+        return $commissions->create([
+            'premium_id' => $premium->id(),
+            'policy_number' => $policy->policyNumber(),
+            'amount' => $amountEarned->getSecure(),
+            'tax' => $tax->getSecure(),
+            'rate_earned' => (int)($commissionRate * 100),
+            'policy_type' => $this->type
+        ]);
+
+    }
 
 }

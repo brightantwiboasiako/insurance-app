@@ -24,7 +24,7 @@ class CreatePremiumsTable extends Migration
             $table->string('receipt_code', 16);
             $table->dateTime('received_at');
             $table->integer('captured_by', false, true);
-            $table->foreign('captured_by')->references('id')->on('users');
+            //$table->foreign('captured_by')->references('id')->on('users');
             $table->timestamps();
         });
     }

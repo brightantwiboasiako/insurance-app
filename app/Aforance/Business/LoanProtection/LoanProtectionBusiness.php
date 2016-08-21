@@ -11,6 +11,8 @@ namespace Aforance\Aforance\Business\LoanProtection;
 
 use Aforance\Aforance\Business\Business;
 use Aforance\Aforance\Business\LoanProtection\Contracts\LoanProtectionRepositoryInterface;
+use Aforance\Aforance\Contracts\Business\Policy;
+use Aforance\Aforance\Contracts\Premium;
 use Aforance\Aforance\Policy\PolicyActionListenerInterface;
 use Aforance\Aforance\Policy\PolicyCreationListenerInterface;
 use Aforance\Aforance\Validation\ValidationException;
@@ -23,6 +25,8 @@ class LoanProtectionBusiness extends Business
     {
         parent::__construct($repository);
         $this->notifier = app('loanprotection.customer_notifier');
+
+        $this->type = 'loanprotection';
     }
 
 
@@ -169,6 +173,12 @@ class LoanProtectionBusiness extends Business
         }catch(ValidationException $e){
             throw $e;
         }
+    }
+
+
+    public function creditCommission(Policy $policy, Premium $premium)
+    {
+        return null;
     }
 
 

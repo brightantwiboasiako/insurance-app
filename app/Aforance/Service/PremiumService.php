@@ -14,6 +14,8 @@ use Aforance\Aforance\Support\Contracts\Checker;
 use Aforance\Aforance\Support\Permission\CanCheckPermission;
 use Aforance\Aforance\Validation\ValidationException;
 use Aforance\Aforance\Validation\Validator;
+use Aforance\Events\PremiumPaid;
+use Money\Money;
 
 class PremiumService implements ServiceInterface{
 
@@ -33,13 +35,6 @@ class PremiumService implements ServiceInterface{
 	 */
 	private $policyService;
 
-
-	/**
-	 * Validator instance
-	 * 
-	 * @var Validator
-	 */
-	private $validator;
 
 	/**
 	 * Repository of premiums
@@ -67,59 +62,35 @@ class PremiumService implements ServiceInterface{
 		// check if role is permitted to pay premium
 		if($this->isPermittedTo('pay', $role)){
 
-			try{
-				// Check premium data
-				$this->checkPremiumData($data);
+		    $business = $this->policyService->business($data['business_type']);
 
-				// Bind necessary data
-				$business = $this->policyService->business($data['business_type']);
-				$policy = $business->getPolicyByNumber($policyNumber);
+			// Manage the premium payment
 
-				// The expected premium amount
-				$data['expected_amount'] = $policy->premium()->getAmount();
+            $manager = app('premium.payment.manager');
 
-				// Verify premium data
-				$verifiers = app('premium.verifiers');
-				foreach($verifiers as $verifier){
-					$verifier->verify($data);
-				}
+            try{
 
-			}catch(ValidationException $e){ // validation failed
-				return $listener->onFailedAction($listener->getAction(), [
-					'reason' => 'validation',
-					'errors' => $this->validator->errors()
-				]);
-			}catch(FatalVerificationException $e){ // fatal verification failed
-				return $listener->onFailedAction($listener->getAction(), [
-					'reason' => 'fatal',
-					'message' => $e->getMessage()
-				]);
-			}
+                $manager->manage($data, $policyNumber, $business, $listener);
 
-			$business->handlePremiumPayment($data, $policy, $this->premiums);
+            }catch(ValidationException $e){
+                return $listener->onFailedAction($listener->getAction(), [
+                    'reason' => 'validation',
+                    'errors' => $manager->errors()
+                ]);
+            }catch(FatalVerificationException $e){
+                return $listener->onFailedAction($listener->getAction(), [
+                    'reason' => 'fatal',
+                    'message' => $e->getMessage()
+                ]);
+            }
 
-			// TODO: Notify client about premium payment
+            return $listener->onSuccessfulAction($listener->getAction(), []);
 
 		}else{
 			return $listener->onFailedAction($listener->getAction(), [
 				'reason' => 'permission'
 			]);
 		}
-
-	}
-
-
-	/**
-	 * Checks premium data for validity
-	 *
-	 * @param array $data
-	 * @throws ValidationException
-	 */
-	public function checkPremiumData(array $data){
-
-		// Set handlers
-		$this->validator->setHandlers(app('premium.validation.handlers'));
-		$this->validator->check($data);
 
 	}
 	
